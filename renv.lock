@@ -839,18 +839,6 @@
       "Repository": "CRAN",
       "Hash": "019d5fc373bec143779d33bfb88757d1"
     },
-    "rayshader": {
-      "Package": "rayshader",
-      "Version": "0.17.0",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "rayshader",
-      "RemoteUsername": "tylermorganwall",
-      "RemoteRef": "master",
-      "RemoteSha": "7052b91dd73fe9dc745f6139bcc589c65050c4ec",
-      "Hash": "eb8ecab535b95aef527422d1a69ae812"
-    },
     "rcmdcheck": {
       "Package": "rcmdcheck",
       "Version": "1.3.3",
