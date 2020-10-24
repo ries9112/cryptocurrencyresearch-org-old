@@ -14,8 +14,9 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ~/.local/share/renv
-          key: r-3-${{ hashFiles('renv.lock') }}
-          restore-keys: r-3-
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
       - name: Install Packages and Run Script
         run: |-
           Rscript -e "install.packages('renv')"
@@ -32,6 +33,5 @@ jobs:
           git config --local user.name "ries9112"
           git add .
           git commit -m "Add html output from CI process" -a
-          git push https://ries9112:${{secrets.GITHUB_TOKEN}}@github.com/ries9112/cryptocurrencyresearch-org.git HEAD:main
-
+          git push https://ries9112:${{secrets.GITHUB_TOKEN}}@github.com/ries9112/cryptocurrencyresearch-org.git HEAD:main --force
 
