@@ -935,13 +935,6 @@
       "Repository": "CRAN",
       "Hash": "093584b944440c5cd07a696b3c8e0e4c"
     },
-    "rgl": {
-      "Package": "rgl",
-      "Version": "0.100.50",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "30066f09826010feecfc836c51aaa7a9"
-    },
     "rlang": {
       "Package": "rlang",
       "Version": "0.4.7",
