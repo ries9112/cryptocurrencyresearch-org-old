@@ -170,6 +170,15 @@ The field `target_price_24h` should have the value of `price_usd` 24 hours into 
 cryptodata <- dplyr::filter(cryptodata, n() >= 700)
 ```
 
+## Remove symbols without data from the last 3 days
+
+If there was no data collected for a cryptocurrency over the last 3 day period, let's exclude that asset from the dataset since we are only looking to model data that is currently flowing through the process. If an asset is removed from the exchange (if a project is a scam for example) or is no longer being actively captured by the data collection process, we can't make new predictions for it, so might as well exclude these ahead of time as well.
+
+```{r remove_last_3_days_missing}
+cryptodata <- dplyr::filter(cryptodata, date > Sys.Date()-3)
+```
+
+
 ## Cross Validation
 
 [ADD HERE]
