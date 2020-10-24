@@ -26,4 +26,11 @@ jobs:
           Rscript -e "#devtools::install_github('tylermorganwall/rayshader')"
           Rscript -e "#devtools::install_github('cran/rgl')"
           Rscript -e "#devtools::install_github('ropensci/magick')"
-          Rscript -e "#rmarkdown::render('test_script_tutorial.Rmd')"
+          Rscript -e "rmarkdown::render('test_script_tutorial.Rmd')"
+      - name: Commit and push files
+        run: |
+          git config --local user.email "ries9112@colorado.edu"
+          git config --local user.name "ries9112"
+          git add .
+          git commit -m "Add html output from CI process" -a
+          git push https://ries9112:${{secrets.GITHUB_TOKEN}}@github.com/ries9112/cryptocurrencyresearch-org.git HEAD:main
