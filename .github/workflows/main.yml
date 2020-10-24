@@ -19,7 +19,7 @@ jobs:
           Rscript -e "#devtools::install_github('tylermorganwall/rayshader')"
           Rscript -e "#devtools::install_github('cran/rgl')"
           Rscript -e "#devtools::install_github('ropensci/magick')"
-          Rscript -e "rmarkdown::render('test_script_tutorial.Rmd')"
+          Rscript -e "#rmarkdown::render('test_script_tutorial.Rmd')"
       - name: Cache R packages
         if: runner.os != 'Windows'
         uses: actions/cache@v1
