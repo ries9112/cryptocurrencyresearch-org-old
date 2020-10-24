@@ -11,12 +11,12 @@ jobs:
         run: |
           brew install pandoc
           brew install pandoc-citeproc
-      - name: Cache Renv packages
-        uses: actions/cache@v1
+      - uses: actions/cache@v2
         with:
-          path: ~/Library/Application Support/renv
-          key: r-3-${{ hashFiles('renv.lock') }}
-          restore-keys: r-3-
+          path: ~/.local/share/renv
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
       - name: Install Packages and Run Script
         run: |-
           Rscript -e "install.packages('renv')"
