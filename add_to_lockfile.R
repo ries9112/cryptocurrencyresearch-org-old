@@ -6,3 +6,7 @@ lock$repos(CRAN = "https://cran.r-project.org")
 lock$add(pacman = "pacman@0.5.1")
 # write to file
 lock$write("renv.lock")
+
+
+# WAY BETTER SOLUTION: https://github.com/MilesMcBain/capsule
+capsule::create("01-Setup.Rmd")
