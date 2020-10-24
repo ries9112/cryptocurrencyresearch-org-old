@@ -27,10 +27,6 @@ jobs:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-r-${{ matrix.config.r }}-3-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-3-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: my-artifact
-          path: test_script_tutorial.html
       - name: Commit and push files
         run: |
           git config --local user.email "ries9112@colorado.edu"
