@@ -1,0 +1,79 @@
+# Setup and Installation {#setup}
+
+<!-- (OLD COMMENTS, NOW DOING HITBTC FIRST AND MAKING THAT STEP REPRODUCIBLE AND EXPLAINING MESSARI DATA LATER) -->
+
+<!-- Unfortunately, unlike the [high-level version](https://cryptocurrencyresearch.org/high-level/) we are not allowed to redistribute the data to others directly. Therefore, in order to use the same data used in this tutorial you will need to follow the instructions that we have outlined at this link: https://github.com/ries9112/messarir -->
+
+<!-- Those instructions provide a guide on setting up a process to collect data using the Messari.io API and writing it to a Google Sheets dataset. After doing so every step outlined in the rest of this tutorial would work because it would be the exact same data. Because this is too much to ask out of the average user, we won't cover each step here, but they are linked in [the repository linked above](https://github.com/ries9112/messarir). If anything is unclear about the process and you are running into problems you can create an issue here: https://github.com/ries9112/messarir/issues -->
+
+<!-- We recommend that most users follow along with this tutorial without setting up the data collection process and instead follow along with the document without running the code. -->
+
+<!-- [NEED TO KEEP WORKING ON THIS. MESSARIR PACKAGE NEEDS PROPER INFRASTRUCTURE TO GET ANYONE DATA (BOTH FREE AND PRO API) COLLECTION PROCESS WRITING DATA INTO GOOGLE SHEETS AND HOW TO USE TO REPLICATE TUTORIAL] -->
+
+<!-- NEED TO UPDATE THE ABOVE: Instead start with HitBTC data (provided through pins), and call out that won't be able to use Messari data without own data collection process. -->
+
+You can follow the tutorial without coding. In that case, [**you can move on to the next page where the tutorial actually begins**](#overview).
+
+## Option 1 - Run in the Cloud
+
+If you do not currently have R and RStudio installed on your computer, you can run all of the code in a jupyter notebook using an R kernel that we have made available online in <a href="https://gesis.mybinder.org/binder/v2/gh/ries9112/Research-Paper-Example/0a23077a85848af214976c87d7d5d2472df700ee?filepath=Jupyter%2FCryptocurrency%20Research.ipynb" target="_blank">**this mobile friendly link**</a>.
+
+This can take up to 30 seconds to load, and once it has you should see a page that looks like this:
+
+![](images/jupyter_notebook.png)
+
+**From here, you can run the code one cell at a time:**
+
+![](images/jupyter_run_one_cell.png)
+
+*You can also use `Shift` + `Enter` to run an individual code cell*
+
+**Or run all code cells at once (recommended):**
+
+![](images/jupyter_run_all_cells.png)
+
+**If you feel lost, you can do a quick interactive walkthrough under *Help --\> User Interface Tour*:**
+
+![](images/user_interface_tour.png)
+
+## Option 2 - Run Locally
+
+If you want to follow along from your own computer directly (recommended option), please follow the installation instructions below. Afterwards, you will be able to run the code. You only need to follow these instructions **once**. If you have followed these steps once already, [**skip ahead to the next section**](#overview).
+
+### Setup R
+
+Hopefully you already have **R** and **RStudio** installed on your computer.
+
+If you don't have these two programs installed, you will need to:
+
+1.  [**Install R**](https://cran.revolutionanalytics.com/).
+
+![](images/r_install.png)
+
+2.  [**Install RStudio**](https://rstudio.com/products/rstudio/download/). This step is optional, but it is very recommended that you use an integrated development environment [(IDE)](https://en.wikipedia.org/wiki/Integrated_development_environment) like RStudio as you follow along, rather than using the R console as it was installed in step 1 above.
+
+![](images/rstudio_install.png)
+
+## Installing and Loading Packages {#installing-and-loading-packages}
+
+[ADD HERE] describe how to install packages, what they are, etc... like high-level version.
+
+```{r install_pacman, eval=F}
+install.packages('pacman')
+```
+
+Load pacman:
+
+```{r load_pacman}
+library(pacman)
+```
+
+Install other packages:
+
+```{r install_all_other_packages}
+p_load('pins','tidyverse','skimr','tsibble','doParallel','DT', 'caret','anytime','gganimate','tictoc','gifski',
+       'xgboost','gbm','rayshader', 'rgl', 'ggthemes','ggTimeSeries',
+       'av','magick')
+```
+
+Nice work! Now you have everything you need to [follow along with this example](#overview).

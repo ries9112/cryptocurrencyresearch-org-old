@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Untitled</title>
+  <meta name="description" content="Untitled" />
+  <meta name="generator" content="bookdown 0.19.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Untitled" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Untitled" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="setup.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.13/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Cryptocurrency Research</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#what-will-i-learn"><i class="fa fa-check"></i><b>1.1</b> What will I learn?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#before-getting-started"><i class="fa fa-check"></i><b>1.2</b> Before Getting Started</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#who-is-this-example-for"><i class="fa fa-check"></i><b>1.3</b> Who is this example for?</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#format-notes"><i class="fa fa-check"></i><b>1.4</b> Format Notes</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#plan-of-attack"><i class="fa fa-check"></i><b>1.5</b> Plan of Attack</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i><b>1.6</b> Disclaimer</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>2</b> Setup and Installation</a></li>
+<li class="chapter" data-level="3" data-path="explore-data.html"><a href="explore-data.html"><i class="fa fa-check"></i><b>3</b> Explore the Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="explore-data.html"><a href="explore-data.html#data-preview"><i class="fa fa-check"></i><b>3.1</b> Data Preview</a></li>
+<li class="chapter" data-level="3.2" data-path="explore-data.html"><a href="explore-data.html#data-quality"><i class="fa fa-check"></i><b>3.2</b> Data Quality</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-prep.html"><a href="data-prep.html"><i class="fa fa-check"></i><b>4</b> Data Prep</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-prep.html"><a href="data-prep.html#convert-date-time"><i class="fa fa-check"></i><b>4.1</b> Convert Date Time</a></li>
+<li class="chapter" data-level="4.2" data-path="data-prep.html"><a href="data-prep.html#prices-by-exchange"><i class="fa fa-check"></i><b>4.2</b> Prices by Exchange</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="data-prep.html"><a href="data-prep.html#pull-exchange-data"><i class="fa fa-check"></i><b>4.2.1</b> Pull Exchange Data</a></li>
+<li class="chapter" data-level="4.2.2" data-path="data-prep.html"><a href="data-prep.html#the-definition-of-a-price"><i class="fa fa-check"></i><b>4.2.2</b> The definition of a “price”</a></li>
+<li class="chapter" data-level="4.2.3" data-path="data-prep.html"><a href="data-prep.html#join-datasets"><i class="fa fa-check"></i><b>4.2.3</b> Join Datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-prep.html"><a href="data-prep.html#add-target"><i class="fa fa-check"></i><b>4.3</b> Add Target Variable</a></li>
+<li class="chapter" data-level="4.4" data-path="data-prep.html"><a href="data-prep.html#group-by-crypto"><i class="fa fa-check"></i><b>4.4</b> Group by Cryptocurrency and Exchange</a></li>
+<li class="chapter" data-level="4.5" data-path="data-prep.html"><a href="data-prep.html#split-data"><i class="fa fa-check"></i><b>4.5</b> Split Data</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="data-prep.html"><a href="data-prep.html#traintest-split"><i class="fa fa-check"></i><b>4.5.1</b> Train/Test Split</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="data-prep.html"><a href="data-prep.html#final-adjustments"><i class="fa fa-check"></i><b>4.6</b> Final Adjustments</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="data-prep.html"><a href="data-prep.html#do-function"><i class="fa fa-check"></i><b>4.6.1</b> do() Function</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>5</b> Visualization 📉</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="visualization.html"><a href="visualization.html#basics---ggplot2"><i class="fa fa-check"></i><b>5.1</b> Basics - ggplot2</a></li>
+<li class="chapter" data-level="5.2" data-path="visualization.html"><a href="visualization.html#plot-relationships"><i class="fa fa-check"></i><b>5.2</b> Plot Relationships</a></li>
+<li class="chapter" data-level="5.3" data-path="visualization.html"><a href="visualization.html#using-extensions"><i class="fa fa-check"></i><b>5.3</b> Using Extensions</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="visualization.html"><a href="visualization.html#ggthemes"><i class="fa fa-check"></i><b>5.3.1</b> ggthemes</a></li>
+<li class="chapter" data-level="5.3.2" data-path="visualization.html"><a href="visualization.html#plotly"><i class="fa fa-check"></i><b>5.3.2</b> plotly</a></li>
+<li class="chapter" data-level="5.3.3" data-path="visualization.html"><a href="visualization.html#ggpubr"><i class="fa fa-check"></i><b>5.3.3</b> ggpubr</a></li>
+<li class="chapter" data-level="5.3.4" data-path="visualization.html"><a href="visualization.html#gganimate"><i class="fa fa-check"></i><b>5.3.4</b> gganimate</a></li>
+<li class="chapter" data-level="5.3.5" data-path="visualization.html"><a href="visualization.html#calendar-heatmap"><i class="fa fa-check"></i><b>5.3.5</b> Calendar Heatmap</a></li>
+<li class="chapter" data-level="5.3.6" data-path="visualization.html"><a href="visualization.html#rayshader"><i class="fa fa-check"></i><b>5.3.6</b> Rayshader</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="predictive-modeling.html"><a href="predictive-modeling.html"><i class="fa fa-check"></i><b>6</b> Predictive Modeling</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="predictive-modeling.html"><a href="predictive-modeling.html#linear-model"><i class="fa fa-check"></i><b>6.1</b> Linear Model</a></li>
+<li class="chapter" data-level="6.2" data-path="predictive-modeling.html"><a href="predictive-modeling.html#caret"><i class="fa fa-check"></i><b>6.2</b> Caret</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="predictive-modeling.html"><a href="predictive-modeling.html#linear-model-1"><i class="fa fa-check"></i><b>6.2.1</b> Linear Model</a></li>
+<li class="chapter" data-level="6.2.2" data-path="predictive-modeling.html"><a href="predictive-modeling.html#xgboost"><i class="fa fa-check"></i><b>6.2.2</b> XGBoost</a></li>
+<li class="chapter" data-level="6.2.3" data-path="predictive-modeling.html"><a href="predictive-modeling.html#neural-network"><i class="fa fa-check"></i><b>6.2.3</b> Neural Network</a></li>
+<li class="chapter" data-level="6.2.4" data-path="predictive-modeling.html"><a href="predictive-modeling.html#cubist"><i class="fa fa-check"></i><b>6.2.4</b> Cubist</a></li>
+<li class="chapter" data-level="6.2.5" data-path="predictive-modeling.html"><a href="predictive-modeling.html#gradient-boosting-machines"><i class="fa fa-check"></i><b>6.2.5</b> Gradient Boosting Machines</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="predictive-modeling.html"><a href="predictive-modeling.html#making-predictions"><i class="fa fa-check"></i><b>6.3</b> Making Predictions</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="time-series.html"><a href="time-series.html"><i class="fa fa-check"></i><b>7</b> Time Series</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="time-series.html"><a href="time-series.html#create-tsibble"><i class="fa fa-check"></i><b>7.0.1</b> Create <code>tsibble</code></a></li>
+<li class="chapter" data-level="7.0.2" data-path="time-series.html"><a href="time-series.html#fable-time-series-models"><i class="fa fa-check"></i><b>7.0.2</b> Fable Time Series Models</a></li>
+<li class="chapter" data-level="7.0.3" data-path="time-series.html"><a href="time-series.html#ets"><i class="fa fa-check"></i><b>7.0.3</b> ETS</a></li>
+<li class="chapter" data-level="7.0.4" data-path="time-series.html"><a href="time-series.html#arima"><i class="fa fa-check"></i><b>7.0.4</b> ARIMA</a></li>
+<li class="chapter" data-level="7.0.5" data-path="time-series.html"><a href="time-series.html#make-models"><i class="fa fa-check"></i><b>7.0.5</b> Make models</a></li>
+<li class="chapter" data-level="7.0.6" data-path="time-series.html"><a href="time-series.html#make-predictions"><i class="fa fa-check"></i><b>7.0.6</b> Make Predictions</a></li>
+<li class="chapter" data-level="7.0.7" data-path="time-series.html"><a href="time-series.html#error-metrics"><i class="fa fa-check"></i><b>7.0.7</b> Error Metrics</a></li>
+<li class="chapter" data-level="7.0.8" data-path="time-series.html"><a href="time-series.html#add-to-grouped-data"><i class="fa fa-check"></i><b>7.0.8</b> Add to Grouped Data</a></li>
+<li class="chapter" data-level="7.1" data-path="time-series.html"><a href="time-series.html#references-for-this-section"><i class="fa fa-check"></i><b>7.1</b> References for this section:</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html"><i class="fa fa-check"></i><b>8</b> Evaluate Model Performance</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#caret-1"><i class="fa fa-check"></i><b>8.1</b> Caret</a></li>
+<li class="chapter" data-level="8.2" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#timeseries"><i class="fa fa-check"></i><b>8.2</b> Timeseries</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#do-arima-models-perform-better-than-naive-ones"><i class="fa fa-check"></i><b>8.2.1</b> Do ARIMA models perform better than NAIVE ones?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#find-best-results"><i class="fa fa-check"></i><b>8.3</b> Find best results</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="predictions.html"><a href="predictions.html"><i class="fa fa-check"></i><b>9</b> Predictions</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="predictions.html"><a href="predictions.html#make-trades"><i class="fa fa-check"></i><b>9.1</b> Make Trades</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="explain-predictions.html"><a href="explain-predictions.html"><i class="fa fa-check"></i><b>10</b> Explain Predictions</a></li>
+<li class="chapter" data-level="11" data-path="evaluate-results.html"><a href="evaluate-results.html"><i class="fa fa-check"></i><b>11</b> Evaluate Results</a></li>
+<li class="chapter" data-level="12" data-path="considerations.html"><a href="considerations.html"><i class="fa fa-check"></i><b>12</b> Considerations</a></li>
+<li class="chapter" data-level="13" data-path="archive.html"><a href="archive.html"><i class="fa fa-check"></i><b>13</b> Archive</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="archive.html"><a href="archive.html#may-2020"><i class="fa fa-check"></i><b>13.1</b> May 2020</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>14</b> References</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="references.html"><a href="references.html#resources-used"><i class="fa fa-check"></i><b>14.1</b> Resources Used</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="references.html"><a href="references.html#visualization-section"><i class="fa fa-check"></i><b>14.1.1</b> Visualization Section</a></li>
+<li class="chapter" data-level="14.1.2" data-path="references.html"><a href="references.html#time-series-section"><i class="fa fa-check"></i><b>14.1.2</b> Time Series Section</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="references.html"><a href="references.html#packages-used-and-cited"><i class="fa fa-check"></i><b>14.2</b> Packages used and cited</a></li>
+<li class="chapter" data-level="14.3" data-path="references.html"><a href="references.html#r-markdown"><i class="fa fa-check"></i><b>14.3</b> R Markdown</a></li>
+<li class="chapter" data-level="14.4" data-path="references.html"><a href="references.html#including-plots"><i class="fa fa-check"></i><b>14.4</b> Including Plots</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Untitled</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Untitled</h1>
+<p class="date"><em>Last Updated:<br/> 2020-10-08 18:13:06</em></p>
+</div>
+<div id="introduction" class="section level1" number="1">
+<h1><span class="header-section-number">Section - 1</span> Introduction</h1>
+<p><strong>(this book is a work in progress and is NOT ready)</strong></p>
+<div id="what-will-i-learn" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> What will I learn?</h2>
+<ul>
+<li><p>In this tutorial you will primarily learn about tools for the R programming language developed by <a href="https://rstudio.com/">RStudio</a> and more specifically the <a href="https://www.tidyverse.org/">tidyverse</a>. If you are not familiar with these open source products, don’t worry. We’ll introduce these throughout the tutorial as needed.</p></li>
+<li><p>The focus of the tutorial is on supervised machine learning, a process for building models that can predict future events, such as cryptocurrency prices. You will learn how to use the <a href="https://topepo.github.io/caret/index.html"><code>caret</code></a> package to make many different predictive models, and tools to evaluate their performance.</p></li>
+<li><p>You will learn how to perform “group by” operations on your data using the <a href="https://dplyr.tidyverse.org/"><code>dplyr</code></a> package.</p></li>
+<li><p>You will be exposed to some very useful data pre-processing R packages, including <a href="https://github.com/ropensci/skimr"><code>skimr</code></a>, <a href="https://garthtarr.github.io/meatR/janitor.html"><code>janitor</code></a> and <a href="http://dirk.eddelbuettel.com/code/anytime.html"><code>anytime</code></a>.</p></li>
+<li><p>You will learn about some powerful <a href="https://exts.ggplot2.tidyverse.org/">extensions to the ggplot2 visualization framework</a>.</p></li>
+<li><p>You will gain a better understanding of the steps involved in any supervised machine learning process, as well considerations you might need to keep in mind based on your specific data and the way you plan on acting on the predictions you have made. Each problem comes with a unique set of challenges, but there are steps that are necessary in creating any supervised machine learning model, and questions you should ask yourself regardless of the specific problem at hand.</p></li>
+</ul>
+<!-- For example, regardless of what you may be predicting, you need to make sure you are only using information that you would have readily available when it is time to make a new prediction.  -->
+<!-- Note/Reminder, delete: Another example here would be keeping in mind the way you plan on actually using the predictions to take specific actions and how beneficial it is to maintain that perspective. -->
+<ul>
+<li>You will also learn a little about cryptocurrencies themselves, but <strong>this is not a tutorial around blockchain itself or trading</strong>.</li>
+</ul>
+</div>
+<div id="before-getting-started" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Before Getting Started</h2>
+<p><strong>There are two different versions of this tutorial, one high-level, accessible version and one detailed, code-heavy version. We recommend you start with the high-level version of the tutorial (#1 below):</strong></p>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://cryptocurrencyresearch.org/high-level/">The high-level version of this tutorial</a> simplifies the supervised machine learning process as much as possible and provides a high-level framework that can be used for most supervised learning problems. When following along with this example, the results will be completely reproducible and the document is static and does not update over time. Even if your intent is to appropriate all the knowledge of the detailed tutorial, consider doing this tutorial first.</p></li>
+<li><p>The detailed tutorial is the document you are currently looking at, and is a full example showing one possible approach to making predictions on the cryptocurrency markets. Here we discuss the nuances that are specific to our data and problem. We focus on the supervised machine learning process and modeling many cryptocurrencies at once rather than real trades on these markets. This entire document and results are updated twice daily with the latest data.</p></li>
+</ol>
+</div>
+<div id="who-is-this-example-for" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Who is this example for?</h2>
+<p>Are you a Bob, Hosung, or Jessica? This section provides more information on how to proceed with this tutorial.</p>
+<ul>
+<li><p><strong>Bob (beginner)</strong>: Bob is someone who understands the idea of predictive analytics at a high level and has heard of cryptocurrencies and is interested in learning more about both, but he has never used R. Bob would want to first <a href="https://predictcrypto.org/r-basics-tutorial">learn the basics of the R programming language</a>. Afterwards, like Hosung, he might decide to <a href="https://cryptocurrencyresearch.org/high-level/">opt for the more high-level version of this tutorial</a>.</p>
+<ul>
+<li>Bob might benefit from the book <a href="https://r4ds.had.co.nz/">“R for Data Science”</a> and DataCamp’s free <a href="https://www.datacamp.com/courses/free-introduction-to-r">“Introduction to R”</a> course are great resources as well. Both are available for free online.</li>
+</ul></li>
+<li><p><strong>Hosung (intermediate)</strong>: Hosung is a statistician who learned to use R 10 years ago. He has heard of the tidyverse, but doesn’t regularly use it in his work and he usually sticks to base R as his preference. Hosung should review the example explaining the pipe operator and the tidyverse <a href="https://cryptocurrencyresearch.org/setup.html#tidy-example">when it comes up in the next section</a>. Hosung does not care much for cryptocurrencies specifically, but is interested in learning new tools to use for his work in R and getting some useful boilerplate code. Hosung would want to start with the <a href="https://cryptocurrencyresearch.org/high-level/"><strong>high-level version of this tutorial</strong></a> and later return to the <a href="https://cryptocurrencyresearch.org/index.html#introduction"><strong>detailed tutorial</strong></a>.</p></li>
+<li><p><strong>Jessica (expert)</strong>: Jessica is a business analyst who has experience with both R and the Tidyverse and uses the pipe operator (%&gt;%) regularly. Jessica should <a href="index.html#introduction"><strong>move onto the next section</strong></a> for the detailed tutorial.</p></li>
+</ul>
+</div>
+<div id="format-notes" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Format Notes</h2>
+<ul>
+<li><p>You can hide the sidebar on the left by pressing the <strong><em>s</em></strong> key on your keyboard.</p></li>
+<li><p>When the code is <code>highlighted this way</code>, that means we are referencing an R object of some kind. This will usually be an object in the R session like a dataset, but functions and packages are highlighted in the same way.</p></li>
+<li><p>The cryptocurrency data was chosen to produce results that change over time and because these markets don’t have any downtime (unlike the stock market).</p></li>
+</ul>
+</div>
+<div id="plan-of-attack" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Plan of Attack</h2>
+<p>How will we generate predictive models to predict cryptocurrency prices? At a high level, here are the steps we will be taking:</p>
+<ol style="list-style-type: decimal">
+<li><p><a href="setup.html#setup">Setup guide</a>. Installation guide on getting the tools used installed on your machine.</p></li>
+<li><p><a href="explore-data.html#explore-data">Explore data</a>. What <strong><em>is</em></strong> the data we are working with? How “good” is the “quality”?</p></li>
+<li><p><a href="data-prep.html#data-prep">Prepare the data</a>. Make adjustments to “clean” the data based on the findings from the previous section to avoid running into problems when making models to make predictions.</p></li>
+<li><p><a href="visualization.html#visualization">Visualize the data</a>. Visualizing the data can be an effective way to understand relationships, trends and outliers before creating predictive models.</p></li>
+<li><p><a href="predictive-modeling.html#predictive-modeling">Make predictive models</a>. Now we are ready to take the data available to us and use it to make predictive models that can be used to make predictions about future price movements using the latest data.</p></li>
+<li><p><a href="evaluate-model-performance.html#evaluate-model-performance">Evaluate the performance of the models</a>. Before we can use the predictive models to make predictions on the latest data, we need to understand how well we expect them to perform, which is also essential in detecting issues.</p></li>
+</ol>
+</div>
+<div id="disclaimer" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> Disclaimer</h2>
+
+<div class="rmdimportant">
+This tutorial is made available for learning and educational purposes only and the information to follow does not constitute trading advice in any way shape or form. We avoid giving any advice when it comes to trading strategies, as this is a very complex ecosystem that is out of the scope of this tutorial; we make no attempt in this regard, and if this, rather than data science, is your interest, your time would be better spent following a different tutorial that aims to answer those questions.
+</div>
+<!-- REMEMBER OTHER SPECIAL BLOCK TYPE IS CALLED "rmdcaution" USE THESE TO DRAW ATTENTION TO ANYTHING IMPORTANT! -->
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="setup.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CryptoResearchPaper.pdf", "CryptoResearchPaper.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
