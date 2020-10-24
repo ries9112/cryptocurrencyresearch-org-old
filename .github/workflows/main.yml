@@ -11,12 +11,13 @@ jobs:
         run: |
           brew install pandoc
           brew install pandoc-citeproc
-      - uses: actions/cache@v2
+      - name: Cache R packages
+        if: runner.os != 'Windows'
+        uses: actions/cache@v1
         with:
-          path: ~/.local/share/renv
-          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-renv-
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-${{ matrix.config.r }}-3-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-3-
       - name: Install Packages and Run Script
         run: |-
           Rscript -e "install.packages('renv')"
