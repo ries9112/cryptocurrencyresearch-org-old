@@ -27,9 +27,9 @@ jobs:
           Rscript -e "#devtools::install_github('tylermorganwall/rayshader')"
           Rscript -e "#devtools::install_github('cran/rgl')"
           Rscript -e "#devtools::install_github('ropensci/magick')"
-      - name: Run Script
+      - name: Render Book
         run: |-
-          Rscript -e "rmarkdown::render('test_script_tutorial.Rmd')"
+          Rscript -e "bookdown::render_book('index.Rmd')"
       - name: Commit and push files
         run: |
           git config --local user.email "ries9112@colorado.edu"
