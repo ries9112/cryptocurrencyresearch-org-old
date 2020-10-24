@@ -1,0 +1,147 @@
+# Explore the Data {#explore-data}
+
+## Pull the Data
+
+The first thing we will need to do is download the latest data. We will do this by using the `pins` package [@R-pins], which has already been loaded into our session [in the previous section](#installing-and-loading-packages).
+
+First, we will need to connect to a public GitHub repository (anyone can post their code to the GitHub website and make a "repository" with code for their project) and ***register*** the ***board*** that the data is ***pinned*** to by using the **`board_register()`** function:
+
+```{r hitBTC-register}
+board_register(name = "pins_board", url = "https://raw.githubusercontent.com/predictcrypto/pins/master/", board = "datatxt")
+```
+
+By running the `board_register()` command on the URL where the data is located, we can now ***"ask"*** for the data we are interested in, which is called `hitBTC_orderbook`:
+
+```{r pull_data}
+cryptodata <- pin_get(name = "hitBTC_orderbook")
+```
+
+The data has been saved to the `cryptodata` object.
+
+<!-- ```{r full_data_db_hidden, include=F} -->
+<!-- library(DBI) -->
+<!-- library(RMariaDB) -->
+
+<!-- # Pull data: -->
+<!-- ### SQL CONNECTION -->
+<!-- getSqlConnection <- function(){ -->
+<!--   con <- -->
+<!--     dbConnect( -->
+<!--       RMariaDB::MariaDB(), -->
+<!--       username = '', -->
+<!--       password = '', -->
+<!--       host = '', -->
+<!--       dbname = '' -->
+<!--     ) -->
+<!--   return(con) -->
+<!-- } -->
+
+<!-- database_connection <- getSqlConnection() -->
+
+<!-- query <- "SELECT * FROM HitBTC_orderbook_USD WHERE quote_currency = 'USD' ORDER BY Date DESC LIMIT 1000000" -->
+<!-- cryptodata <- dbFetch(dbSendQuery(database_connection, query)) -->
+<!-- # Convert to tibble -->
+<!-- cryptodata <- as_tibble(cryptodata)  -->
+
+<!-- # Disconnect from the database -->
+<!-- dbDisconnect(database_connection) -->
+
+<!-- # Move date_time_utc to the front -->
+<!-- cryptodata <- cryptodata %>% select(date_time_utc, everything()) -->
+
+<!-- # Arrange showing most recent data first -->
+<!-- cryptodata <- cryptodata %>% arrange(desc(date_time_utc)) -->
+
+<!-- # Make sure it's UTC timezone -->
+<!-- attr(cryptodata$date_time_utc, "tzone") <- "UTC" -->
+<!-- ``` -->
+
+
+## Data Preview {#data-preview}
+
+```{r disable_scientific_notation, include=F}
+options(scipen=999)
+```
+
+Below is a preview of the data:
+
+```{r show_cryptodata, echo=F, message=FALSE, warning=FALSE}
+library(DT)
+datatable(head(cryptodata, 2000),  style = "default", 
+          options = list(scrollX = TRUE, pageLength=3, lengthMenu = c(3, 5, 10)), rownames = F)
+```
+
+This is [***tidy data***](https://tidyr.tidyverse.org/articles/tidy-data.html), meaning:
+
+1.  Every column is a variable.
+
+2.  Every row is an observation.
+
+3.  Every cell is a single value.
+
+The data is collected once per hour and includes 120 days worth of data relative to today's date. Each row is an observation of an individual cryptocurrency, and the same cryptocurrency is tracked on an hourly basis, each time presented as a new row in the dataset.
+
+<br>
+
+Only the first 2,000 rows of the data are shown in the table above. There are `r nrow(cryptodata)` rows in the actual full dataset. The latest data is from `r max(cryptodata$date, na.rm =T )`.
+
+
+
+## The definition of a "price"
+
+[ADD HERE ABOUT ORDERBOOKS VS. PRICE SHOWN ON A WEBSITE]
+
+The price of a cryptocurrency on an exchange is given by the [***order book***](https://www.investopedia.com/terms/o/order-book.asp), where traders can post trades they want to perform. [KEEP ADDING HERE]
+
+<!-- A trade can be posted as a ***market*** order to purchase or sell the cryptocurrency at the currently most favori -->
+
+
+
+
+
+
+
+
+## Data Quality {#data-quality}
+
+First, let us get a general overview of the data to confirm there are no major data quality issues. There are several ways to do this, including using base R functions (base R meaning anything that comes with the default installation of R when you start up a new session), but we will use the `skimr`[@R-skimr] package to get a nicely formatted output.
+
+We can use `skim()` on the `cryptodata` dataframe to get a summary of the data to help locate any potential problems:
+
+```{r skimr}
+skim(cryptodata)
+```
+
+<!-- ```{r show_data_preview, echo=F} -->
+
+<!-- # try this post-call -->
+
+<!-- knitr::kable(data_quality_overview, longtable = TRUE, booktabs = TRUE) -->
+
+<!-- ``` -->
+
+<!-- The new object we just created and displayed `data_quality_overview` contains a lot of useful information pertaining to the quality of the data. The column `complete_rate` for example, gives the percentage of non-missing values for each of the columns in the `cryptodata` data. While the output is slightly cut off on the right side of the document, you can see the full output by running the code on your computer. What is even neater about the object we made through `skimr`, is that the result itself is a dataframe that we can use to make adjustments to the data as needed. -->
+
+<!-- We can see the result `data_quality_overview` that we displayed has columns of its own: -->
+
+<!-- ```{r show_skimr_colnames} -->
+<!-- colnames(data_quality_overview) -->
+<!-- ``` -->
+
+<!-- We can then use the information contained within this result to manipulate the data itself. For example we could exclude columns where 30% or more of the data is missing by applying the filter `complete_rate > 0.7` by using `subset()`: -->
+
+<!-- ```{r remove_nulls_70_30_skimr} -->
+<!-- subset(data_quality_overview, complete_rate > 0.7) -->
+<!-- ``` -->
+
+
+
+<!-- Think about how the resulting object would have less values for the column `skim_variable`, and how those values (meaning all columns with a complete rate greater than 70%) could then themselves be used to select which columns to remove out of the original dataset. We will use this idea in the [next section](#data-prep) to make the necessary adjustments to the data to dynamically get rid of any columns in the data that are missing too many values or don't have any variation in values. -->
+
+<!-- Looking at this summary, you may have noticed the `Date` field is a character data type, so that's something else that we will need to convert in the [next section where we focus on the data preparation steps](#data-prep) before visualizing and modeling the data. -->
+
+Move on to the [next section](#data-prep), where we make the adjustments necessary to the data before we can start making visualizations and predictive models.
+
+
+
+

@@ -28,7 +28,6 @@ leadrboard.RDS
 misc/client_secret_gmail.json
 .RData
 pins_key.R
-02-ExploreData.Rmd
 index.Rmd
 CryptoResearchPaper.Rmd
 
