@@ -20,6 +20,7 @@ jobs:
       - name: Install Packages and Run Script
         run: |-
           Rscript -e "install.packages('renv')"
+          Rscript -e 'renv::consent(provided = TRUE)'
           Rscript -e "renv::restore()"
           Rscript -e "install.packages(c('knitr','bookdown','deepnet','devtools'))"
           Rscript -e "#devtools::install_github('tylermorganwall/rayshader')"
