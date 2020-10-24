@@ -11,6 +11,13 @@ jobs:
         run: |
           brew install pandoc
           brew install pandoc-citeproc
+      - name: Cache R packages
+        if: runner.os != 'Windows'
+        uses: actions/cache@v1
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-${{ matrix.config.r }}-3-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-3-
       - name: Install Packages and Run Script
         run: |-
           Rscript -e "install.packages('renv')"
@@ -19,18 +26,4 @@ jobs:
           Rscript -e "#devtools::install_github('tylermorganwall/rayshader')"
           Rscript -e "#devtools::install_github('cran/rgl')"
           Rscript -e "#devtools::install_github('ropensci/magick')"
-          Rscript -e "rmarkdown::render('test_script_tutorial.Rmd')"
-      - name: Cache R packages
-        if: runner.os != 'Windows'
-        uses: actions/cache@v1
-        with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-r-${{ matrix.config.r }}-3-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-3-
-      - name: Commit and push files
-        run: |
-          git config --local user.email "ries9112@colorado.edu"
-          git config --local user.name "ries9112"
-          git add .
-          git commit -m "Add html output from CI process" -a
-          git push https://ries9112:${{secrets.GITHUB_TOKEN}}@github.com/ries9112/cryptocurrencyresearch-org.git HEAD:main
+          Rscript -e "#rmarkdown::render('test_script_tutorial.Rmd')"
