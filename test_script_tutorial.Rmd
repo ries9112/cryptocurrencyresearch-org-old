@@ -199,6 +199,11 @@ This step removed `r rowcount1-rowcount2` rows on the latest run.
 cryptodata$ts_index <- anytime(paste0(cryptodata$pkDummy,':00:00')) 
 ```
 
+... `distinct()` from the `dplyr` package [@R-dplyr]...
+```{r}
+cryptodata <- distinct(cryptodata, symbol, ts_index, .keep_all=TRUE)
+```
+
 ... `as_tsibble()` from the `tsibble` package [@R-tsibble]...
 
 ```{r}
