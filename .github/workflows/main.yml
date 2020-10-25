@@ -30,13 +30,13 @@ jobs:
           Rscript -e 'renv::consent(provided = TRUE)'
           Rscript -e "renv::restore()"
           Rscript -e "install.packages(c('knitr','bookdown','deepnet','devtools'))"
-          Rscript -e "#devtools::install_github('tylermorganwall/rayshader')"
+          Rscript -e "install.packages('rayshader')"
           Rscript -e "#devtools::install_github('cran/rgl')"
           Rscript -e "install.packages('e1071')"
           Rscript -e "#devtools::install_github('ropensci/magick')"
       - name: Render Book
         run: |-
-          Rscript -e "bookdown::render_book('index.Rmd')"
+          Rscript -e "#bookdown::render_book('index.Rmd')"
       - name: Snapshot renv to update lockfile
         run: |-
           Rscript -e "renv::snapshot()"
