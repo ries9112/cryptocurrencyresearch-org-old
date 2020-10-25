@@ -169,6 +169,12 @@ Now looking at the data again, there are `r rowcount2-rowcount1` additional rows
 cryptodata
 ```
 
+For now, let's convert the data back to a `tibble` instead of a `tsibble`:
+<!-- [TODO - EXPLAIN THIS] -->
+```{r}
+cryptodata <- as_tibble(cryptodata)
+```
+
 
 ### Calculate Target
 
@@ -324,16 +330,21 @@ animated_chart <- animated_chart +
 animate(animated_chart, fps = 2)
 ```
 
-### Fix Data by Split
+## Fix Data by Split
 
 Now that we have split the data into many different subsets, those subsets themselves may have issues that prevent the predictive models from working as expected.
 
-#### Zero Variance
+### Zero Variance
 
 One of the first models we will make is a simple linear model. The regular R function for this will not work if the data contains any columns that have "zero variance", meaning the value of the column never changes throughout the data being given to the model. Therefore, let's fix any issues relating to zero variance columns in any dataset before we change the structure of the data in the step after this one.
 
-First let's create a new object called `find_zero_var` which shows the value of the minimum standard deviation across all columns and calculated based on the grouping of symbol, split and train.
+First change the grouping of the data, we are interested in calculating the zero variance based on the `symbol`, `split` and `training` fields.
+```{r}
+cryptodata <- group_by(cryptodata, symbol, split, training)
+```
 
+
+Now let's create a new object called `find_zero_var` which shows the value of the minimum standard deviation across all columns and calculated based on the grouping of symbol, split and train.
 ```{r}
 find_zero_var <- select(mutate(cryptodata, min_sd = min(sd(price_usd, na.rm=T), 
                                                         sd(target_price_24h, na.rm=T),
@@ -351,10 +362,12 @@ Now let's get to a list of cryptocurrency symbols where the minimum standard dev
 
 ```{r}
 minimum_sd <- filter(distinct(mutate(group_by(ungroup(find_zero_var), symbol),
-                                     min_sd = min(min_sd, na.rm=T)), min_sd),min_sd < 0.0001)$symbol
+                                     min_sd = min(min_sd, na.rm=T)), min_sd),min_sd < 0)$symbol
 # Show result
 minimum_sd
 ```
+<!-- [TODO - 0.000001 isn't a super perfect cutoff, small prices will have low standard deviation because not standardized, but will live with some cryptos with suuuper small prices being excluded] -->
+
 
 Now we can remove these symbols from appearing in the dataset:
 
