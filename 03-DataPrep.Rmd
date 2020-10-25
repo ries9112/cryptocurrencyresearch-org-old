@@ -362,11 +362,13 @@ Now let's get to a list of cryptocurrency symbols where the minimum standard dev
 
 ```{r}
 minimum_sd <- filter(distinct(mutate(group_by(ungroup(find_zero_var), symbol),
-                                     min_sd = min(min_sd, na.rm=T)), min_sd),min_sd < 0.0001)$symbol
+                                     min_sd = min(min_sd, na.rm=T)), min_sd),min_sd < 0.000001)$symbol
 # Show result
 minimum_sd
 ```
+
 <!-- [TODO - 0.0001 isn't a super perfect cutoff, small prices will have low standard deviation because not standardized, but will live with some cryptos with suuuper small prices being excluded] -->
+
 
 Now we can remove these symbols from appearing in the dataset:
 
