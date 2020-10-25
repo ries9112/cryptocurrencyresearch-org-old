@@ -6,34 +6,16 @@
 
 [ADD HERE]
 
-```{r omit_nulls}
-cryptodata <- na.omit(cryptodata)
+(because we can't do anything without ask_1_price or date_time_utc at the very least being there)
+
+Remove any rows where the `ask_1_price` is Null:
+```{r omit_nulls_ask1price}
+cryptodata <- cryptodata[!is.na(cryptodata$ask_1_price), ]
 ```
 
-## Remove symbols without enough rows
-
-[ADD HERE]
-
-```{r}
-rowcount1 <- nrow(cryptodata)
-```
-
-```{r rm_subset_not_enough_rows}
-cryptodata <- dplyr::filter(cryptodata, n() >= 700)
-```
-
-```{r}
-rowcount2 <- nrow(cryptodata)
-```
-
-The number of rows for the `cryptodata` dataset before the filtering step was `r rowcount1` and is now `r rowcount2`.
-
-## Remove symbols without data from the last 3 days
-
-If there was no data collected for a cryptocurrency over the last 3 day period, let's exclude that asset from the dataset since we are only looking to model data that is currently flowing through the process. If an asset is removed from the exchange (if a project is a scam for example) or is no longer being actively captured by the data collection process, we can't make new predictions for it, so might as well exclude these ahead of time as well.
-
-```{r remove_last_3_days_missing}
-cryptodata <- dplyr::filter(cryptodata, date > Sys.Date()-3)
+And when the `date_time_utc` is Null:
+```{r omit_nulls_datetime}
+cryptodata <- cryptodata[!is.na(cryptodata$date_time_utc), ]
 ```
 
 ## Calculate `price_usd` Column
@@ -86,6 +68,52 @@ rowcount2 <- nrow(cryptodata)
 ```
 
 This step removed `r rowcount1-rowcount2` rows on the latest run.
+
+## Clean Data by Group
+
+[ADD HERE]
+
+...`group_by()` from the `dplyr` [@R-dplyr] package...
+
+```{r}
+cryptodata <- group_by(cryptodata, symbol)
+```
+
+### Remove symbols without enough rows
+
+[ADD HERE]
+
+```{r, include=F}
+rowcount1 <- nrow(cryptodata)
+```
+
+```{r rm_subset_not_enough_rows}
+cryptodata <- dplyr::filter(cryptodata, n() >= 700)
+```
+
+```{r, include=F}
+rowcount2 <- nrow(cryptodata)
+```
+
+The number of rows for the `cryptodata` dataset before the filtering step was `r rowcount1` and is now `r rowcount2`.
+
+### Remove symbols without data from the last 3 days
+
+If there was no data collected for a cryptocurrency over the last 3 day period, let's exclude that asset from the dataset since we are only looking to model data that is currently flowing through the process. If an asset is removed from the exchange (if a project is a scam for example) or is no longer being actively captured by the data collection process, we can't make new predictions for it, so might as well exclude these ahead of time as well.
+
+```{r, include=F}
+rowcount1 <- nrow(cryptodata)
+```
+
+```{r remove_last_3_days_missing}
+cryptodata <- dplyr::filter(cryptodata, max(date) > Sys.Date()-3)
+```
+
+```{r, include=F}
+rowcount2 <- nrow(cryptodata)
+```
+
+The number of rows for the `cryptodata` dataset before this filtering step was `r rowcount1` and is now `r rowcount2`.
 
 ## Any gaps?
 
@@ -141,21 +169,6 @@ Now looking at the data again, there are `r rowcount2-rowcount1` additional rows
 cryptodata
 ```
 
-### Group Data
-
-[ADD HERE]
-
-```{r back_to_tibble}
-cryptodata <- as_tibble(cryptodata)
-```
-
-[ADD HERE]
-
-...`group_by()` from the `dplyr` [@R-dplyr] package...
-
-```{r}
-cryptodata <- group_by(cryptodata, symbol)
-```
 
 ### Calculate Target
 
@@ -255,7 +268,7 @@ cryptodata <- select(cryptodata, -(tot_rows:test_rows_5), -(trade_usd_1:trade_us
 Our data now has the new columns `training` (*train*, *test* or *holdout*) and `split` (numbers 1-5) added to it, let's take a look at the new columns:
 
 ```{r cross_validate_preview_1}
-select(cryptodata, training, split, date)
+select(cryptodata, training, split)
 ```
 
 *Notice that even though we left `symbol` variables out of our selection, because it is part of the way we grouped our data, it was added back in with the message "Adding missing grouping variables `symbol`". The data is tied to its groupings when performing all operations until we use `ungroup()` to undo them.*
@@ -271,7 +284,7 @@ The new field `split`, helps us split the data into 5 different datasets based o
 Running the same code as before with `tail()` added, we should see rows associated with the test data of the 5th split (again remember, each of the 5 splits has a training and testing dataset):
 
 ```{r cross_validate_preview_tail}
-tail( select(cryptodata, training, split, date) )
+tail( select(cryptodata, training, split) )
 ```
 
 The easiest way to understand these groupings, is to visualize them. In the next section, you will learn powerful tools for visualizing data in R. Do not worry if you do not understand the code below and are not familiar with `ggplot()`, we will explain this framework in the [next section](#visualization), for now review the charts below and try to follow along with the way we are grouping the data for the predictive models by looking at what the x and y axis represent, as well as the colors. On the x-axis we are plotting the DateTime of when a data point was collected, and on the y-axis the `split` (1-5) as described in this section. The data is then colored based on the category assigned for the `training` variable ("train","test" or "holdout").
@@ -438,6 +451,7 @@ New data:
 ```{r show_nested}
 cryptodata_nested
 ```
+
 
 [ADD HERE - Intro to Visualization and explain we will use grouped data in PredictiveModeling]
 
