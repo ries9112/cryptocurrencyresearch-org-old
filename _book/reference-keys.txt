@@ -1,4 +1,11 @@
 tab:skimr
+introduction
+what-will-i-learn
+before-getting-started
+who-is-this-example-for
+format-notes
+plan-of-attack
+disclaimer
 setup
 option-1---run-in-the-cloud
 option-2---run-locally
