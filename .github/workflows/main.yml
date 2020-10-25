@@ -32,10 +32,14 @@ jobs:
           Rscript -e "install.packages(c('knitr','bookdown','deepnet','devtools'))"
           Rscript -e "devtools::install_github('tylermorganwall/rayshader')"
           Rscript -e "devtools::install_github('cran/rgl')"
+          Rscript -e "install.packages('e1071')"
           Rscript -e "#devtools::install_github('ropensci/magick')"
       - name: Render Book
         run: |-
           Rscript -e "bookdown::render_book('index.Rmd')"
+      - name: Snapshot renv to update lockfile
+        run: |-
+          Rscript -e "renv::snapshot()"
       - name: Commit and push files
         run: |
           git config --local user.email "ries9112@colorado.edu"
