@@ -170,9 +170,9 @@ cryptodata
 ```
 
 For now, let's convert the data back to a `tibble` instead of a `tsibble`:
-<!-- [TODO - EXPLAIN THIS] -->
+<!-- [TODO - EXPLAIN THIS - GROUPINGS NOT BY TIME, BUT BY SYMBOL] -->
 ```{r}
-cryptodata <- as_tibble(cryptodata)
+cryptodata <- group_by(as_tibble(cryptodata), symbol)
 ```
 
 
@@ -362,7 +362,7 @@ Now let's get to a list of cryptocurrency symbols where the minimum standard dev
 
 ```{r}
 minimum_sd <- filter(distinct(mutate(group_by(ungroup(find_zero_var), symbol),
-                                     min_sd = min(min_sd, na.rm=T)), min_sd),min_sd < 0)$symbol
+                                     min_sd = min(min_sd, na.rm=T)), min_sd),min_sd == 0)$symbol
 # Show result
 minimum_sd
 ```
@@ -422,12 +422,12 @@ cryptodata_train <- rename(nest(filter(cryptodata, training=='train')), train_da
 # Now remove training column
 cryptodata_train <- select(ungroup(cryptodata_train, training), -training)
 # Fix issues with individual groups of the data
-cryptodata_train$train_data <- lapply(cryptodata_train$train_data, na.omit)
+#cryptodata_train$train_data <- lapply(cryptodata_train$train_data, na.omit)
 # Remove elements with no rows after na.omit step. CONFIRM THIS WORKS!!!
 # First add new column with nrow of train dataset
 cryptodata_train <- group_by(ungroup(mutate(rowwise(cryptodata_train), train_rows = nrow(train_data))), symbol, split)
 # Remove all symbols where their train data has less than 20 rows at least once
-symbols_rm <- unique(filter(cryptodata_train, train_rows < 20)$symbol)
+symbols_rm <- unique(filter(cryptodata_train, split < 5, train_rows < 20)$symbol)
 # Remove all data relating to the symbols found above
 cryptodata_train <- filter(cryptodata_train, ! symbol %in% symbols_rm) # ! is to make %not in% operator
 # Drop train_rows column
