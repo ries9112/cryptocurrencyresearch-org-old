@@ -4,9 +4,7 @@ date: '`r paste("Last Updated:<br/>",Sys.time())`'
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:
-- book.bib
 - packages.bib
-- main.bib
 biblio-style: apalike
 link-citations: yes
 ---
