@@ -6,8 +6,16 @@
 
 [ADD HERE]
 
-```{r omit_nulls}
-cryptodata <- na.omit(cryptodata)
+(because we can't do anything without ask_1_price or date_time_utc at the very least being there)
+
+Remove any rows where the `ask_1_price` is Null:
+```{r omit_nulls_ask1price}
+cryptodata <- cryptodata[!is.na(cryptodata$ask_1_price), ]
+```
+
+And when the `date_time_utc` is Null:
+```{r omit_nulls_datetime}
+cryptodata <- cryptodata[!is.na(cryptodata$date_time_utc), ]
 ```
 
 ## Calculate `price_usd` Column
@@ -61,6 +69,52 @@ rowcount2 <- nrow(cryptodata)
 
 This step removed `r rowcount1-rowcount2` rows on the latest run.
 
+## Clean Data by Group
+
+[ADD HERE]
+
+...`group_by()` from the `dplyr` [@R-dplyr] package...
+
+```{r}
+cryptodata <- group_by(cryptodata, symbol)
+```
+
+### Remove symbols without enough rows
+
+[ADD HERE]
+
+```{r, include=F}
+rowcount1 <- nrow(cryptodata)
+```
+
+```{r rm_subset_not_enough_rows}
+cryptodata <- dplyr::filter(cryptodata, n() >= 700)
+```
+
+```{r, include=F}
+rowcount2 <- nrow(cryptodata)
+```
+
+The number of rows for the `cryptodata` dataset before the filtering step was `r rowcount1` and is now `r rowcount2`.
+
+### Remove symbols without data from the last 3 days
+
+If there was no data collected for a cryptocurrency over the last 3 day period, let's exclude that asset from the dataset since we are only looking to model data that is currently flowing through the process. If an asset is removed from the exchange (if a project is a scam for example) or is no longer being actively captured by the data collection process, we can't make new predictions for it, so might as well exclude these ahead of time as well.
+
+```{r, include=F}
+rowcount1 <- nrow(cryptodata)
+```
+
+```{r remove_last_3_days_missing}
+cryptodata <- dplyr::filter(cryptodata, max(date) > Sys.Date()-3)
+```
+
+```{r, include=F}
+rowcount2 <- nrow(cryptodata)
+```
+
+The number of rows for the `cryptodata` dataset before this filtering step was `r rowcount1` and is now `r rowcount2`.
+
 ## Any gaps?
 
 [ADD HERE]
@@ -78,6 +132,7 @@ cryptodata$ts_index <- anytime(paste0(cryptodata$pkDummy,':00:00'))
 ```
 
 ... `distinct()` from the `dplyr` package [@R-dplyr]...
+
 ```{r}
 cryptodata <- distinct(cryptodata, symbol, ts_index, .keep_all=TRUE)
 ```
@@ -114,21 +169,12 @@ Now looking at the data again, there are `r rowcount2-rowcount1` additional rows
 cryptodata
 ```
 
-### Group Data
-
-[ADD HERE]
-
-```{r back_to_tibble}
-cryptodata <- as_tibble(cryptodata)
-```
-
-[ADD HERE]
-
-...`group_by()` from the `dplyr` [@R-dplyr] package...
-
+For now, let's convert the data back to a `tibble` instead of a `tsibble`:
+<!-- [TODO - EXPLAIN THIS - GROUPINGS NOT BY TIME, BUT BY SYMBOL] -->
 ```{r}
-cryptodata <- group_by(cryptodata, symbol)
+cryptodata <- group_by(as_tibble(cryptodata), symbol)
 ```
+
 
 ### Calculate Target
 
@@ -154,21 +200,13 @@ cryptodata <- mutate(cryptodata,
                      #lagged_price_31d = lag(price_usd, 24*31, order_by=ts_index))
 ```
 
-Here is an example showing the results for the subset of data related to the Ethereum cryptocurrency (symbol == 'ETH') showing 30 rows and the relevant columns we just calculated:
+Here is an example showing the results for the subset of data related to the Ethereum cryptocurrency (using `symbol == 'ETH'`) showing 30 rows and the relevant columns we just calculated:
 
 ```{r}
-print(select(filter(cryptodata, symbol == 'ETH'),date_time_utc, price_usd, lagged_price_1h, lagged_price_24h, target_price_24h), n=30)
+print(select(filter(cryptodata, symbol == 'ETH'),ts_index, price_usd, lagged_price_1h, lagged_price_24h, target_price_24h), n=30)
 ```
 
-The field `target_price_24h` should have the value of `price_usd` 24 hours into the future relative to the row of data. All the `lagged_` fields show the price from the past relative to `date_time_utc`.
-
-## Remove subsets without enough rows
-
-[ADD HERE]
-
-```{r rm_subset_not_enough_rows}
-cryptodata <- dplyr::filter(cryptodata, n() >= 700)
-```
+The field `target_price_24h` shows the value of `price_usd` 24 hours into the future relative to the row of data. All the `lagged_` fields show the price from the past relative to when the data was collected (where `lagged_price_1h` shows the price 1 hour before the `ts_index` timestamp of the data).
 
 ## Cross Validation
 
@@ -236,7 +274,7 @@ cryptodata <- select(cryptodata, -(tot_rows:test_rows_5), -(trade_usd_1:trade_us
 Our data now has the new columns `training` (*train*, *test* or *holdout*) and `split` (numbers 1-5) added to it, let's take a look at the new columns:
 
 ```{r cross_validate_preview_1}
-select(cryptodata, training, split, date)
+select(cryptodata, training, split)
 ```
 
 *Notice that even though we left `symbol` variables out of our selection, because it is part of the way we grouped our data, it was added back in with the message "Adding missing grouping variables `symbol`". The data is tied to its groupings when performing all operations until we use `ungroup()` to undo them.*
@@ -252,7 +290,7 @@ The new field `split`, helps us split the data into 5 different datasets based o
 Running the same code as before with `tail()` added, we should see rows associated with the test data of the 5th split (again remember, each of the 5 splits has a training and testing dataset):
 
 ```{r cross_validate_preview_tail}
-tail( select(cryptodata, training, split, date) )
+tail( select(cryptodata, training, split) )
 ```
 
 The easiest way to understand these groupings, is to visualize them. In the next section, you will learn powerful tools for visualizing data in R. Do not worry if you do not understand the code below and are not familiar with `ggplot()`, we will explain this framework in the [next section](#visualization), for now review the charts below and try to follow along with the way we are grouping the data for the predictive models by looking at what the x and y axis represent, as well as the colors. On the x-axis we are plotting the DateTime of when a data point was collected, and on the y-axis the `split` (1-5) as described in this section. The data is then colored based on the category assigned for the `training` variable ("train","test" or "holdout").
@@ -292,17 +330,21 @@ animated_chart <- animated_chart +
 animate(animated_chart, fps = 2)
 ```
 
-
-### Fix Data by Split
+## Fix Data by Split
 
 Now that we have split the data into many different subsets, those subsets themselves may have issues that prevent the predictive models from working as expected.
 
-#### Zero Variance
+### Zero Variance
 
 One of the first models we will make is a simple linear model. The regular R function for this will not work if the data contains any columns that have "zero variance", meaning the value of the column never changes throughout the data being given to the model. Therefore, let's fix any issues relating to zero variance columns in any dataset before we change the structure of the data in the step after this one.
 
-First let's create a new object called `find_zero_var` which shows the value of the minimum standard deviation across all columns and calculated based on the grouping of symbol, split and train. 
+First change the grouping of the data, we are interested in calculating the zero variance based on the `symbol`, `split` and `training` fields.
+```{r}
+cryptodata <- group_by(cryptodata, symbol, split, training)
+```
 
+
+Now let's create a new object called `find_zero_var` which shows the value of the minimum standard deviation across all columns and calculated based on the grouping of symbol, split and train.
 ```{r}
 find_zero_var <- select(mutate(cryptodata, min_sd = min(sd(price_usd, na.rm=T), 
                                                         sd(target_price_24h, na.rm=T),
@@ -316,7 +358,7 @@ find_zero_var <- select(mutate(cryptodata, min_sd = min(sd(price_usd, na.rm=T),
 find_zero_var
 ```
 
-Now let's get to a list of cryptocurrency symbols where the minimum standard deviation across all columns for all splits of the data is 0.
+Now let's get to a list of cryptocurrency symbols where the minimum standard deviation across all columns for all splits of the data is 0, which is the list of cryptocurrencies to remove from the data.
 
 ```{r}
 minimum_sd <- filter(distinct(mutate(group_by(ungroup(find_zero_var), symbol),
@@ -324,6 +366,7 @@ minimum_sd <- filter(distinct(mutate(group_by(ungroup(find_zero_var), symbol),
 # Show result
 minimum_sd
 ```
+<!-- [TODO - 0.0001 isn't a super perfect cutoff, small prices will have low standard deviation because not standardized, but will live with some cryptos with suuuper small prices being excluded] -->
 
 Now we can remove these symbols from appearing in the dataset:
 
@@ -333,19 +376,23 @@ cryptodata <- filter(cryptodata, !(symbol %in% minimum_sd))
 
 In the code above we match all rows where the symbol is part of the `minimum_sd` object with the list of cryptocurrency symbols to remove from the data, and we then negate the selection using the `!` operator to only keep rows with symbols not in the list we found.
 
-
 <!-- Ugh wish I could write it like this: -->
+
 <!-- ```{r} -->
+
 <!-- find_zero_var %>% #start with data -->
+
 <!--   ungroup() %>% #ungroup -->
+
 <!--   group_by(symbol) %>% #re-group by symbol -->
+
 <!--   mutate(min_sd = min(min_sd)) %>% #find the minimum by the symbol -->
+
 <!--   select(min_sd) %>% #only keep symbol and min_sd -->
+
 <!--   distinct() #distinct  -->
+
 <!-- ``` -->
-
-
-
 
 ## Nest data
 
@@ -379,7 +426,7 @@ cryptodata_train$train_data <- lapply(cryptodata_train$train_data, na.omit)
 # First add new column with nrow of train dataset
 cryptodata_train <- group_by(ungroup(mutate(rowwise(cryptodata_train), train_rows = nrow(train_data))), symbol, split)
 # Remove all symbols where their train data has less than 20 rows at least once
-symbols_rm <- unique(filter(cryptodata_train, train_rows < 20)$symbol)
+symbols_rm <- unique(filter(cryptodata_train, split < 5, train_rows < 20)$symbol)
 # Remove all data relating to the symbols found above
 cryptodata_train <- filter(cryptodata_train, ! symbol %in% symbols_rm) # ! is to make %not in% operator
 # Drop train_rows column
@@ -417,6 +464,7 @@ New data:
 cryptodata_nested
 ```
 
+
 [ADD HERE - Intro to Visualization and explain we will use grouped data in PredictiveModeling]
 
 [ADD HERE - Worth mentioning the fact that some data will be higher quality, etc...? Give more background on those steps as "catch-alls"?]
@@ -444,39 +492,57 @@ Could work with the data using for loops, which is an "object-oriented" approach
 <!-- We can find columns that have at least a 98% completion rate using a combination of `skim()` and `filter()`: -->
 
 <!-- ```{r} -->
+
 <!-- filter(skim(cryptodata_nested$train_data[[1]]), complete_rate > 0.02) -->
+
 <!-- ``` -->
 
 <!-- And extract the variable names by adding `$skim_variable` to the end of the result to return the results for that column only since that is what we are interested in. We will save the result in the object `example_variables` so we can use it in the next step. -->
 
 <!-- ```{r} -->
+
 <!-- example_variables <- filter(skim(cryptodata_nested$train_data[[1]]),  -->
+
 <!--                             complete_rate > 0.02)$skim_variable -->
+
 <!-- # Show the new object -->
+
 <!-- example_variables -->
+
 <!-- ``` -->
 
 <!-- Now we can use that information to only keep these columns in the train data: -->
-<!-- ```{r} -->
-<!-- cryptodata_nested$train_data[[1]][, example_variables] -->
-<!-- ``` -->
 
+<!-- ```{r} -->
+
+<!-- cryptodata_nested$train_data[[1]][, example_variables] -->
+
+<!-- ``` -->
 
 <!-- Great! Hopefully this change was not necessary on the first nested dataset. Now we need to apply the same idea to create a function that we can apply to all nested datasets -->
 
-<!-- <!-- [TODO - Explain this step and process using map() better!] --> -->
+<!-- <!-- [TODO - Explain this step and process using map() better!] -->
+
+--\>
 
 <!-- ```{r} -->
+
 <!-- remove_zero_var <- function(df){ -->
+
 <!--   df[, filter(skim(df), complete_rate > 0.02)$skim_variable] -->
+
 <!-- } -->
+
 <!-- ``` -->
 
-
 <!-- Now the function can be used in conjunction with the `map()` and `mutate()` functions to apply the function on each of the nested datasets and overwrite the old results with the new ones: -->
+
 <!-- ```{r} -->
+
 <!-- cryptodata_nested <- mutate(cryptodata_nested,  -->
+
 <!--                             train_data = map(train_data, remove_zero_var)) -->
+
 <!-- ``` -->
 
 <!-- Now we need to do the same for the test data, but skipping over the empty  -->
@@ -484,9 +550,9 @@ Could work with the data using for loops, which is an "object-oriented" approach
 <!-- [TODO - HERE AM I SKIPPING OVER EMPTY ONES OR KEEP TEST_AND_HOLDOUT AND TRAIN? SO NO NULL ROW ELEMENTS] -->
 
 <!-- ```{r} -->
+
 <!-- cryptodata_nested <- mutate(cryptodata_nested,  -->
+
 <!--                             test_data = case_when(class(test_data)[[1]] == 'tbl_df' ~ map(test_data, remove_zero_var))) -->
+
 <!-- ``` -->
-
-
-

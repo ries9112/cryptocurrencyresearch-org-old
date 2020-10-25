@@ -100,9 +100,9 @@ evaluate_preds_rmse <- function(predictions, test_data){
 Now we can use map2() to use it to get the RMSE metric for both the test data and the holdout:
 ```{r add_rmse}
 cryptodata_nested <- mutate(cryptodata_nested,
-                            lm_rmse =  unlist(ifelse(split < 5, 
-                                              map2(lm_test_predictions, test_data, evaluate_preds_rmse), 
-                                              map2(lm_holdout_predictions, holdout_data, evaluate_preds_rmse))))
+                            lm_rmse_test =  unlist(map2(lm_test_predictions, test_data, evaluate_preds_rmse)), 
+                            
+                            lm_rmse_holdout = unlist(map2(lm_holdout_predictions, holdout_data, evaluate_preds_rmse)))
 ```
 
 <!-- [TODO - Add explanation for ifelse() to add rmse based on test or holdout] -->
@@ -127,9 +127,9 @@ evaluate_preds_rsq <- function(predictions, test_data){
 
 ```{r add_rsq}
 cryptodata_nested <- mutate(cryptodata_nested,
-                            lm_rsq =  unlist(ifelse(split < 5, 
-                                              map2(lm_test_predictions, test_data, evaluate_preds_rsq), 
-                                              map2(lm_holdout_predictions, holdout_data, evaluate_preds_rsq))))
+                            lm_rsq_test =  unlist(map2(lm_test_predictions, test_data, evaluate_preds_rsq)),
+                            
+                            lm_rsq_holdout = unlist(map2(lm_holdout_predictions, holdout_data, evaluate_preds_rsq)))
 ```
 
 And now we can do the same for all the other models
@@ -138,30 +138,30 @@ And now we can do the same for all the other models
 
 ```{r add_metrics_rest}
 cryptodata_nested <- mutate(cryptodata_nested,
-                            # XGBoost - RMSE
-                            xgb_rmse = unlist(ifelse(split < 5, 
-                                              map2(xgb_test_predictions, test_data, evaluate_preds_rmse), 
-                                              map2(xgb_holdout_predictions, holdout_data,evaluate_preds_rmse))),
-                            # XGBoost - R^2
-                            xgb_rsq = unlist(ifelse(split < 5, 
-                                              map2(xgb_test_predictions, test_data, evaluate_preds_rsq), 
-                                              map2(xgb_holdout_predictions, holdout_data, evaluate_preds_rsq))),
-                            # XGBoost Trees - RMSE
-                            xgbTree_rmse = unlist(ifelse(split < 5, 
-                                              map2(xgbTree_test_predictions, test_data, evaluate_preds_rmse), 
-                                              map2(xgbTree_holdout_predictions, holdout_data, evaluate_preds_rmse))),
-                            # XGBoost Trees - R^2
-                            xgbTree_rsq = unlist(ifelse(split < 5, 
-                                              map2(xgbTree_test_predictions, test_data, evaluate_preds_rsq), 
-                                              map2(xgbTree_holdout_predictions, holdout_data, evaluate_preds_rsq))),
-                            # Neural Network - RMSE
-                            nnet_rmse = unlist(ifelse(split < 5, 
-                                              map2(nnet_test_predictions, test_data, evaluate_preds_rmse), 
-                                              map2(nnet_holdout_predictions, holdout_data, evaluate_preds_rmse))),
-                            # Neural Network - R^2
-                            nnet_rsq = unlist(ifelse(split < 5, 
-                                              map2(nnet_test_predictions, test_data, evaluate_preds_rsq), 
-                                              map2(nnet_holdout_predictions, holdout_data, evaluate_preds_rsq))))
+                            # XGBoost - RMSE - Test
+                            xgb_rmse_test = unlist(map2(xgb_test_predictions, test_data, evaluate_preds_rmse)),
+                            # And holdout:
+                            xgb_rmse_holdout = unlist(map2(xgb_holdout_predictions, holdout_data,evaluate_preds_rmse)),
+                            # XGBoost - R^2 - Test
+                            xgb_rsq_test = unlist(map2(xgb_test_predictions, test_data, evaluate_preds_rsq)), 
+                            # And holdout:
+                            xgb_rsq_holdout = map2(xgb_holdout_predictions, holdout_data, evaluate_preds_rsq),
+                            # XGBoost Trees - RMSE - Test  
+                            xgbTree_rmse_test = unlist(map2(xgbTree_test_predictions, test_data, evaluate_preds_rmse)),
+                            # And holdout:
+                            xgbTree_rmse_holdout = unlist(map2(xgbTree_holdout_predictions, holdout_data, evaluate_preds_rmse)),
+                            # XGBoost Trees - R^2 - Test
+                            xgbTree_rsq_test = unlist(map2(xgbTree_test_predictions, test_data, evaluate_preds_rsq)),
+                            # And holdout:
+                            xgbTree_rsq_holdout = unlist(map2(xgbTree_holdout_predictions, holdout_data, evaluate_preds_rsq)),
+                            # Neural Network - RMSE - Test
+                            nnet_rmse_test = unlist(map2(nnet_test_predictions, test_data, evaluate_preds_rmse)),
+                            # And holdout:
+                            nnet_rmse_holdout = unlist(map2(nnet_holdout_predictions, holdout_data, evaluate_preds_rmse)),
+                            # Neural Network - R^2 - Test
+                            nnet_rsq_test = unlist(map2(nnet_test_predictions, test_data, evaluate_preds_rsq)),
+                            # And holdout:
+                            nnet_rsq_holdout = unlist(map2(nnet_holdout_predictions, holdout_data, evaluate_preds_rsq)))
                             
 ```
 
@@ -292,6 +292,6 @@ The app shown above also has a button to **Show Code**. If you were to copy and 
 
 
 
-[TODO - HERE ALSO REMEMBER TO LOG MLFLOW METRICS AND WRITE THE SAME INFO TO THE DB]
+<!-- [TODO - HERE ALSO REMEMBER TO LOG MLFLOW METRICS AND WRITE THE SAME INFO TO THE DB] -->
 
 
