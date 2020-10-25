@@ -356,7 +356,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [90m 5[39m NEO        1  0.573   
 ## [90m 6[39m STX        1  0.002[4m0[24m[4m7[24m 
 ## [90m 7[39m BTG        1  0.252   
-## [90m 8[39m LINK       1  0.703   
+## [90m 8[39m LINK       1  0.723   
 ## [90m 9[39m VET        1  0.000[4m4[24m[4m5[24m[4m8[24m
 ## [90m10[39m IHF        1  0.004[4m5[24m[4m3[24m 
 ## [90m# … with 315 more rows[39m</code></pre>
@@ -408,16 +408,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [90m# Groups:   symbol, split [325][39m
 ##    symbol split   lm_rmse xgb_rmse xgbTree_rmse nnet_rmse
 ##    [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;dbl&gt;[39m[23m     [3m[90m&lt;dbl&gt;[39m[23m    [3m[90m&lt;dbl&gt;[39m[23m        [3m[90m&lt;dbl&gt;[39m[23m     [3m[90m&lt;dbl&gt;[39m[23m
-## [90m 1[39m XTZ        1  0.266     0.315        0.405     0.340  
-## [90m 2[39m BCH        1 14.3      10.1         10.6       7.20   
-## [90m 3[39m BNB        1  0.614     0.581        0.571     1.15   
-## [90m 4[39m ETC        1  0.183     0.173        0.168     0.277  
-## [90m 5[39m NEO        1  0.573     0.430        0.432     1.63   
-## [90m 6[39m STX        1  0.002[4m0[24m[4m7[24m  [31mNA[39m           [31mNA[39m         0.002[4m6[24m[4m5[24m
-## [90m 7[39m BTG        1  0.252    [31mNA[39m           [31mNA[39m         0.183  
-## [90m 8[39m LINK       1  0.703     0.930        0.856     1.07   
-## [90m 9[39m VET        1  0.000[4m4[24m[4m5[24m[4m8[24m [31mNA[39m           [31mNA[39m         0.002[4m9[24m[4m6[24m
-## [90m10[39m IHF        1  0.004[4m5[24m[4m3[24m   0.004[4m5[24m[4m6[24m      0.004[4m7[24m[4m8[24m   0.004[4m2[24m[4m0[24m
+## [90m 1[39m XTZ        1  0.266     0.315        0.444     0.542  
+## [90m 2[39m BCH        1 14.3      10.6         10.4      17.4    
+## [90m 3[39m BNB        1  0.614     0.583        0.611     0.385  
+## [90m 4[39m ETC        1  0.183     0.148        0.168     0.293  
+## [90m 5[39m NEO        1  0.573     0.406        0.438     1.66   
+## [90m 6[39m STX        1  0.002[4m0[24m[4m7[24m  [31mNA[39m           [31mNA[39m         0.005[4m3[24m[4m2[24m
+## [90m 7[39m BTG        1  0.252    [31mNA[39m           [31mNA[39m         0.194  
+## [90m 8[39m LINK       1  0.723     0.963        0.840     1.07   
+## [90m 9[39m VET        1  0.000[4m4[24m[4m5[24m[4m8[24m [31mNA[39m           [31mNA[39m         0.001[4m9[24m[4m0[24m
+## [90m10[39m IHF        1  0.004[4m5[24m[4m3[24m   0.004[4m4[24m[4m3[24m      0.004[4m8[24m[4m1[24m   0.003[4m1[24m[4m8[24m
 ## [90m# … with 315 more rows[39m</code></pre>
 <p>And the R Squared values:</p>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="evaluate-model-performance.html#cb104-1" aria-hidden="true"></a>rsq_scores &lt;-<span class="st"> </span><span class="kw">select</span>(cryptodata_nested, lm_rsq, xgb_rsq, xgbTree_rsq, nnet_rsq)</span>
@@ -427,16 +427,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [90m# Groups:   symbol, split [325][39m
 ##    symbol split  lm_rsq xgb_rsq xgbTree_rsq nnet_rsq
 ##    [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m       [3m[90m&lt;dbl&gt;[39m[23m    [3m[90m&lt;dbl&gt;[39m[23m
-## [90m 1[39m XTZ        1 0.067[4m2[24m  0.003[4m5[24m[4m2[24m     0.027[4m2[24m   0.041[4m1[24m 
-## [90m 2[39m BCH        1 0.541   0.633       0.480   [31mNA[39m      
-## [90m 3[39m BNB        1 0.488   0.334       0.380   [31mNA[39m      
-## [90m 4[39m ETC        1 0.059[4m4[24m  0.084[4m7[24m      0.068[4m4[24m  [31mNA[39m      
-## [90m 5[39m NEO        1 0.147   0.236       0.559   [31mNA[39m      
-## [90m 6[39m STX        1 0.122   0.135       0.104    0.001[4m4[24m[4m5[24m
-## [90m 7[39m BTG        1 0.004[4m5[24m[4m1[24m 0.009[4m1[24m[4m0[24m     0.002[4m0[24m[4m4[24m [31mNA[39m      
-## [90m 8[39m LINK       1 0.014[4m3[24m  0.113       0.046[4m6[24m  [31mNA[39m      
-## [90m 9[39m VET        1 0.114   0.163       0.170    0.089[4m1[24m 
-## [90m10[39m IHF        1 0.089[4m4[24m  0.139       0.033[4m0[24m   0.050[4m8[24m 
+## [90m 1[39m XTZ        1 0.067[4m2[24m  0.003[4m5[24m[4m2[24m     0.121    0.127  
+## [90m 2[39m BCH        1 0.541   0.602       0.519   [31mNA[39m      
+## [90m 3[39m BNB        1 0.488   0.376       0.331   [31mNA[39m      
+## [90m 4[39m ETC        1 0.059[4m4[24m  0.058[4m7[24m      0.070[4m9[24m  [31mNA[39m      
+## [90m 5[39m NEO        1 0.147   0.355       0.397   [31mNA[39m      
+## [90m 6[39m STX        1 0.122   0.135       0.119    0.003[4m7[24m[4m2[24m
+## [90m 7[39m BTG        1 0.004[4m5[24m[4m1[24m 0.015[4m2[24m      0.005[4m2[24m[4m6[24m [31mNA[39m      
+## [90m 8[39m LINK       1 0.018[4m4[24m  0.158       0.040[4m5[24m  [31mNA[39m      
+## [90m 9[39m VET        1 0.114   0.163       0.185    0.303  
+## [90m10[39m IHF        1 0.089[4m4[24m  0.134       0.059[4m7[24m   0.679  
 ## [90m# … with 315 more rows[39m</code></pre>
 </div>
 <div id="new-section" class="section level3" number="7.1.4">

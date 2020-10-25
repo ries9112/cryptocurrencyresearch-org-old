@@ -318,7 +318,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-7"><a href="data-prep.html#cb14-7" aria-hidden="true"></a>                       cryptodata<span class="op">$</span>trade_usd_<span class="dv">5</span> <span class="op">&gt;=</span><span class="st"> </span><span class="dv">15</span> <span class="op">~</span><span class="st"> </span>cryptodata<span class="op">$</span>ask_<span class="dv">5</span>_price))</span></code></pre></div>
 <p>Now remove rows where we couldn’t find a price above $15 for any of the 5 cheapest orders in the order book.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data-prep.html#cb15-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">na.omit</span>(cryptodata)</span></code></pre></div>
-<p>This step removed 19997 rows on the latest run.</p>
+<p>This step removed 20028 rows on the latest run.</p>
 </div>
 <div id="clean-data-by-group" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Clean Data by Group</h2>
@@ -329,13 +329,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">4.3.1</span> Remove symbols without enough rows</h3>
 <p>[ADD HERE]</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-prep.html#cb17-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cryptodata, <span class="kw">n</span>() <span class="op">&gt;=</span><span class="st"> </span><span class="dv">700</span>)</span></code></pre></div>
-<p>The number of rows for the <code>cryptodata</code> dataset before the filtering step was 172604 and is now 141188.</p>
+<p>The number of rows for the <code>cryptodata</code> dataset before the filtering step was 172796 and is now 141343.</p>
 </div>
 <div id="remove-symbols-without-data-from-the-last-3-days" class="section level3" number="4.3.2">
 <h3><span class="header-section-number">4.3.2</span> Remove symbols without data from the last 3 days</h3>
 <p>If there was no data collected for a cryptocurrency over the last 3 day period, let’s exclude that asset from the dataset since we are only looking to model data that is currently flowing through the process. If an asset is removed from the exchange (if a project is a scam for example) or is no longer being actively captured by the data collection process, we can’t make new predictions for it, so might as well exclude these ahead of time as well.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-prep.html#cb18-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cryptodata, <span class="kw">max</span>(date) <span class="op">&gt;</span><span class="st"> </span><span class="kw">Sys.Date</span>()<span class="op">-</span><span class="dv">3</span>)</span></code></pre></div>
-<p>The number of rows for the <code>cryptodata</code> dataset before this filtering step was 141188 and is now 125709.</p>
+<p>The number of rows for the <code>cryptodata</code> dataset before this filtering step was 141343 and is now 125864.</p>
 </div>
 </div>
 <div id="any-gaps" class="section level2" number="4.4">
@@ -357,7 +357,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="scan-gaps" class="section level3" number="4.4.2">
 <h3><span class="header-section-number">4.4.2</span> Scan gaps</h3>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-prep.html#cb22-1" aria-hidden="true"></a><span class="kw">scan_gaps</span>(cryptodata)</span></code></pre></div>
-<pre><code>## [90m# A tsibble: 40,870 x 2 [1h] &lt;UTC&gt;[39m
+<pre><code>## [90m# A tsibble: 40,874 x 2 [1h] &lt;UTC&gt;[39m
 ## [90m# Key:       symbol [109][39m
 ##    symbol ts_index           
 ##    [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;dttm&gt;[39m[23m             
@@ -371,14 +371,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [90m 8[39m ACAT   2020-08-15 [90m04:00:00[39m
 ## [90m 9[39m ACAT   2020-08-15 [90m05:00:00[39m
 ## [90m10[39m ACAT   2020-08-15 [90m06:00:00[39m
-## [90m# … with 40,860 more rows[39m</code></pre>
+## [90m# … with 40,864 more rows[39m</code></pre>
 </div>
 <div id="fill-gaps" class="section level3" number="4.4.3">
 <h3><span class="header-section-number">4.4.3</span> Fill gaps</h3>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-prep.html#cb24-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">fill_gaps</span>(cryptodata)</span></code></pre></div>
-<p>Now looking at the data again, there are 40870 additional rows that were added as implicitly missing in the data:</p>
+<p>Now looking at the data again, there are 40874 additional rows that were added as implicitly missing in the data:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-prep.html#cb25-1" aria-hidden="true"></a>cryptodata</span></code></pre></div>
-<pre><code>## [90m# A tsibble: 166,392 x 34 [1h] &lt;UTC&gt;[39m
+<pre><code>## [90m# A tsibble: 166,551 x 34 [1h] &lt;UTC&gt;[39m
 ## [90m# Key:       symbol [109][39m
 ## [90m# Groups:    symbol [109][39m
 ##    pair  symbol quote_currency ask_1_price ask_1_quantity ask_2_price
@@ -393,7 +393,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [90m 8[39m ACAT… ACAT   USD                0.000[4m1[24m[4m9[24m         [4m1[24m[4m1[24m[4m8[24m300     0.000[4m2[24m[4m2[24m
 ## [90m 9[39m ACAT… ACAT   USD                0.000[4m1[24m[4m9[24m         [4m1[24m[4m1[24m[4m8[24m300     0.000[4m2[24m[4m2[24m
 ## [90m10[39m ACAT… ACAT   USD                0.000[4m1[24m[4m9[24m         [4m1[24m[4m1[24m[4m8[24m300     0.000[4m2[24m[4m2[24m
-## [90m# … with 166,382 more rows, and 28 more variables: ask_2_quantity [3m[90m&lt;dbl&gt;[90m[23m,[39m
+## [90m# … with 166,541 more rows, and 28 more variables: ask_2_quantity [3m[90m&lt;dbl&gt;[90m[23m,[39m
 ## [90m#   ask_3_price [3m[90m&lt;dbl&gt;[90m[23m, ask_3_quantity [3m[90m&lt;dbl&gt;[90m[23m, ask_4_price [3m[90m&lt;dbl&gt;[90m[23m,[39m
 ## [90m#   ask_4_quantity [3m[90m&lt;dbl&gt;[90m[23m, ask_5_price [3m[90m&lt;dbl&gt;[90m[23m, ask_5_quantity [3m[90m&lt;dbl&gt;[90m[23m,[39m
 ## [90m#   bid_1_price [3m[90m&lt;dbl&gt;[90m[23m, bid_1_quantity [3m[90m&lt;dbl&gt;[90m[23m, bid_2_price [3m[90m&lt;dbl&gt;[90m[23m,[39m
@@ -426,7 +426,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb28-13"><a href="data-prep.html#cb28-13" aria-hidden="true"></a>                     <span class="co">#lagged_price_31d = lag(price_usd, 24*31, order_by=ts_index))</span></span></code></pre></div>
 <p>Here is an example showing the results for the subset of data related to the Ethereum cryptocurrency (using <code>symbol == 'ETH'</code>) showing 30 rows and the relevant columns we just calculated:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-prep.html#cb29-1" aria-hidden="true"></a><span class="kw">print</span>(<span class="kw">select</span>(<span class="kw">filter</span>(cryptodata, symbol <span class="op">==</span><span class="st"> &#39;ETH&#39;</span>),ts_index, price_usd, lagged_price_1h, lagged_price_24h, target_price_24h), <span class="dt">n=</span><span class="dv">30</span>)</span></code></pre></div>
-<pre><code>## [90m# A tibble: 1,106 x 6[39m
+<pre><code>## [90m# A tibble: 1,108 x 6[39m
 ## [90m# Groups:   symbol [1][39m
 ##    symbol ts_index            price_usd lagged_price_1h lagged_price_24h
 ##    [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;dttm&gt;[39m[23m                  [3m[90m&lt;dbl&gt;[39m[23m           [3m[90m&lt;dbl&gt;[39m[23m            [3m[90m&lt;dbl&gt;[39m[23m
@@ -460,7 +460,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [90m28[39m ETH    2020-09-10 [90m14:00:00[39m      377.            372.             348.
 ## [90m29[39m ETH    2020-09-10 [90m15:00:00[39m      367.            377.             353.
 ## [90m30[39m ETH    2020-09-10 [90m16:00:00[39m      372.            367.             353.
-## [90m# … with 1,076 more rows, and 1 more variable: target_price_24h [3m[90m&lt;dbl&gt;[90m[23m[39m</code></pre>
+## [90m# … with 1,078 more rows, and 1 more variable: target_price_24h [3m[90m&lt;dbl&gt;[90m[23m[39m</code></pre>
 <p>The field <code>target_price_24h</code> shows the value of <code>price_usd</code> 24 hours into the future relative to the row of data. All the <code>lagged_</code> fields show the price from the past relative to when the data was collected (where <code>lagged_price_1h</code> shows the price 1 hour before the <code>ts_index</code> timestamp of the data).</p>
 </div>
 </div>
@@ -521,7 +521,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb31-48"><a href="data-prep.html#cb31-48" aria-hidden="true"></a>                     <span class="op">-</span>pkDummy, <span class="op">-</span>pkey, <span class="op">-</span>ts_index, split)</span></code></pre></div>
 <p>Our data now has the new columns <code>training</code> (<em>train</em>, <em>test</em> or <em>holdout</em>) and <code>split</code> (numbers 1-5) added to it, let’s take a look at the new columns:</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-prep.html#cb32-1" aria-hidden="true"></a><span class="kw">select</span>(cryptodata, training, split)</span></code></pre></div>
-<pre><code>## [90m# A tibble: 125,522 x 3[39m
+<pre><code>## [90m# A tibble: 125,677 x 3[39m
 ## [90m# Groups:   symbol [109][39m
 ##    symbol training split
 ##    [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;chr&gt;[39m[23m    [3m[90m&lt;dbl&gt;[39m[23m
@@ -535,7 +535,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [90m 8[39m GBX    train        1
 ## [90m 9[39m ACT    train        1
 ## [90m10[39m MBL    train        1
-## [90m# … with 125,512 more rows[39m</code></pre>
+## [90m# … with 125,667 more rows[39m</code></pre>
 <p><em>Notice that even though we left <code>symbol</code> variables out of our selection, because it is part of the way we grouped our data, it was added back in with the message “Adding missing grouping variables <code>symbol</code>”. The data is tied to its groupings when performing all operations until we use <code>ungroup()</code> to undo them.</em></p>
 <p>Let’s add the new <code>split</code> column to the way the data is grouped:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-prep.html#cb34-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">group_by</span>(cryptodata, symbol, split)</span></code></pre></div>
@@ -597,7 +597,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb41-8"><a href="data-prep.html#cb41-8" aria-hidden="true"></a>                                                        <span class="kw">sd</span>(lagged_price_24h, <span class="dt">na.rm=</span>T))), min_sd)</span>
 <span id="cb41-9"><a href="data-prep.html#cb41-9" aria-hidden="true"></a><span class="co"># Show data</span></span>
 <span id="cb41-10"><a href="data-prep.html#cb41-10" aria-hidden="true"></a>find_zero_var</span></code></pre></div>
-<pre><code>## [90m# A tibble: 125,522 x 4[39m
+<pre><code>## [90m# A tibble: 125,677 x 4[39m
 ## [90m# Groups:   symbol, split, training [1,090][39m
 ##    symbol split training     min_sd
 ##    [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;chr&gt;[39m[23m         [3m[90m&lt;dbl&gt;[39m[23m
@@ -609,9 +609,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [90m 6[39m LEO        1 train    0.115     
 ## [90m 7[39m STX        1 train    0.000[4m5[24m[4m0[24m[4m2[24m  
 ## [90m 8[39m GBX        1 train    0.002[4m5[24m[4m6[24m   
-## [90m 9[39m ACT        1 train    0.000[4m6[24m[4m7[24m[4m5[24m  
+## [90m 9[39m ACT        1 train    0.000[4m6[24m[4m7[24m[4m2[24m  
 ## [90m10[39m MBL        1 train    0.000[4m0[24m[4m0[24m[4m5[24m96
-## [90m# … with 125,512 more rows[39m</code></pre>
+## [90m# … with 125,667 more rows[39m</code></pre>
 <p>Now let’s get to a list of cryptocurrency symbols where the minimum standard deviation across all columns for all splits of the data is 0.</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="data-prep.html#cb43-1" aria-hidden="true"></a>minimum_sd &lt;-<span class="st"> </span><span class="kw">filter</span>(<span class="kw">distinct</span>(<span class="kw">mutate</span>(<span class="kw">group_by</span>(<span class="kw">ungroup</span>(find_zero_var), symbol),</span>
 <span id="cb43-2"><a href="data-prep.html#cb43-2" aria-hidden="true"></a>                                     <span class="dt">min_sd =</span> <span class="kw">min</span>(min_sd, <span class="dt">na.rm=</span>T)), min_sd),min_sd <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.000001</span>)<span class="op">$</span>symbol</span>
@@ -657,7 +657,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [90m 5[39m NEO    train        1 [90m&lt;tibble [177 × 10]&gt;[39m
 ## [90m 6[39m STX    train        1 [90m&lt;tibble [152 × 10]&gt;[39m
 ## [90m 7[39m BTG    train        1 [90m&lt;tibble [268 × 10]&gt;[39m
-## [90m 8[39m LINK   train        1 [90m&lt;tibble [197 × 10]&gt;[39m
+## [90m 8[39m LINK   train        1 [90m&lt;tibble [198 × 10]&gt;[39m
 ## [90m 9[39m VET    train        1 [90m&lt;tibble [281 × 10]&gt;[39m
 ## [90m10[39m IHF    train        1 [90m&lt;tibble [219 × 10]&gt;[39m
 ## [90m# … with 670 more rows[39m</code></pre>
@@ -701,10 +701,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [90m 4[39m ETC        1 [90m&lt;tibble [226 × 10]&gt;[39m [90m&lt;tibble [63 × 10]&gt;[39m [90m&lt;tibble [63 × 10]&gt;[39m
 ## [90m 5[39m NEO        1 [90m&lt;tibble [153 × 10]&gt;[39m [90m&lt;tibble [45 × 10]&gt;[39m [90m&lt;tibble [46 × 10]&gt;[39m
 ## [90m 6[39m STX        1 [90m&lt;tibble [42 × 10]&gt;[39m  [90m&lt;tibble [38 × 10]&gt;[39m [90m&lt;tibble [40 × 10]&gt;[39m
-## [90m 7[39m BTG        1 [90m&lt;tibble [231 × 10]&gt;[39m [90m&lt;tibble [68 × 10]&gt;[39m [90m&lt;tibble [68 × 10]&gt;[39m
-## [90m 8[39m LINK       1 [90m&lt;tibble [173 × 10]&gt;[39m [90m&lt;tibble [50 × 10]&gt;[39m [90m&lt;tibble [54 × 10]&gt;[39m
-## [90m 9[39m VET        1 [90m&lt;tibble [251 × 10]&gt;[39m [90m&lt;tibble [71 × 10]&gt;[39m [90m&lt;tibble [72 × 10]&gt;[39m
-## [90m10[39m IHF        1 [90m&lt;tibble [184 × 10]&gt;[39m [90m&lt;tibble [55 × 10]&gt;[39m [90m&lt;tibble [57 × 10]&gt;[39m
+## [90m 7[39m BTG        1 [90m&lt;tibble [231 × 10]&gt;[39m [90m&lt;tibble [68 × 10]&gt;[39m [90m&lt;tibble [70 × 10]&gt;[39m
+## [90m 8[39m LINK       1 [90m&lt;tibble [174 × 10]&gt;[39m [90m&lt;tibble [50 × 10]&gt;[39m [90m&lt;tibble [50 × 10]&gt;[39m
+## [90m 9[39m VET        1 [90m&lt;tibble [251 × 10]&gt;[39m [90m&lt;tibble [71 × 10]&gt;[39m [90m&lt;tibble [74 × 10]&gt;[39m
+## [90m10[39m IHF        1 [90m&lt;tibble [184 × 10]&gt;[39m [90m&lt;tibble [55 × 10]&gt;[39m [90m&lt;tibble [59 × 10]&gt;[39m
 ## [90m# … with 315 more rows[39m</code></pre>
 <p>[ADD HERE - Intro to Visualization and explain we will use grouped data in PredictiveModeling]</p>
 <p>[ADD HERE - Worth mentioning the fact that some data will be higher quality, etc…? Give more background on those steps as “catch-alls”?]</p>
