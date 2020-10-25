@@ -1,5 +1,6 @@
 name: Run Crypto Tutorial
 on:
+  push:
   schedule:
     - cron: '00 05,17 * * *'
       
@@ -20,21 +21,18 @@ jobs:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-r-${{ matrix.config.r }}-3-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-3-
-      - name: Install XQuartz for rayrender
-        run: |
-          brew cask install xquartz
       - name: Install Packages
         run: |-
           Rscript -e "install.packages('renv')"
           Rscript -e 'renv::consent(provided = TRUE)'
           Rscript -e "renv::restore()"
-          Rscript -e "install.packages(c('knitr','bookdown','deepnet','devtools'))"
-          Rscript -e "#devtools::install_github('tylermorganwall/rayshader')"
-          Rscript -e "#devtools::install_github('cran/rgl')"
-          Rscript -e "#devtools::install_github('ropensci/magick')"
+          Rscript -e "library(rayshader)"
       - name: Render Book
         run: |-
           Rscript -e "bookdown::render_book('index.Rmd')"
+      - name: Snapshot renv to update lockfile
+        run: |-
+          Rscript -e "renv::snapshot()"
       - name: Commit and push files
         run: |
           git config --local user.email "ries9112@colorado.edu"
