@@ -28,45 +28,71 @@ knitr::opts_knit$set(progress=FALSE, verbose = FALSE)
 
 **(this book is a work in progress and is NOT ready)**
 
+<!-- Welcome to this tutorial on supervised machine learning. This document will walk you through the process of using data relating to cryptocurrencies and past price movements to create models that help forecast future prices.  -->
+
+<!-- First we will discuss the process at a high-level  -->
+
+Welcome to this programming tutorial on machine learning!
+
 ## What will I learn?
 
 -   In this tutorial you will primarily learn about tools for the R programming language developed by [RStudio](https://rstudio.com/) and more specifically the [tidyverse](https://www.tidyverse.org/). If you are not familiar with these open source products, don't worry. We'll introduce these throughout the tutorial as needed.
 
 -   The focus of the tutorial is on supervised machine learning, a process for building models that can predict future events, such as cryptocurrency prices. You will learn how to use the [`caret`](https://topepo.github.io/caret/index.html) package to make many different predictive models, and tools to evaluate their performance.
 
--   You will learn how to perform "group by" operations on your data using the [`dplyr`](https://dplyr.tidyverse.org/) package.
+-   Before we can make the models themselves, we will need to "clean" the data. You will learn how to perform "group by" operations on your data using the [`dplyr`](https://dplyr.tidyverse.org/) package and to clean and modify grouped data.
 
--   You will be exposed to some very useful data pre-processing R packages, including [`skimr`](https://github.com/ropensci/skimr), [`janitor`](https://garthtarr.github.io/meatR/janitor.html) and [`anytime`](http://dirk.eddelbuettel.com/code/anytime.html).
+<!-- -   You will be exposed to some useful data pre-processing R packages. -->
 
--   You will learn about some powerful [extensions to the ggplot2 visualization framework](https://exts.ggplot2.tidyverse.org/).
+-   You will learn to visualize data using the [`ggplot2`](https://ggplot2.tidyverse.org/) package, as well as some powerful [tools to extend the functionality of ggplot2](https://exts.ggplot2.tidyverse.org/).
 
--   You will gain a better understanding of the steps involved in any supervised machine learning process, as well considerations you might need to keep in mind based on your specific data and the way you plan on acting on the predictions you have made. Each problem comes with a unique set of challenges, but there are steps that are necessary in creating any supervised machine learning model, and questions you should ask yourself regardless of the specific problem at hand.
+-   You will gain a better understanding of the steps involved in any supervised machine learning process, as well as considerations you might need to keep in mind based on your specific data and the way you plan on acting on the predictions you have made. Each problem comes with a unique set of challenges, but there are steps that are necessary in creating any supervised machine learning model, and questions you should ask yourself regardless of the specific problem at hand.
 
 <!-- For example, regardless of what you may be predicting, you need to make sure you are only using information that you would have readily available when it is time to make a new prediction.  -->
 
 <!-- Note/Reminder, delete: Another example here would be keeping in mind the way you plan on actually using the predictions to take specific actions and how beneficial it is to maintain that perspective. -->
 
--   You will also learn a little about cryptocurrencies themselves, but **this is not a tutorial around blockchain itself or trading**.
+-   You will also learn a little about cryptocurrencies themselves, but **this is not a tutorial centered around trading or blockchain technology**.
 
 ## Before Getting Started
 
-**There are two different versions of this tutorial, one high-level, accessible version and one detailed, code-heavy version. We recommend you start with the high-level version of the tutorial (\#1 below):**
+You can toggle the sidebar on the left side of the page by clicking on the menu button in the top left, or by pressing on the **s** key on your keyboard. You can read this document as if it were a book, scrolling to the bottom of the page and going to the next "chapter", or navigating between sections using the sidebar.
 
-1.  [The high-level version of this tutorial](https://cryptocurrencyresearch.org/high-level/) simplifies the supervised machine learning process as much as possible and provides a high-level framework that can be used for most supervised learning problems. When following along with this example, the results will be completely reproducible and the document is static and does not update over time. Even if your intent is to appropriate all the knowledge of the detailed tutorial, consider doing this tutorial first.
+This document is the tutorial itself, but in order to make the tutorial more accessible to people with less programming experience (or none) we created a [high-level version of this tutorial](https://cryptocurrencyresearch.org/high-level/), which simplifies both the problem at hand (what we want to predict) and the specific programming steps, but uses the same tools and methodology providing easier to digest examples that can be applied to many different datasets and problems.
 
-2.  The detailed tutorial is the document you are currently looking at, and is a full example showing one possible approach to making predictions on the cryptocurrency markets. Here we discuss the nuances that are specific to our data and problem. We focus on the supervised machine learning process and modeling many cryptocurrencies at once rather than real trades on these markets. This entire document and results are updated twice daily with the latest data.
+### High-Level Version
 
-## Who is this example for?
+If you are not very familiar with programming in either R or Python, or are not sure what cryptocurrencies are, you should **definitely** work your way through the [high-level version first](https://cryptocurrencyresearch.org/high-level/). If you are an intermediate programmer we still recommend the [high-level version first](https://cryptocurrencyresearch.org/high-level/). 
 
-Are you a Bob, Hosung, or Jessica? This section provides more information on how to proceed with this tutorial.
+Below is an embedded version of the high-level version, but we recommend using any of the links above to view it in its own window. Once in its own window it can be full-screened by pressing on the **f** button on your keyboard.
+```{r embed_high-level, echo=F}
+knitr::include_url("https://cryptocurrencyresearch.org/high-level/")
+```
 
--   **Bob (beginner)**: Bob is someone who understands the idea of predictive analytics at a high level and has heard of cryptocurrencies and is interested in learning more about both, but he has never used R. Bob would want to first [learn the basics of the R programming language](https://predictcrypto.org/r-basics-tutorial). Afterwards, like Hosung, he might decide to [opt for the more high-level version of this tutorial](https://cryptocurrencyresearch.org/high-level/).
 
-    -   Bob might benefit from the book ["R for Data Science"](https://r4ds.had.co.nz/) and DataCamp's free ["Introduction to R"](https://www.datacamp.com/courses/free-introduction-to-r) course are great resources as well. Both are available for free online.
+```{block2, type='infoicon'}
+When following along with this example, the results will be completely reproducible and the document is static and does not update over time. The document you are currently reading this text on on the other hand updates every 12 hours. You will be able to access the same data source, but it updates hourly by the 8th minute of every hour with the most recent data, so this document and your results won't perfectly match.
+```
 
--   **Hosung (intermediate)**: Hosung is a statistician who learned to use R 10 years ago. He has heard of the tidyverse, but doesn't regularly use it in his work and he usually sticks to base R as his preference. Hosung should review the example explaining the pipe operator and the tidyverse [when it comes up in the next section](https://cryptocurrencyresearch.org/setup.html#tidy-example). Hosung does not care much for cryptocurrencies specifically, but is interested in learning new tools to use for his work in R and getting some useful boilerplate code. Hosung would want to start with the [**high-level version of this tutorial**](https://cryptocurrencyresearch.org/high-level/) and later return to the [**detailed tutorial**](https://cryptocurrencyresearch.org/index.html#introduction).
 
--   **Jessica (expert)**: Jessica is a business analyst who has experience with both R and the Tidyverse and uses the pipe operator (%\>%) regularly. Jessica should [**move onto the next section**](#introduction) for the detailed tutorial.
+<!-- ## Who is this example for? -->
+
+<!-- Are you a Bob, Hosung, or Jessica below? This section provides more information on how to proceed with this tutorial. -->
+
+<!-- -   **Bob (beginner)**: Bob is someone who understands the idea of predictive analytics at a high level and has heard of cryptocurrencies and is interested in learning more about both, but he has never used R. Bob would want to first [learn the basics of the R programming language](https://predictcrypto.org/r-basics-tutorial). Afterwards, like Hosung, he might decide to [opt for the more high-level version of this tutorial](https://cryptocurrencyresearch.org/high-level/). -->
+
+<!--     -   Bob might benefit from the book ["R for Data Science"](https://r4ds.had.co.nz/) and DataCamp's free ["Introduction to R"](https://www.datacamp.com/courses/free-introduction-to-r) course are great resources as well. Both are available for free online. -->
+
+<!-- -   **Hosung (intermediate)**: Hosung is a statistician who learned to use R 10 years ago. He has heard of the tidyverse, but doesn't regularly use it in his work and he usually sticks to base R as his preference. Hosung should review the example explaining the pipe operator and the tidyverse [when it comes up in the next section](https://cryptocurrencyresearch.org/setup.html#tidy-example). Hosung does not care much for cryptocurrencies specifically, but is interested in learning new tools to use for his work in R and getting some useful boilerplate code. Hosung would want to start with the [**high-level version of this tutorial**](https://cryptocurrencyresearch.org/high-level/) and later return to the [**detailed tutorial**](https://cryptocurrencyresearch.org/index.html#introduction). -->
+
+<!-- -   **Jessica (expert)**: Jessica is a business analyst who has experience with both R and the Tidyverse and uses the pipe operator (%\>%) regularly. Jessica should [**move onto the next section**](#introduction) for the detailed tutorial. -->
+
+
+<!-- ### Approach taken -->
+
+<!-- It is also worth mentioning that we will be taking a very practical approach to machine learning. Because we are modeling many cryptocurrencies independently at the same time and the dataset evolves as time passes, it becomes difficult to make a decision across the board in terms of what the "best model" to use is because it may change based on the specific cryptocurrency in question and/or over time. -->
+
+<!-- [TODO - KEEP ADDING HERE?] -->
 
 ## Format Notes
 
@@ -80,18 +106,17 @@ Are you a Bob, Hosung, or Jessica? This section provides more information on how
 
 How will we generate predictive models to predict cryptocurrency prices? At a high level, here are the steps we will be taking:
 
-1. [Setup guide](#setup). Installation guide on getting the tools used installed on your machine.
+1.  [Setup guide](#setup). Installation guide on getting the tools used installed on your machine.
 
-2. [Explore data](#explore-data). What ***is*** the data we are working with? How "good" is the "quality"? 
+2.  [Explore data](#explore-data). What ***is*** the data we are working with? How "good" is the "quality"?
 
-3. [Prepare the data](#data-prep). Make adjustments to "clean" the data based on the findings from the previous section to avoid running into problems when making models to make predictions.
+3.  [Prepare the data](#data-prep). Make adjustments to "clean" the data based on the findings from the previous section to avoid running into problems when making models to make predictions.
 
-4. [Visualize the data](#visualization). Visualizing the data can be an effective way to understand relationships, trends and outliers before creating predictive models.
+4.  [Visualize the data](#visualization). Visualizing the data can be an effective way to understand relationships, trends and outliers before creating predictive models.
 
-5. [Make predictive models](#predictive-modeling). Now we are ready to take the data available to us and use it to make predictive models that can be used to make predictions about future price movements using the latest data.
+5.  [Make predictive models](#predictive-modeling). Now we are ready to take the data available to us and use it to make predictive models that can be used to make predictions about future price movements using the latest data.
 
-6. [Evaluate the performance of the models](#evaluate-model-performance). Before we can use the predictive models to make predictions on the latest data, we need to understand how well we expect them to perform, which is also essential in detecting issues.
-
+6.  [Evaluate the performance of the models](#evaluate-model-performance). Before we can use the predictive models to make predictions on the latest data, we need to understand how well we expect them to perform, which is also essential in detecting issues.
 
 ## Disclaimer
 

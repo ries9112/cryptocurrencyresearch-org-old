@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Cryptocurrency Research</title>
   <meta name="description" content="Cryptocurrency Research" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Cryptocurrency Research" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 
 <link rel="next" href="setup.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,16 +49,6 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.15/datatables.js"></script>
-<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -144,7 +134,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#what-will-i-learn"><i class="fa fa-check"></i><b>1.1</b> What will I learn?</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#before-getting-started"><i class="fa fa-check"></i><b>1.2</b> Before Getting Started</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#before-getting-started"><i class="fa fa-check"></i><b>1.2</b> Before Getting Started</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#high-level-version"><i class="fa fa-check"></i><b>1.2.1</b> High-Level Version</a></li>
+</ul></li>
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#who-is-this-example-for"><i class="fa fa-check"></i><b>1.3</b> Who is this example for?</a></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#format-notes"><i class="fa fa-check"></i><b>1.4</b> Format Notes</a></li>
 <li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#plan-of-attack"><i class="fa fa-check"></i><b>1.5</b> Plan of Attack</a></li>
@@ -276,34 +269,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">Cryptocurrency Research</h1>
-<p class="date"><em>Last Updated:<br/> 2020-10-25 17:06:24</em></p>
+<p class="date"><em>Last Updated:<br/> 2020-10-25 15:41:09</em></p>
 </div>
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">Section - 1</span> Introduction</h1>
 <p><strong>(this book is a work in progress and is NOT ready)</strong></p>
+<!-- Welcome to this tutorial on supervised machine learning. This document will walk you through the process of using data relating to cryptocurrencies and past price movements to create models that help forecast future prices.  -->
+<!-- First we will discuss the process at a high-level  -->
+<p>Welcome to this programming tutorial on machine learning!</p>
 <div id="what-will-i-learn" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> What will I learn?</h2>
 <ul>
 <li><p>In this tutorial you will primarily learn about tools for the R programming language developed by <a href="https://rstudio.com/">RStudio</a> and more specifically the <a href="https://www.tidyverse.org/">tidyverse</a>. If you are not familiar with these open source products, don’t worry. We’ll introduce these throughout the tutorial as needed.</p></li>
 <li><p>The focus of the tutorial is on supervised machine learning, a process for building models that can predict future events, such as cryptocurrency prices. You will learn how to use the <a href="https://topepo.github.io/caret/index.html"><code>caret</code></a> package to make many different predictive models, and tools to evaluate their performance.</p></li>
-<li><p>You will learn how to perform “group by” operations on your data using the <a href="https://dplyr.tidyverse.org/"><code>dplyr</code></a> package.</p></li>
-<li><p>You will be exposed to some very useful data pre-processing R packages, including <a href="https://github.com/ropensci/skimr"><code>skimr</code></a>, <a href="https://garthtarr.github.io/meatR/janitor.html"><code>janitor</code></a> and <a href="http://dirk.eddelbuettel.com/code/anytime.html"><code>anytime</code></a>.</p></li>
-<li><p>You will learn about some powerful <a href="https://exts.ggplot2.tidyverse.org/">extensions to the ggplot2 visualization framework</a>.</p></li>
-<li><p>You will gain a better understanding of the steps involved in any supervised machine learning process, as well considerations you might need to keep in mind based on your specific data and the way you plan on acting on the predictions you have made. Each problem comes with a unique set of challenges, but there are steps that are necessary in creating any supervised machine learning model, and questions you should ask yourself regardless of the specific problem at hand.</p></li>
+<li><p>Before we can make the models themselves, we will need to “clean” the data. You will learn how to perform “group by” operations on your data using the <a href="https://dplyr.tidyverse.org/"><code>dplyr</code></a> package and to clean and modify grouped data.</p></li>
+</ul>
+<!-- -   You will be exposed to some useful data pre-processing R packages. -->
+<ul>
+<li><p>You will learn to visualize data using the <a href="https://ggplot2.tidyverse.org/"><code>ggplot2</code></a> package, as well as some powerful <a href="https://exts.ggplot2.tidyverse.org/">tools to extend the functionality of ggplot2</a>.</p></li>
+<li><p>You will gain a better understanding of the steps involved in any supervised machine learning process, as well as considerations you might need to keep in mind based on your specific data and the way you plan on acting on the predictions you have made. Each problem comes with a unique set of challenges, but there are steps that are necessary in creating any supervised machine learning model, and questions you should ask yourself regardless of the specific problem at hand.</p></li>
 </ul>
 <!-- For example, regardless of what you may be predicting, you need to make sure you are only using information that you would have readily available when it is time to make a new prediction.  -->
 <!-- Note/Reminder, delete: Another example here would be keeping in mind the way you plan on actually using the predictions to take specific actions and how beneficial it is to maintain that perspective. -->
 <ul>
-<li>You will also learn a little about cryptocurrencies themselves, but <strong>this is not a tutorial around blockchain itself or trading</strong>.</li>
+<li>You will also learn a little about cryptocurrencies themselves, but <strong>this is not a tutorial centered around trading or blockchain technology</strong>.</li>
 </ul>
 </div>
 <div id="before-getting-started" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Before Getting Started</h2>
-<p><strong>There are two different versions of this tutorial, one high-level, accessible version and one detailed, code-heavy version. We recommend you start with the high-level version of the tutorial (#1 below):</strong></p>
-<ol style="list-style-type: decimal">
-<li><p><a href="https://cryptocurrencyresearch.org/high-level/">The high-level version of this tutorial</a> simplifies the supervised machine learning process as much as possible and provides a high-level framework that can be used for most supervised learning problems. When following along with this example, the results will be completely reproducible and the document is static and does not update over time. Even if your intent is to appropriate all the knowledge of the detailed tutorial, consider doing this tutorial first.</p></li>
-<li><p>The detailed tutorial is the document you are currently looking at, and is a full example showing one possible approach to making predictions on the cryptocurrency markets. Here we discuss the nuances that are specific to our data and problem. We focus on the supervised machine learning process and modeling many cryptocurrencies at once rather than real trades on these markets. This entire document and results are updated twice daily with the latest data.</p></li>
-</ol>
+<p>You can toggle the sidebar on the left side of the page by clicking on the menu button in the top left, or by pressing on the <strong>s</strong> key on your keyboard. You can read this document as if it were a book, scrolling to the bottom of the page and going to the next “chapter”, or navigating between sections using the sidebar.</p>
+<p>This document is the tutorial itself, but in order to make the tutorial more accessible to people with less programming experience (or none) we created a <a href="https://cryptocurrencyresearch.org/high-level/">high-level version of this tutorial</a>, which simplifies both the problem at hand (what we want to predict) and the specific programming steps, but uses the same tools and methodology providing easier to digest examples that can be applied to many different datasets and problems.</p>
+<div id="high-level-version" class="section level3" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> High-Level Version</h3>
+<p>If you are not very familiar with programming in either R or Python, or are not sure what cryptocurrencies are, you should <strong>definitely</strong> work your way through the <a href="https://cryptocurrencyresearch.org/high-level/">high-level version first</a>. If you are an intermediate programmer we still recommend the <a href="https://cryptocurrencyresearch.org/high-level/">high-level version first</a>.</p>
+<p>Below is an embedded version of the high-level version, but we recommend using any of the links above to view it in its own window. Once in its own window it can be full-screened by pressing on the <strong>f</strong> button on your keyboard.
+<iframe src="https://cryptocurrencyresearch.org/high-level/" width="672" height="400px"></iframe></p>
+
+<div class="infoicon">
+When following along with this example, the results will be completely reproducible and the document is static and does not update over time. The document you are currently reading this text on on the other hand updates every 12 hours. You will be able to access the same data source, but it updates hourly by the 8th minute of every hour with the most recent data, so this document and your results wouldn’t be perfectly matched.
+</div>
+</div>
 </div>
 <div id="who-is-this-example-for" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Who is this example for?</h2>
@@ -316,6 +321,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>Hosung (intermediate)</strong>: Hosung is a statistician who learned to use R 10 years ago. He has heard of the tidyverse, but doesn’t regularly use it in his work and he usually sticks to base R as his preference. Hosung should review the example explaining the pipe operator and the tidyverse <a href="https://cryptocurrencyresearch.org/setup.html#tidy-example">when it comes up in the next section</a>. Hosung does not care much for cryptocurrencies specifically, but is interested in learning new tools to use for his work in R and getting some useful boilerplate code. Hosung would want to start with the <a href="https://cryptocurrencyresearch.org/high-level/"><strong>high-level version of this tutorial</strong></a> and later return to the <a href="https://cryptocurrencyresearch.org/index.html#introduction"><strong>detailed tutorial</strong></a>.</p></li>
 <li><p><strong>Jessica (expert)</strong>: Jessica is a business analyst who has experience with both R and the Tidyverse and uses the pipe operator (%&gt;%) regularly. Jessica should <a href="index.html#introduction"><strong>move onto the next section</strong></a> for the detailed tutorial.</p></li>
 </ul>
+<!-- ### Approach taken -->
+<!-- It is also worth mentioning that we will be taking a very practical approach to machine learning. Because we are modeling many cryptocurrencies independently at the same time and the dataset evolves as time passes, it becomes difficult to make a decision across the board in terms of what the "best model" to use is because it may change based on the specific cryptocurrency in question and/or over time. -->
+<!-- [TODO - KEEP ADDING HERE?] -->
 </div>
 <div id="format-notes" class="section level2" number="1.4">
 <h2><span class="header-section-number">1.4</span> Format Notes</h2>
@@ -395,7 +403,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["CryptoResearchPaper.pdf", "CryptoResearchPaper.epub"],
+"download": null,
 "toc": {
 "collapse": "section"
 }
