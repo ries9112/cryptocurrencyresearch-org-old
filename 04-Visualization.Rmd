@@ -102,20 +102,20 @@ crypto_chart
 In some cases, it's helpful to make a chart responsive to a cursor hovering over it. We can convert any ggplot into an interactive chart by using the `plotly` [@R-plotly] package:
 
 <!-- CAUSES ISSUES 06/11 -->
-<!-- ```{r plotly, message=FALSE, warning=FALSE} -->
-<!-- library(plotly) -->
-<!-- # wrap any ggplot in the function ggplotly() to make it interactive -->
-<!-- ggplotly(crypto_chart) -->
-<!-- # notice that we did not overwrite the crypto_chart object this time -->
-<!-- ``` -->
+```{r plotly, message=FALSE, warning=FALSE}
+library(plotly)
+# wrap any ggplot in the function ggplotly() to make it interactive 
+ggplotly(crypto_chart)
+# notice that we did not overwrite the crypto_chart object this time
+``` -->
 
 If you are not looking to convert a ggplot, plotly also provides its own framework for making charts available in R, you can find out more about it here: https://plotly.com/r/
 
-<!-- ```{r show_plotly_website, echo=F} -->
-<!-- knitr::include_url("https://plotly.com/r/", -->
-<!--   height = "600px") -->
-<!-- ``` -->
-<!-- ***https://plotly.com/r/*** -->
+```{r show_plotly_website, echo=F}
+knitr::include_url("https://plotly.com/r/",
+  height = "600px")
+```
+***https://plotly.com/r/***
 
 <!-- NOT WORKING ANYMORE ON 10/21/2020: -->
 <!-- ### ggpubr -->
