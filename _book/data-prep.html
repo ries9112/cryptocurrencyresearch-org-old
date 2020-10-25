@@ -31,7 +31,7 @@
   
 <link rel="prev" href="explore-data.html"/>
 <link rel="next" href="visualization.html"/>
-<script src="libs/header-attrs-2.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,14 +49,16 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.13/datatables.js"></script>
+<script src="libs/datatables-binding-0.15/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -159,21 +161,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.1" data-path="data-prep.html"><a href="data-prep.html#remove-nulls"><i class="fa fa-check"></i><b>3.1</b> Remove Nulls</a></li>
 <li class="chapter" data-level="3.2" data-path="data-prep.html"><a href="data-prep.html#calculate-price_usd-column"><i class="fa fa-check"></i><b>3.2</b> Calculate <code>price_usd</code> Column</a></li>
-<li class="chapter" data-level="3.3" data-path="data-prep.html"><a href="data-prep.html#any-gaps"><i class="fa fa-check"></i><b>3.3</b> Any gaps?</a>
+<li class="chapter" data-level="3.3" data-path="data-prep.html"><a href="data-prep.html#clean-data-by-group"><i class="fa fa-check"></i><b>3.3</b> Clean Data by Group</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="data-prep.html"><a href="data-prep.html#convert-to-tsibble"><i class="fa fa-check"></i><b>3.3.1</b> Convert to tsibble</a></li>
-<li class="chapter" data-level="3.3.2" data-path="data-prep.html"><a href="data-prep.html#scan-gaps"><i class="fa fa-check"></i><b>3.3.2</b> Scan gaps</a></li>
-<li class="chapter" data-level="3.3.3" data-path="data-prep.html"><a href="data-prep.html#fill-gaps"><i class="fa fa-check"></i><b>3.3.3</b> Fill gaps</a></li>
-<li class="chapter" data-level="3.3.4" data-path="data-prep.html"><a href="data-prep.html#group-data"><i class="fa fa-check"></i><b>3.3.4</b> Group Data</a></li>
-<li class="chapter" data-level="3.3.5" data-path="data-prep.html"><a href="data-prep.html#calculate-target"><i class="fa fa-check"></i><b>3.3.5</b> Calculate Target</a></li>
+<li class="chapter" data-level="3.3.1" data-path="data-prep.html"><a href="data-prep.html#remove-symbols-without-enough-rows"><i class="fa fa-check"></i><b>3.3.1</b> Remove symbols without enough rows</a></li>
+<li class="chapter" data-level="3.3.2" data-path="data-prep.html"><a href="data-prep.html#remove-symbols-without-data-from-the-last-3-days"><i class="fa fa-check"></i><b>3.3.2</b> Remove symbols without data from the last 3 days</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="data-prep.html"><a href="data-prep.html#remove-subsets-without-enough-rows"><i class="fa fa-check"></i><b>3.4</b> Remove subsets without enough rows</a></li>
-<li class="chapter" data-level="3.5" data-path="data-prep.html"><a href="data-prep.html#cross-validation"><i class="fa fa-check"></i><b>3.5</b> Cross Validation</a>
+<li class="chapter" data-level="3.4" data-path="data-prep.html"><a href="data-prep.html#any-gaps"><i class="fa fa-check"></i><b>3.4</b> Any gaps?</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="data-prep.html"><a href="data-prep.html#fix-data-by-split"><i class="fa fa-check"></i><b>3.5.1</b> Fix Data by Split</a></li>
+<li class="chapter" data-level="3.4.1" data-path="data-prep.html"><a href="data-prep.html#convert-to-tsibble"><i class="fa fa-check"></i><b>3.4.1</b> Convert to tsibble</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-prep.html"><a href="data-prep.html#scan-gaps"><i class="fa fa-check"></i><b>3.4.2</b> Scan gaps</a></li>
+<li class="chapter" data-level="3.4.3" data-path="data-prep.html"><a href="data-prep.html#fill-gaps"><i class="fa fa-check"></i><b>3.4.3</b> Fill gaps</a></li>
+<li class="chapter" data-level="3.4.4" data-path="data-prep.html"><a href="data-prep.html#calculate-target"><i class="fa fa-check"></i><b>3.4.4</b> Calculate Target</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="data-prep.html"><a href="data-prep.html#nest-data"><i class="fa fa-check"></i><b>3.6</b> Nest data</a></li>
-<li class="chapter" data-level="3.7" data-path="data-prep.html"><a href="data-prep.html#functional-programming"><i class="fa fa-check"></i><b>3.7</b> Functional Programming</a></li>
+<li class="chapter" data-level="3.5" data-path="data-prep.html"><a href="data-prep.html#cross-validation"><i class="fa fa-check"></i><b>3.5</b> Cross Validation</a></li>
+<li class="chapter" data-level="3.6" data-path="data-prep.html"><a href="data-prep.html#fix-data-by-split"><i class="fa fa-check"></i><b>3.6</b> Fix Data by Split</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="data-prep.html"><a href="data-prep.html#zero-variance"><i class="fa fa-check"></i><b>3.6.1</b> Zero Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="data-prep.html"><a href="data-prep.html#nest-data"><i class="fa fa-check"></i><b>3.7</b> Nest data</a></li>
+<li class="chapter" data-level="3.8" data-path="data-prep.html"><a href="data-prep.html#functional-programming"><i class="fa fa-check"></i><b>3.8</b> Functional Programming</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>4</b> Visualization 📉</a>
 <ul>
@@ -265,169 +271,188 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="remove-nulls" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Remove Nulls</h2>
 <p>[ADD HERE]</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-prep.html#cb8-1" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(cryptodata)</span></code></pre></div>
+<p>(because we can’t do anything without ask_1_price or date_time_utc at the very least being there)</p>
+<p>Remove any rows where the <code>ask_1_price</code> is Null:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-prep.html#cb16-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span>cryptodata[<span class="op">!</span><span class="kw">is.na</span>(cryptodata<span class="op">$</span>ask_<span class="dv">1</span>_price), ]</span></code></pre></div>
+<p>And when the <code>date_time_utc</code> is Null:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-prep.html#cb17-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span>cryptodata[<span class="op">!</span><span class="kw">is.na</span>(cryptodata<span class="op">$</span>date_time_utc), ]</span></code></pre></div>
 </div>
 <div id="calculate-price_usd-column" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Calculate <code>price_usd</code> Column</h2>
 <p>[ADD HERE]</p>
 <p>Calculate the <code>price_usd</code> using the order books data and taking the cheapest price available from the <strong>ask</strong> side where at least $15 worth of the cryptocurrency are being sold.</p>
 <p>[ADD HERE]</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data-prep.html#cb9-1" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">mutate</span>(cryptodata, </span>
-<span id="cb9-2"><a href="data-prep.html#cb9-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">trade_usd_1 =</span> ask_1_price <span class="sc">*</span> ask_1_quantity,</span>
-<span id="cb9-3"><a href="data-prep.html#cb9-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">trade_usd_2 =</span> ask_2_price <span class="sc">*</span> ask_2_quantity,</span>
-<span id="cb9-4"><a href="data-prep.html#cb9-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">trade_usd_3 =</span> ask_3_price <span class="sc">*</span> ask_3_quantity,</span>
-<span id="cb9-5"><a href="data-prep.html#cb9-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">trade_usd_4 =</span> ask_4_price <span class="sc">*</span> ask_4_quantity,</span>
-<span id="cb9-6"><a href="data-prep.html#cb9-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">trade_usd_5 =</span> ask_5_price <span class="sc">*</span> ask_5_quantity)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-prep.html#cb18-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">mutate</span>(cryptodata, </span>
+<span id="cb18-2"><a href="data-prep.html#cb18-2" aria-hidden="true"></a>                     <span class="dt">trade_usd_1 =</span> ask_<span class="dv">1</span>_price <span class="op">*</span><span class="st"> </span>ask_<span class="dv">1</span>_quantity,</span>
+<span id="cb18-3"><a href="data-prep.html#cb18-3" aria-hidden="true"></a>                     <span class="dt">trade_usd_2 =</span> ask_<span class="dv">2</span>_price <span class="op">*</span><span class="st"> </span>ask_<span class="dv">2</span>_quantity,</span>
+<span id="cb18-4"><a href="data-prep.html#cb18-4" aria-hidden="true"></a>                     <span class="dt">trade_usd_3 =</span> ask_<span class="dv">3</span>_price <span class="op">*</span><span class="st"> </span>ask_<span class="dv">3</span>_quantity,</span>
+<span id="cb18-5"><a href="data-prep.html#cb18-5" aria-hidden="true"></a>                     <span class="dt">trade_usd_4 =</span> ask_<span class="dv">4</span>_price <span class="op">*</span><span class="st"> </span>ask_<span class="dv">4</span>_quantity,</span>
+<span id="cb18-6"><a href="data-prep.html#cb18-6" aria-hidden="true"></a>                     <span class="dt">trade_usd_5 =</span> ask_<span class="dv">5</span>_price <span class="op">*</span><span class="st"> </span>ask_<span class="dv">5</span>_quantity)</span></code></pre></div>
 <p>We can look at an example [ADD HERE]</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-prep.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">select</span>(cryptodata, symbol, date_time_utc, ask_1_price, ask_1_quantity, trade_usd_1))</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 5
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="data-prep.html#cb19-1" aria-hidden="true"></a><span class="kw">head</span>(<span class="kw">select</span>(cryptodata, symbol, date_time_utc, ask_<span class="dv">1</span>_price, ask_<span class="dv">1</span>_quantity, trade_usd_<span class="dv">1</span>))</span></code></pre></div>
+<pre><code>## [90m# A tibble: 6 x 5[39m
 ##   symbol date_time_utc       ask_1_price ask_1_quantity trade_usd_1
-##   &lt;chr&gt;  &lt;dttm&gt;                    &lt;dbl&gt;          &lt;dbl&gt;       &lt;dbl&gt;
-## 1 DCN    2020-10-23 12:05:25  0.00000424     19505000         82.7 
-## 2 BZRX   2020-10-23 12:05:25  0.124              1365.       170.  
-## 3 UTT    2020-10-23 12:05:24  0.125               256.        32.1 
-## 4 ETP    2020-10-23 12:05:23  0.193                50.4        9.74
-## 5 DAY    2020-10-23 12:05:20  0.262              3001        785.  
-## 6 DRT    2020-10-23 12:05:19  0.00167            8130         13.5</code></pre>
+##   [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;dttm&gt;[39m[23m                    [3m[90m&lt;dbl&gt;[39m[23m          [3m[90m&lt;dbl&gt;[39m[23m       [3m[90m&lt;dbl&gt;[39m[23m
+## [90m1[39m BTC    2020-10-25 [90m00:00:00[39m   [4m1[24m[4m3[24m111.              0.31      [4m4[24m064. 
+## [90m2[39m ETH    2020-10-25 [90m00:00:01[39m     412.              0.4        165. 
+## [90m3[39m EOS    2020-10-25 [90m00:00:01[39m       2.66          600         [4m1[24m595. 
+## [90m4[39m LTC    2020-10-25 [90m00:00:02[39m      59.2             3.75       222. 
+## [90m5[39m BSV    2020-10-25 [90m00:00:03[39m     176.              0.6        106. 
+## [90m6[39m ADA    2020-10-25 [90m00:00:04[39m       0.108         775           83.7</code></pre>
 <p>If none of the top 5 orders on the order book ask side are for at least $15, exclude the row. [ADD HERE]</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-prep.html#cb12-1" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">mutate</span>(cryptodata, </span>
-<span id="cb12-2"><a href="data-prep.html#cb12-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">price_usd =</span> <span class="fu">case_when</span>(</span>
-<span id="cb12-3"><a href="data-prep.html#cb12-3" aria-hidden="true" tabindex="-1"></a>                       cryptodata<span class="sc">$</span>trade_usd_1 <span class="sc">&gt;=</span> <span class="dv">15</span> <span class="sc">~</span> cryptodata<span class="sc">$</span>ask_1_price,</span>
-<span id="cb12-4"><a href="data-prep.html#cb12-4" aria-hidden="true" tabindex="-1"></a>                       cryptodata<span class="sc">$</span>trade_usd_2 <span class="sc">&gt;=</span> <span class="dv">15</span> <span class="sc">~</span> cryptodata<span class="sc">$</span>ask_2_price,</span>
-<span id="cb12-5"><a href="data-prep.html#cb12-5" aria-hidden="true" tabindex="-1"></a>                       cryptodata<span class="sc">$</span>trade_usd_3 <span class="sc">&gt;=</span> <span class="dv">15</span> <span class="sc">~</span> cryptodata<span class="sc">$</span>ask_3_price,</span>
-<span id="cb12-6"><a href="data-prep.html#cb12-6" aria-hidden="true" tabindex="-1"></a>                       cryptodata<span class="sc">$</span>trade_usd_4 <span class="sc">&gt;=</span> <span class="dv">15</span> <span class="sc">~</span> cryptodata<span class="sc">$</span>ask_4_price,</span>
-<span id="cb12-7"><a href="data-prep.html#cb12-7" aria-hidden="true" tabindex="-1"></a>                       cryptodata<span class="sc">$</span>trade_usd_5 <span class="sc">&gt;=</span> <span class="dv">15</span> <span class="sc">~</span> cryptodata<span class="sc">$</span>ask_5_price))</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data-prep.html#cb21-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">mutate</span>(cryptodata, </span>
+<span id="cb21-2"><a href="data-prep.html#cb21-2" aria-hidden="true"></a>                     <span class="dt">price_usd =</span> <span class="kw">case_when</span>(</span>
+<span id="cb21-3"><a href="data-prep.html#cb21-3" aria-hidden="true"></a>                       cryptodata<span class="op">$</span>trade_usd_<span class="dv">1</span> <span class="op">&gt;=</span><span class="st"> </span><span class="dv">15</span> <span class="op">~</span><span class="st"> </span>cryptodata<span class="op">$</span>ask_<span class="dv">1</span>_price,</span>
+<span id="cb21-4"><a href="data-prep.html#cb21-4" aria-hidden="true"></a>                       cryptodata<span class="op">$</span>trade_usd_<span class="dv">2</span> <span class="op">&gt;=</span><span class="st"> </span><span class="dv">15</span> <span class="op">~</span><span class="st"> </span>cryptodata<span class="op">$</span>ask_<span class="dv">2</span>_price,</span>
+<span id="cb21-5"><a href="data-prep.html#cb21-5" aria-hidden="true"></a>                       cryptodata<span class="op">$</span>trade_usd_<span class="dv">3</span> <span class="op">&gt;=</span><span class="st"> </span><span class="dv">15</span> <span class="op">~</span><span class="st"> </span>cryptodata<span class="op">$</span>ask_<span class="dv">3</span>_price,</span>
+<span id="cb21-6"><a href="data-prep.html#cb21-6" aria-hidden="true"></a>                       cryptodata<span class="op">$</span>trade_usd_<span class="dv">4</span> <span class="op">&gt;=</span><span class="st"> </span><span class="dv">15</span> <span class="op">~</span><span class="st"> </span>cryptodata<span class="op">$</span>ask_<span class="dv">4</span>_price,</span>
+<span id="cb21-7"><a href="data-prep.html#cb21-7" aria-hidden="true"></a>                       cryptodata<span class="op">$</span>trade_usd_<span class="dv">5</span> <span class="op">&gt;=</span><span class="st"> </span><span class="dv">15</span> <span class="op">~</span><span class="st"> </span>cryptodata<span class="op">$</span>ask_<span class="dv">5</span>_price))</span></code></pre></div>
 <p>Now remove rows where we couldn’t find a price above $15 for any of the 5 cheapest orders in the order book.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-prep.html#cb13-1" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(cryptodata)</span></code></pre></div>
-<p>This step removed 19195 rows on the latest run.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-prep.html#cb22-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">na.omit</span>(cryptodata)</span></code></pre></div>
+<p>This step removed 19819 rows on the latest run.</p>
 </div>
-<div id="any-gaps" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Any gaps?</h2>
-<p>[ADD HERE]</p>
-<div id="convert-to-tsibble" class="section level3" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Convert to tsibble</h3>
-<p>… the <code>tsibble</code> package <span class="citation">[@R-tsibble]</span>…</p>
-<div id="convert-to-hourly-data-and-get-rid-of-minutes-and-seconds" class="section level4" number="3.3.1.1">
-<h4><span class="header-section-number">3.3.1.1</span> Convert to hourly data and get rid of minutes and seconds</h4>
-<p>… <code>anytime()</code> from the <code>anytime</code> package <span class="citation">[@R-anytime]</span>…</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-prep.html#cb14-1" aria-hidden="true" tabindex="-1"></a>cryptodata<span class="sc">$</span>ts_index <span class="ot">&lt;-</span> <span class="fu">anytime</span>(<span class="fu">paste0</span>(cryptodata<span class="sc">$</span>pkDummy,<span class="st">&#39;:00:00&#39;</span>)) </span></code></pre></div>
-<p>… <code>as_tsibble()</code> from the <code>tsibble</code> package <span class="citation">[@R-tsibble]</span>…</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data-prep.html#cb15-1" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">as_tsibble</span>(cryptodata, <span class="at">index=</span>ts_index, <span class="at">key=</span>symbol)</span></code></pre></div>
-</div>
-</div>
-<div id="scan-gaps" class="section level3" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> Scan gaps</h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-prep.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scan_gaps</span>(cryptodata)</span></code></pre></div>
-<pre><code>## # A tsibble: 30,591 x 2 [1h] &lt;America/Denver&gt;
-## # Key:       symbol [185]
-##    symbol ts_index           
-##    &lt;chr&gt;  &lt;dttm&gt;             
-##  1 AAB    2020-10-16 22:00:00
-##  2 AAB    2020-10-16 23:00:00
-##  3 AAB    2020-10-17 00:00:00
-##  4 AAB    2020-10-17 01:00:00
-##  5 AAB    2020-10-17 02:00:00
-##  6 AAB    2020-10-17 03:00:00
-##  7 AAB    2020-10-17 04:00:00
-##  8 AAB    2020-10-17 05:00:00
-##  9 AAB    2020-10-17 06:00:00
-## 10 AAB    2020-10-17 07:00:00
-## # ... with 30,581 more rows</code></pre>
-</div>
-<div id="fill-gaps" class="section level3" number="3.3.3">
-<h3><span class="header-section-number">3.3.3</span> Fill gaps</h3>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-prep.html#cb18-1" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">fill_gaps</span>(cryptodata)</span></code></pre></div>
-<p>Now looking at the data again, there are 30591 additional rows that were added as implicitly missing in the data:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="data-prep.html#cb19-1" aria-hidden="true" tabindex="-1"></a>cryptodata</span></code></pre></div>
-<pre><code>## # A tsibble: 198,590 x 34 [1h] &lt;America/Denver&gt;
-## # Key:       symbol [196]
-##    date_time_utc       pair  symbol quote_currency ask_1_price ask_1_quantity ask_2_price ask_2_quantity ask_3_price ask_3_quantity ask_4_price ask_4_quantity
-##    &lt;dttm&gt;              &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;                &lt;dbl&gt;          &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;
-##  1 2020-09-25 15:04:39 AABU~ AAB    USD                  0.390           104.       0.39           320         0.621            4.5       1               99  
-##  2 2020-09-25 16:04:36 AABU~ AAB    USD                  0.390           104.       0.39           320         0.619            4.5       1               99  
-##  3 2020-09-25 17:04:37 AABU~ AAB    USD                  0.390           104.       0.39           320         0.618            4.5       1               99  
-##  4 2020-09-25 18:04:40 AABU~ AAB    USD                  0.390           104.       0.39           320         0.617            4.5       1               99  
-##  5 2020-09-25 19:04:40 AABU~ AAB    USD                  0.390           104.       0.39           320         0.615            4.5       1               99  
-##  6 2020-09-25 20:04:41 AABU~ AAB    USD                  0.390           104.       0.39           320         0.614            4.5       1               99  
-##  7 2020-09-25 21:04:41 AABU~ AAB    USD                  0.390           104.       0.39           320         0.613            4.5       1               99  
-##  8 2020-09-25 22:04:38 AABU~ AAB    USD                  0.390           104.       0.390           45.3       0.39           320         0.611            4.5
-##  9 2020-09-25 23:04:32 AABU~ AAB    USD                  0.390           104.       0.390           45.3       0.39           320         0.610            4.5
-## 10 2020-09-26 00:04:37 AABU~ AAB    USD                  0.390           104.       0.390           45.3       0.39           320         0.608            4.5
-## # ... with 198,580 more rows, and 22 more variables: ask_5_price &lt;dbl&gt;, ask_5_quantity &lt;dbl&gt;, bid_1_price &lt;dbl&gt;, bid_1_quantity &lt;dbl&gt;, bid_2_price &lt;dbl&gt;,
-## #   bid_2_quantity &lt;dbl&gt;, bid_3_price &lt;dbl&gt;, bid_3_quantity &lt;dbl&gt;, bid_4_price &lt;dbl&gt;, bid_4_quantity &lt;dbl&gt;, bid_5_price &lt;dbl&gt;, bid_5_quantity &lt;dbl&gt;, date &lt;date&gt;,
-## #   pkDummy &lt;chr&gt;, pkey &lt;chr&gt;, trade_usd_1 &lt;dbl&gt;, trade_usd_2 &lt;dbl&gt;, trade_usd_3 &lt;dbl&gt;, trade_usd_4 &lt;dbl&gt;, trade_usd_5 &lt;dbl&gt;, price_usd &lt;dbl&gt;, ts_index &lt;dttm&gt;</code></pre>
-</div>
-<div id="group-data" class="section level3" number="3.3.4">
-<h3><span class="header-section-number">3.3.4</span> Group Data</h3>
-<p>[ADD HERE]</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data-prep.html#cb21-1" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(cryptodata)</span></code></pre></div>
+<div id="clean-data-by-group" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Clean Data by Group</h2>
 <p>[ADD HERE]</p>
 <p>…<code>group_by()</code> from the <code>dplyr</code> <span class="citation">[@R-dplyr]</span> package…</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-prep.html#cb22-1" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">group_by</span>(cryptodata, symbol)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="data-prep.html#cb23-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">group_by</span>(cryptodata, symbol)</span></code></pre></div>
+<div id="remove-symbols-without-enough-rows" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Remove symbols without enough rows</h3>
+<p>[ADD HERE]</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-prep.html#cb24-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cryptodata, <span class="kw">n</span>() <span class="op">&gt;=</span><span class="st"> </span><span class="dv">700</span>)</span></code></pre></div>
+<p>The number of rows for the <code>cryptodata</code> dataset before the filtering step was 171556 and is now 140351.</p>
 </div>
-<div id="calculate-target" class="section level3" number="3.3.5">
-<h3><span class="header-section-number">3.3.5</span> Calculate Target</h3>
+<div id="remove-symbols-without-data-from-the-last-3-days" class="section level3" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Remove symbols without data from the last 3 days</h3>
+<p>If there was no data collected for a cryptocurrency over the last 3 day period, let’s exclude that asset from the dataset since we are only looking to model data that is currently flowing through the process. If an asset is removed from the exchange (if a project is a scam for example) or is no longer being actively captured by the data collection process, we can’t make new predictions for it, so might as well exclude these ahead of time as well.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-prep.html#cb25-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cryptodata, <span class="kw">max</span>(date) <span class="op">&gt;</span><span class="st"> </span><span class="kw">Sys.Date</span>()<span class="op">-</span><span class="dv">3</span>)</span></code></pre></div>
+<p>The number of rows for the <code>cryptodata</code> dataset before this filtering step was 140351 and is now 123637.</p>
+</div>
+</div>
+<div id="any-gaps" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Any gaps?</h2>
+<p>[ADD HERE]</p>
+<div id="convert-to-tsibble" class="section level3" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Convert to tsibble</h3>
+<p>… the <code>tsibble</code> package <span class="citation">[@R-tsibble]</span>…</p>
+<div id="convert-to-hourly-data-and-get-rid-of-minutes-and-seconds" class="section level4" number="3.4.1.1">
+<h4><span class="header-section-number">3.4.1.1</span> Convert to hourly data and get rid of minutes and seconds</h4>
+<p>… <code>anytime()</code> from the <code>anytime</code> package <span class="citation">[@R-anytime]</span>…</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="data-prep.html#cb26-1" aria-hidden="true"></a>cryptodata<span class="op">$</span>ts_index &lt;-<span class="st"> </span><span class="kw">anytime</span>(<span class="kw">paste0</span>(cryptodata<span class="op">$</span>pkDummy,<span class="st">&#39;:00:00&#39;</span>)) </span></code></pre></div>
+<p>… <code>distinct()</code> from the <code>dplyr</code> package <span class="citation">[@R-dplyr]</span>…</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-prep.html#cb27-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">distinct</span>(cryptodata, symbol, ts_index, <span class="dt">.keep_all=</span><span class="ot">TRUE</span>)</span></code></pre></div>
+<p>… <code>as_tsibble()</code> from the <code>tsibble</code> package <span class="citation">[@R-tsibble]</span>…</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data-prep.html#cb28-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">as_tsibble</span>(cryptodata, <span class="dt">index=</span>ts_index, <span class="dt">key=</span>symbol)</span></code></pre></div>
+</div>
+</div>
+<div id="scan-gaps" class="section level3" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> Scan gaps</h3>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-prep.html#cb29-1" aria-hidden="true"></a><span class="kw">scan_gaps</span>(cryptodata)</span></code></pre></div>
+<pre><code>## [90m# A tsibble: 40,238 x 2 [1h] &lt;UTC&gt;[39m
+## [90m# Key:       symbol [108][39m
+##    symbol ts_index           
+##    [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;dttm&gt;[39m[23m             
+## [90m 1[39m ACAT   2020-08-13 [90m22:00:00[39m
+## [90m 2[39m ACAT   2020-08-14 [90m20:00:00[39m
+## [90m 3[39m ACAT   2020-08-14 [90m21:00:00[39m
+## [90m 4[39m ACAT   2020-08-14 [90m22:00:00[39m
+## [90m 5[39m ACAT   2020-08-15 [90m01:00:00[39m
+## [90m 6[39m ACAT   2020-08-15 [90m02:00:00[39m
+## [90m 7[39m ACAT   2020-08-15 [90m03:00:00[39m
+## [90m 8[39m ACAT   2020-08-15 [90m04:00:00[39m
+## [90m 9[39m ACAT   2020-08-15 [90m05:00:00[39m
+## [90m10[39m ACAT   2020-08-15 [90m06:00:00[39m
+## [90m# … with 40,228 more rows[39m</code></pre>
+</div>
+<div id="fill-gaps" class="section level3" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> Fill gaps</h3>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data-prep.html#cb31-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">fill_gaps</span>(cryptodata)</span></code></pre></div>
+<p>Now looking at the data again, there are 40238 additional rows that were added as implicitly missing in the data:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-prep.html#cb32-1" aria-hidden="true"></a>cryptodata</span></code></pre></div>
+<pre><code>## [90m# A tsibble: 163,688 x 34 [1h] &lt;UTC&gt;[39m
+## [90m# Key:       symbol [108][39m
+## [90m# Groups:    symbol [108][39m
+##    pair  symbol quote_currency ask_1_price ask_1_quantity ask_2_price
+##    [3m[90m&lt;chr&gt;[39m[23m [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;chr&gt;[39m[23m                [3m[90m&lt;dbl&gt;[39m[23m          [3m[90m&lt;dbl&gt;[39m[23m       [3m[90m&lt;dbl&gt;[39m[23m
+## [90m 1[39m ACAT… ACAT   USD                0.000[4m1[24m[4m9[24m         [4m1[24m[4m1[24m[4m8[24m300     0.000[4m2[24m[4m2[24m
+## [90m 2[39m ACAT… ACAT   USD                0.000[4m1[24m[4m9[24m         [4m1[24m[4m1[24m[4m8[24m300     0.000[4m2[24m[4m2[24m
+## [90m 3[39m ACAT… ACAT   USD                0.000[4m1[24m[4m9[24m         [4m1[24m[4m1[24m[4m8[24m300     0.000[4m2[24m[4m2[24m
+## [90m 4[39m ACAT… ACAT   USD                0.000[4m1[24m[4m9[24m         [4m1[24m[4m1[24m[4m8[24m300     0.000[4m2[24m[4m2[24m
+## [90m 5[39m ACAT… ACAT   USD                0.000[4m1[24m[4m9[24m         [4m1[24m[4m1[24m[4m8[24m300     0.000[4m2[24m[4m2[24m
+## [90m 6[39m ACAT… ACAT   USD                0.000[4m1[24m[4m9[24m         [4m1[24m[4m1[24m[4m8[24m300     0.000[4m2[24m[4m2[24m
+## [90m 7[39m ACAT… ACAT   USD                0.000[4m1[24m[4m9[24m         [4m1[24m[4m1[24m[4m8[24m300     0.000[4m2[24m[4m2[24m
+## [90m 8[39m ACAT… ACAT   USD                0.000[4m1[24m[4m9[24m         [4m1[24m[4m1[24m[4m8[24m300     0.000[4m2[24m[4m2[24m
+## [90m 9[39m ACAT… ACAT   USD                0.000[4m1[24m[4m9[24m         [4m1[24m[4m1[24m[4m8[24m300     0.000[4m2[24m[4m2[24m
+## [90m10[39m ACAT… ACAT   USD                0.000[4m1[24m[4m9[24m         [4m1[24m[4m1[24m[4m8[24m300     0.000[4m2[24m[4m2[24m
+## [90m# … with 163,678 more rows, and 28 more variables: ask_2_quantity [3m[90m&lt;dbl&gt;[90m[23m,[39m
+## [90m#   ask_3_price [3m[90m&lt;dbl&gt;[90m[23m, ask_3_quantity [3m[90m&lt;dbl&gt;[90m[23m, ask_4_price [3m[90m&lt;dbl&gt;[90m[23m,[39m
+## [90m#   ask_4_quantity [3m[90m&lt;dbl&gt;[90m[23m, ask_5_price [3m[90m&lt;dbl&gt;[90m[23m, ask_5_quantity [3m[90m&lt;dbl&gt;[90m[23m,[39m
+## [90m#   bid_1_price [3m[90m&lt;dbl&gt;[90m[23m, bid_1_quantity [3m[90m&lt;dbl&gt;[90m[23m, bid_2_price [3m[90m&lt;dbl&gt;[90m[23m,[39m
+## [90m#   bid_2_quantity [3m[90m&lt;dbl&gt;[90m[23m, bid_3_price [3m[90m&lt;dbl&gt;[90m[23m, bid_3_quantity [3m[90m&lt;dbl&gt;[90m[23m,[39m
+## [90m#   bid_4_price [3m[90m&lt;dbl&gt;[90m[23m, bid_4_quantity [3m[90m&lt;dbl&gt;[90m[23m, bid_5_price [3m[90m&lt;dbl&gt;[90m[23m,[39m
+## [90m#   bid_5_quantity [3m[90m&lt;dbl&gt;[90m[23m, date_time_utc [3m[90m&lt;dttm&gt;[90m[23m, date [3m[90m&lt;date&gt;[90m[23m, pkDummy [3m[90m&lt;chr&gt;[90m[23m,[39m
+## [90m#   pkey [3m[90m&lt;chr&gt;[90m[23m, trade_usd_1 [3m[90m&lt;dbl&gt;[90m[23m, trade_usd_2 [3m[90m&lt;dbl&gt;[90m[23m, trade_usd_3 [3m[90m&lt;dbl&gt;[90m[23m,[39m
+## [90m#   trade_usd_4 [3m[90m&lt;dbl&gt;[90m[23m, trade_usd_5 [3m[90m&lt;dbl&gt;[90m[23m, price_usd [3m[90m&lt;dbl&gt;[90m[23m, ts_index [3m[90m&lt;dttm&gt;[90m[23m[39m</code></pre>
+<p>For now, let’s convert the data back to a <code>tibble</code> instead of a <code>tsibble</code>:
+<!-- [TODO - EXPLAIN THIS] --></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-prep.html#cb34-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(cryptodata)</span></code></pre></div>
+</div>
+<div id="calculate-target" class="section level3" number="3.4.4">
+<h3><span class="header-section-number">3.4.4</span> Calculate Target</h3>
 <p>[ADD HERE]</p>
 <p>Also adding lagged variables here! [ADD HERE]</p>
 <p>…<code>mutate()</code> from the <code>dplyr</code> <span class="citation">[@R-dplyr]</span> package…</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="data-prep.html#cb23-1" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">mutate</span>(cryptodata, </span>
-<span id="cb23-2"><a href="data-prep.html#cb23-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">target_price_24h =</span> <span class="fu">lead</span>(price_usd, <span class="dv">24</span>, <span class="at">order_by=</span>ts_index),</span>
-<span id="cb23-3"><a href="data-prep.html#cb23-3" aria-hidden="true" tabindex="-1"></a>                     <span class="co"># Now all the lagged variables:</span></span>
-<span id="cb23-4"><a href="data-prep.html#cb23-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">lagged_price_1h  =</span> <span class="fu">lag</span>(price_usd, <span class="dv">1</span>, <span class="at">order_by=</span>ts_index),</span>
-<span id="cb23-5"><a href="data-prep.html#cb23-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">lagged_price_2h  =</span> <span class="fu">lag</span>(price_usd, <span class="dv">2</span>, <span class="at">order_by=</span>ts_index),</span>
-<span id="cb23-6"><a href="data-prep.html#cb23-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">lagged_price_3h  =</span> <span class="fu">lag</span>(price_usd, <span class="dv">3</span>, <span class="at">order_by=</span>ts_index),</span>
-<span id="cb23-7"><a href="data-prep.html#cb23-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">lagged_price_6h  =</span> <span class="fu">lag</span>(price_usd, <span class="dv">6</span>, <span class="at">order_by=</span>ts_index),</span>
-<span id="cb23-8"><a href="data-prep.html#cb23-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">lagged_price_12h =</span> <span class="fu">lag</span>(price_usd, <span class="dv">12</span>, <span class="at">order_by=</span>ts_index),</span>
-<span id="cb23-9"><a href="data-prep.html#cb23-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">lagged_price_24h =</span> <span class="fu">lag</span>(price_usd, <span class="dv">24</span>, <span class="at">order_by=</span>ts_index))</span>
-<span id="cb23-10"><a href="data-prep.html#cb23-10" aria-hidden="true" tabindex="-1"></a>                     <span class="co">#lagged_price_3d  = lag(price_usd, 24*3, order_by=ts_index),</span></span>
-<span id="cb23-11"><a href="data-prep.html#cb23-11" aria-hidden="true" tabindex="-1"></a>                     <span class="co">#lagged_price_7d  = lag(price_usd, 24*7, order_by=ts_index),</span></span>
-<span id="cb23-12"><a href="data-prep.html#cb23-12" aria-hidden="true" tabindex="-1"></a>                     <span class="co">#lagged_price_14d = lag(price_usd, 24*14, order_by=ts_index),</span></span>
-<span id="cb23-13"><a href="data-prep.html#cb23-13" aria-hidden="true" tabindex="-1"></a>                     <span class="co">#lagged_price_31d = lag(price_usd, 24*31, order_by=ts_index))</span></span></code></pre></div>
-<p>Here is an example showing the results for the subset of data related to the Ethereum cryptocurrency (symbol == ‘ETH’) showing 30 rows and the relevant columns we just calculated:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-prep.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">select</span>(<span class="fu">filter</span>(cryptodata, symbol <span class="sc">==</span> <span class="st">&#39;ETH&#39;</span>),date_time_utc, price_usd, lagged_price_1h, lagged_price_24h, target_price_24h), <span class="at">n=</span><span class="dv">30</span>)</span></code></pre></div>
-<pre><code>## Adding missing grouping variables: `symbol`</code></pre>
-<pre><code>## # A tibble: 1,058 x 6
-## # Groups:   symbol [1]
-##    symbol date_time_utc       price_usd lagged_price_1h lagged_price_24h target_price_24h
-##    &lt;chr&gt;  &lt;dttm&gt;                  &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
-##  1 ETH    2020-09-09 11:00:38      347.             NA               NA              363.
-##  2 ETH    2020-09-09 12:00:39      348.            347.              NA              365.
-##  3 ETH    2020-09-09 13:00:39      347.            348.              NA              372.
-##  4 ETH    2020-09-09 14:00:38      348.            347.              NA              377.
-##  5 ETH    2020-09-09 15:00:39      353.            348.              NA              367.
-##  6 ETH    2020-09-09 16:00:39      353.            353.              NA              372.
-##  7 ETH    2020-09-09 17:00:40      351.            353.              NA              367.
-##  8 ETH    2020-09-09 18:00:38      352.            351.              NA              367.
-##  9 ETH    2020-09-09 19:00:39      359.            352.              NA              364.
-## 10 ETH    2020-09-09 20:00:38      356.            359.              NA              364.
-## 11 ETH    2020-09-09 21:00:39      353.            356.              NA              365.
-## 12 ETH    2020-09-09 22:00:39      353.            353.              NA              367.
-## 13 ETH    2020-09-09 23:00:38      355.            353.              NA              368.
-## 14 ETH    2020-09-10 00:00:39      351.            355.              NA              368.
-## 15 ETH    2020-09-10 01:00:39      355.            351.              NA              369.
-## 16 ETH    2020-09-10 02:00:39      368.            355.              NA              366.
-## 17 ETH    2020-09-10 03:00:40      367.            368.              NA              363.
-## 18 ETH    2020-09-10 04:00:39      371.            367.              NA              356.
-## 19 ETH    2020-09-10 05:00:39      373.            371.              NA              357.
-## 20 ETH    2020-09-10 06:00:39      370.            373.              NA              361.
-## 21 ETH    2020-09-10 07:00:40      367.            370.              NA              363.
-## 22 ETH    2020-09-10 08:00:46      363.            367.              NA              362.
-## 23 ETH    2020-09-10 09:00:39      364.            363.              NA              365.
-## 24 ETH    2020-09-10 10:00:39      365.            364.              NA              368.
-## 25 ETH    2020-09-10 11:00:38      363.            365.             347.             365.
-## 26 ETH    2020-09-10 12:00:39      365.            363.             348.             363.
-## 27 ETH    2020-09-10 13:00:39      372.            365.             347.             366.
-## 28 ETH    2020-09-10 14:00:40      377.            372.             348.             365.
-## 29 ETH    2020-09-10 15:00:39      367.            377.             353.             367.
-## 30 ETH    2020-09-10 16:00:39      372.            367.             353.             369.
-## # ... with 1,028 more rows</code></pre>
-<p>The field <code>target_price_24h</code> should have the value of <code>price_usd</code> 24 hours into the future relative to the row of data. All the <code>lagged_</code> fields show the price from the past relative to <code>date_time_utc</code>.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="data-prep.html#cb35-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">mutate</span>(cryptodata, </span>
+<span id="cb35-2"><a href="data-prep.html#cb35-2" aria-hidden="true"></a>                     <span class="dt">target_price_24h =</span> <span class="kw">lead</span>(price_usd, <span class="dv">24</span>, <span class="dt">order_by=</span>ts_index),</span>
+<span id="cb35-3"><a href="data-prep.html#cb35-3" aria-hidden="true"></a>                     <span class="co"># Now all the lagged variables:</span></span>
+<span id="cb35-4"><a href="data-prep.html#cb35-4" aria-hidden="true"></a>                     <span class="dt">lagged_price_1h  =</span> <span class="kw">lag</span>(price_usd, <span class="dv">1</span>, <span class="dt">order_by=</span>ts_index),</span>
+<span id="cb35-5"><a href="data-prep.html#cb35-5" aria-hidden="true"></a>                     <span class="dt">lagged_price_2h  =</span> <span class="kw">lag</span>(price_usd, <span class="dv">2</span>, <span class="dt">order_by=</span>ts_index),</span>
+<span id="cb35-6"><a href="data-prep.html#cb35-6" aria-hidden="true"></a>                     <span class="dt">lagged_price_3h  =</span> <span class="kw">lag</span>(price_usd, <span class="dv">3</span>, <span class="dt">order_by=</span>ts_index),</span>
+<span id="cb35-7"><a href="data-prep.html#cb35-7" aria-hidden="true"></a>                     <span class="dt">lagged_price_6h  =</span> <span class="kw">lag</span>(price_usd, <span class="dv">6</span>, <span class="dt">order_by=</span>ts_index),</span>
+<span id="cb35-8"><a href="data-prep.html#cb35-8" aria-hidden="true"></a>                     <span class="dt">lagged_price_12h =</span> <span class="kw">lag</span>(price_usd, <span class="dv">12</span>, <span class="dt">order_by=</span>ts_index),</span>
+<span id="cb35-9"><a href="data-prep.html#cb35-9" aria-hidden="true"></a>                     <span class="dt">lagged_price_24h =</span> <span class="kw">lag</span>(price_usd, <span class="dv">24</span>, <span class="dt">order_by=</span>ts_index))</span>
+<span id="cb35-10"><a href="data-prep.html#cb35-10" aria-hidden="true"></a>                     <span class="co">#lagged_price_3d  = lag(price_usd, 24*3, order_by=ts_index),</span></span>
+<span id="cb35-11"><a href="data-prep.html#cb35-11" aria-hidden="true"></a>                     <span class="co">#lagged_price_7d  = lag(price_usd, 24*7, order_by=ts_index),</span></span>
+<span id="cb35-12"><a href="data-prep.html#cb35-12" aria-hidden="true"></a>                     <span class="co">#lagged_price_14d = lag(price_usd, 24*14, order_by=ts_index),</span></span>
+<span id="cb35-13"><a href="data-prep.html#cb35-13" aria-hidden="true"></a>                     <span class="co">#lagged_price_31d = lag(price_usd, 24*31, order_by=ts_index))</span></span></code></pre></div>
+<p>Here is an example showing the results for the subset of data related to the Ethereum cryptocurrency (using <code>symbol == 'ETH'</code>) showing 30 rows and the relevant columns we just calculated:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-prep.html#cb36-1" aria-hidden="true"></a><span class="kw">print</span>(<span class="kw">select</span>(<span class="kw">filter</span>(cryptodata, symbol <span class="op">==</span><span class="st"> &#39;ETH&#39;</span>),ts_index, price_usd, lagged_price_1h, lagged_price_24h, target_price_24h), <span class="dt">n=</span><span class="dv">30</span>)</span></code></pre></div>
+<pre><code>## [90m# A tibble: 1,095 x 5[39m
+##    ts_index            price_usd lagged_price_1h lagged_price_24h
+##    [3m[90m&lt;dttm&gt;[39m[23m                  [3m[90m&lt;dbl&gt;[39m[23m           [3m[90m&lt;dbl&gt;[39m[23m            [3m[90m&lt;dbl&gt;[39m[23m
+## [90m 1[39m 2020-09-09 [90m11:00:00[39m      347.            5.02              [31mNA[39m 
+## [90m 2[39m 2020-09-09 [90m12:00:00[39m      348.            5.02              [31mNA[39m 
+## [90m 3[39m 2020-09-09 [90m13:00:00[39m      347.            5.01              [31mNA[39m 
+## [90m 4[39m 2020-09-09 [90m14:00:00[39m      348.            5.01              [31mNA[39m 
+## [90m 5[39m 2020-09-09 [90m15:00:00[39m      353.            5.05              [31mNA[39m 
+## [90m 6[39m 2020-09-09 [90m16:00:00[39m      353.            5.05              [31mNA[39m 
+## [90m 7[39m 2020-09-09 [90m17:00:00[39m      351.            5.05              [31mNA[39m 
+## [90m 8[39m 2020-09-09 [90m18:00:00[39m      352.            5.05              [31mNA[39m 
+## [90m 9[39m 2020-09-09 [90m19:00:00[39m      359.            5.08              [31mNA[39m 
+## [90m10[39m 2020-09-09 [90m20:00:00[39m      356.            5.08              [31mNA[39m 
+## [90m11[39m 2020-09-09 [90m21:00:00[39m      353.            5.04             171.
+## [90m12[39m 2020-09-09 [90m22:00:00[39m      353.            5.01             171.
+## [90m13[39m 2020-09-09 [90m23:00:00[39m      355.            5.05             172.
+## [90m14[39m 2020-09-10 [90m00:00:00[39m      351.            5.02             170.
+## [90m15[39m 2020-09-10 [90m01:00:00[39m      355.            5.04             170.
+## [90m16[39m 2020-09-10 [90m02:00:00[39m      368.            5.11             172.
+## [90m17[39m 2020-09-10 [90m03:00:00[39m      367.            5.09             172.
+## [90m18[39m 2020-09-10 [90m04:00:00[39m      371.            5.09             172.
+## [90m19[39m 2020-09-10 [90m05:00:00[39m      373.            5.08             171.
+## [90m20[39m 2020-09-10 [90m06:00:00[39m      370.            5.08             171.
+## [90m21[39m 2020-09-10 [90m07:00:00[39m      367.            5.06             170.
+## [90m22[39m 2020-09-10 [90m08:00:00[39m      363.            5.05             169.
+## [90m23[39m 2020-09-10 [90m09:00:00[39m      364.            5.05             169.
+## [90m24[39m 2020-09-10 [90m10:00:00[39m      365.            5.07             170.
+## [90m25[39m 2020-09-10 [90m11:00:00[39m      363.            5.08             169.
+## [90m26[39m 2020-09-10 [90m12:00:00[39m      365.            5.12             170.
+## [90m27[39m 2020-09-10 [90m13:00:00[39m      372.            5.15             170.
+## [90m28[39m 2020-09-10 [90m14:00:00[39m      377.            5.16             171.
+## [90m29[39m 2020-09-10 [90m15:00:00[39m      367.            5.09             169.
+## [90m30[39m 2020-09-10 [90m16:00:00[39m      372.            5.12             169.
+## [90m# … with 1,065 more rows, and 1 more variable: target_price_24h [3m[90m&lt;dbl&gt;[90m[23m[39m</code></pre>
+<p>The field <code>target_price_24h</code> shows the value of <code>price_usd</code> 24 hours into the future relative to the row of data. All the <code>lagged_</code> fields show the price from the past relative to when the data was collected (where <code>lagged_price_1h</code> shows the price 1 hour before the <code>ts_index</code> timestamp of the data).</p>
 </div>
-</div>
-<div id="remove-subsets-without-enough-rows" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Remove subsets without enough rows</h2>
-<p>[ADD HERE]</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-prep.html#cb27-1" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(cryptodata, <span class="fu">n</span>() <span class="sc">&gt;=</span> <span class="dv">700</span>)</span></code></pre></div>
 </div>
 <div id="cross-validation" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> Cross Validation</h2>
@@ -436,361 +461,165 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- [TODO - Here will also need to explain that we are taking this process very step by step and focusing on doing this correctly, but in a tool used later on to make models (caret) this functionality is available without having to set this up, so don't worry about this being hard-coded to our specific needs.] -->
 <!-- [TODO - ^ OR might be a good opportunity to explain how to write a function] -->
 <p>NEW CV METHOD - need to explain:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data-prep.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove rows with null date_time_utc to exclude missing data from next steps</span></span>
-<span id="cb28-2"><a href="data-prep.html#cb28-2" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">drop_na</span>(cryptodata, date_time_utc)</span>
-<span id="cb28-3"><a href="data-prep.html#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Counts by symbol</span></span>
-<span id="cb28-4"><a href="data-prep.html#cb28-4" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> cryptodata <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(symbol) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">tot_rows =</span> <span class="fu">n</span>())</span>
-<span id="cb28-5"><a href="data-prep.html#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Add row index by symbol</span></span>
-<span id="cb28-6"><a href="data-prep.html#cb28-6" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">mutate</span>(<span class="fu">arrange</span>(cryptodata, date_time_utc), <span class="at">row_id =</span> <span class="fu">seq_along</span>(date_time_utc))</span>
-<span id="cb28-7"><a href="data-prep.html#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate what rows belong in the first split</span></span>
-<span id="cb28-8"><a href="data-prep.html#cb28-8" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> cryptodata <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">split_rows_1 =</span> <span class="fu">as.integer</span>(<span class="fu">n</span>()<span class="sc">/</span><span class="dv">5</span>),</span>
-<span id="cb28-9"><a href="data-prep.html#cb28-9" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">split_rows_2 =</span> <span class="fu">as.integer</span>(split_rows_1<span class="sc">*</span><span class="dv">2</span>),</span>
-<span id="cb28-10"><a href="data-prep.html#cb28-10" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">split_rows_3 =</span> <span class="fu">as.integer</span>(split_rows_1<span class="sc">*</span><span class="dv">3</span>),</span>
-<span id="cb28-11"><a href="data-prep.html#cb28-11" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">split_rows_4 =</span> <span class="fu">as.integer</span>(split_rows_1<span class="sc">*</span><span class="dv">4</span>),</span>
-<span id="cb28-12"><a href="data-prep.html#cb28-12" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">split_rows_5 =</span> <span class="fu">as.integer</span>(split_rows_1<span class="sc">*</span><span class="dv">5</span>))</span>
-<span id="cb28-13"><a href="data-prep.html#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Now calculate what split the current row_id belongs into</span></span>
-<span id="cb28-14"><a href="data-prep.html#cb28-14" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">mutate</span>(cryptodata, </span>
-<span id="cb28-15"><a href="data-prep.html#cb28-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">split =</span> <span class="fu">case_when</span>(</span>
-<span id="cb28-16"><a href="data-prep.html#cb28-16" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&lt;=</span> split_rows_1 <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb28-17"><a href="data-prep.html#cb28-17" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&lt;=</span> split_rows_2 <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb28-18"><a href="data-prep.html#cb28-18" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&lt;=</span> split_rows_3 <span class="sc">~</span> <span class="dv">3</span>,</span>
-<span id="cb28-19"><a href="data-prep.html#cb28-19" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&lt;=</span> split_rows_4 <span class="sc">~</span> <span class="dv">4</span>,</span>
-<span id="cb28-20"><a href="data-prep.html#cb28-20" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&gt;</span> split_rows_4 <span class="sc">~</span> <span class="dv">5</span>))</span>
-<span id="cb28-21"><a href="data-prep.html#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Now figure out train/test groups</span></span>
-<span id="cb28-22"><a href="data-prep.html#cb28-22" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> cryptodata <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">train_rows_1 =</span> (<span class="fu">as.integer</span>(<span class="fu">n</span>()<span class="sc">/</span><span class="dv">5</span>))<span class="sc">*</span><span class="fl">0.8</span>,</span>
-<span id="cb28-23"><a href="data-prep.html#cb28-23" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">test_rows_1  =</span> train_rows_1 <span class="sc">+</span> (<span class="fu">as.integer</span>(<span class="fu">n</span>()<span class="sc">/</span><span class="dv">5</span>))<span class="sc">*</span><span class="fl">0.2</span>,</span>
-<span id="cb28-24"><a href="data-prep.html#cb28-24" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">train_rows_2 =</span> test_rows_1 <span class="sc">+</span> train_rows_1,</span>
-<span id="cb28-25"><a href="data-prep.html#cb28-25" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">test_rows_2  =</span> train_rows_2 <span class="sc">+</span> (<span class="fu">as.integer</span>(<span class="fu">n</span>()<span class="sc">/</span><span class="dv">5</span>))<span class="sc">*</span><span class="fl">0.2</span>,</span>
-<span id="cb28-26"><a href="data-prep.html#cb28-26" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">train_rows_3 =</span> test_rows_2 <span class="sc">+</span> train_rows_1,</span>
-<span id="cb28-27"><a href="data-prep.html#cb28-27" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">test_rows_3  =</span> train_rows_3 <span class="sc">+</span> (<span class="fu">as.integer</span>(<span class="fu">n</span>()<span class="sc">/</span><span class="dv">5</span>))<span class="sc">*</span><span class="fl">0.2</span>,</span>
-<span id="cb28-28"><a href="data-prep.html#cb28-28" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">train_rows_4 =</span> test_rows_3 <span class="sc">+</span> train_rows_1,</span>
-<span id="cb28-29"><a href="data-prep.html#cb28-29" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">test_rows_4  =</span> train_rows_4 <span class="sc">+</span> (<span class="fu">as.integer</span>(<span class="fu">n</span>()<span class="sc">/</span><span class="dv">5</span>))<span class="sc">*</span><span class="fl">0.2</span>,</span>
-<span id="cb28-30"><a href="data-prep.html#cb28-30" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">train_rows_5 =</span> test_rows_4 <span class="sc">+</span> train_rows_1,</span>
-<span id="cb28-31"><a href="data-prep.html#cb28-31" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">test_rows_5  =</span> train_rows_5 <span class="sc">+</span> (<span class="fu">as.integer</span>(<span class="fu">n</span>()<span class="sc">/</span><span class="dv">5</span>))<span class="sc">*</span><span class="fl">0.2</span>)</span>
-<span id="cb28-32"><a href="data-prep.html#cb28-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Now assign train/test groups</span></span>
-<span id="cb28-33"><a href="data-prep.html#cb28-33" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">mutate</span>(cryptodata, </span>
-<span id="cb28-34"><a href="data-prep.html#cb28-34" aria-hidden="true" tabindex="-1"></a>                     <span class="at">training =</span> <span class="fu">case_when</span>(</span>
-<span id="cb28-35"><a href="data-prep.html#cb28-35" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&lt;=</span> train_rows_1 <span class="sc">~</span> <span class="st">&#39;train&#39;</span>,</span>
-<span id="cb28-36"><a href="data-prep.html#cb28-36" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&lt;=</span> test_rows_1 <span class="sc">~</span> <span class="st">&#39;test&#39;</span>,</span>
-<span id="cb28-37"><a href="data-prep.html#cb28-37" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&lt;=</span> train_rows_2 <span class="sc">~</span> <span class="st">&#39;train&#39;</span>,</span>
-<span id="cb28-38"><a href="data-prep.html#cb28-38" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&lt;=</span> test_rows_2 <span class="sc">~</span> <span class="st">&#39;test&#39;</span>,</span>
-<span id="cb28-39"><a href="data-prep.html#cb28-39" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&lt;=</span> train_rows_3 <span class="sc">~</span> <span class="st">&#39;train&#39;</span>,</span>
-<span id="cb28-40"><a href="data-prep.html#cb28-40" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&lt;=</span> test_rows_3 <span class="sc">~</span> <span class="st">&#39;test&#39;</span>,</span>
-<span id="cb28-41"><a href="data-prep.html#cb28-41" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&lt;=</span> train_rows_4 <span class="sc">~</span> <span class="st">&#39;train&#39;</span>,</span>
-<span id="cb28-42"><a href="data-prep.html#cb28-42" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&lt;=</span> test_rows_4 <span class="sc">~</span> <span class="st">&#39;test&#39;</span>,</span>
-<span id="cb28-43"><a href="data-prep.html#cb28-43" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&lt;=</span> train_rows_5 <span class="sc">~</span> <span class="st">&#39;train&#39;</span>,</span>
-<span id="cb28-44"><a href="data-prep.html#cb28-44" aria-hidden="true" tabindex="-1"></a>                       row_id <span class="sc">&gt;</span> train_rows_5 <span class="sc">~</span> <span class="st">&#39;holdout&#39;</span>))</span>
-<span id="cb28-45"><a href="data-prep.html#cb28-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove all columns that are no longer needed now</span></span>
-<span id="cb28-46"><a href="data-prep.html#cb28-46" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">select</span>(cryptodata, <span class="sc">-</span>(tot_rows<span class="sc">:</span>test_rows_5), <span class="sc">-</span>(trade_usd_1<span class="sc">:</span>trade_usd_5),</span>
-<span id="cb28-47"><a href="data-prep.html#cb28-47" aria-hidden="true" tabindex="-1"></a>                     <span class="sc">-</span>(ask_1_price<span class="sc">:</span>bid_5_quantity), <span class="sc">-</span>pair, <span class="sc">-</span>quote_currency, </span>
-<span id="cb28-48"><a href="data-prep.html#cb28-48" aria-hidden="true" tabindex="-1"></a>                     <span class="sc">-</span>pkDummy, <span class="sc">-</span>pkey, <span class="sc">-</span>ts_index, split)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="data-prep.html#cb38-1" aria-hidden="true"></a><span class="co"># Remove rows with null date_time_utc to exclude missing data from next steps</span></span>
+<span id="cb38-2"><a href="data-prep.html#cb38-2" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">drop_na</span>(cryptodata, date_time_utc)</span>
+<span id="cb38-3"><a href="data-prep.html#cb38-3" aria-hidden="true"></a><span class="co"># Counts by symbol</span></span>
+<span id="cb38-4"><a href="data-prep.html#cb38-4" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span>cryptodata <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(symbol) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">tot_rows =</span> <span class="kw">n</span>())</span>
+<span id="cb38-5"><a href="data-prep.html#cb38-5" aria-hidden="true"></a><span class="co"># Add row index by symbol</span></span>
+<span id="cb38-6"><a href="data-prep.html#cb38-6" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">mutate</span>(<span class="kw">arrange</span>(cryptodata, date_time_utc), <span class="dt">row_id =</span> <span class="kw">seq_along</span>(date_time_utc))</span>
+<span id="cb38-7"><a href="data-prep.html#cb38-7" aria-hidden="true"></a><span class="co"># Calculate what rows belong in the first split</span></span>
+<span id="cb38-8"><a href="data-prep.html#cb38-8" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span>cryptodata <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">split_rows_1 =</span> <span class="kw">as.integer</span>(<span class="kw">n</span>()<span class="op">/</span><span class="dv">5</span>),</span>
+<span id="cb38-9"><a href="data-prep.html#cb38-9" aria-hidden="true"></a>                                    <span class="dt">split_rows_2 =</span> <span class="kw">as.integer</span>(split_rows_<span class="dv">1</span><span class="op">*</span><span class="dv">2</span>),</span>
+<span id="cb38-10"><a href="data-prep.html#cb38-10" aria-hidden="true"></a>                                    <span class="dt">split_rows_3 =</span> <span class="kw">as.integer</span>(split_rows_<span class="dv">1</span><span class="op">*</span><span class="dv">3</span>),</span>
+<span id="cb38-11"><a href="data-prep.html#cb38-11" aria-hidden="true"></a>                                    <span class="dt">split_rows_4 =</span> <span class="kw">as.integer</span>(split_rows_<span class="dv">1</span><span class="op">*</span><span class="dv">4</span>),</span>
+<span id="cb38-12"><a href="data-prep.html#cb38-12" aria-hidden="true"></a>                                    <span class="dt">split_rows_5 =</span> <span class="kw">as.integer</span>(split_rows_<span class="dv">1</span><span class="op">*</span><span class="dv">5</span>))</span>
+<span id="cb38-13"><a href="data-prep.html#cb38-13" aria-hidden="true"></a><span class="co"># Now calculate what split the current row_id belongs into</span></span>
+<span id="cb38-14"><a href="data-prep.html#cb38-14" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">mutate</span>(cryptodata, </span>
+<span id="cb38-15"><a href="data-prep.html#cb38-15" aria-hidden="true"></a>                     <span class="dt">split =</span> <span class="kw">case_when</span>(</span>
+<span id="cb38-16"><a href="data-prep.html#cb38-16" aria-hidden="true"></a>                       row_id <span class="op">&lt;=</span><span class="st"> </span>split_rows_<span class="dv">1</span> <span class="op">~</span><span class="st"> </span><span class="dv">1</span>,</span>
+<span id="cb38-17"><a href="data-prep.html#cb38-17" aria-hidden="true"></a>                       row_id <span class="op">&lt;=</span><span class="st"> </span>split_rows_<span class="dv">2</span> <span class="op">~</span><span class="st"> </span><span class="dv">2</span>,</span>
+<span id="cb38-18"><a href="data-prep.html#cb38-18" aria-hidden="true"></a>                       row_id <span class="op">&lt;=</span><span class="st"> </span>split_rows_<span class="dv">3</span> <span class="op">~</span><span class="st"> </span><span class="dv">3</span>,</span>
+<span id="cb38-19"><a href="data-prep.html#cb38-19" aria-hidden="true"></a>                       row_id <span class="op">&lt;=</span><span class="st"> </span>split_rows_<span class="dv">4</span> <span class="op">~</span><span class="st"> </span><span class="dv">4</span>,</span>
+<span id="cb38-20"><a href="data-prep.html#cb38-20" aria-hidden="true"></a>                       row_id <span class="op">&gt;</span><span class="st"> </span>split_rows_<span class="dv">4</span> <span class="op">~</span><span class="st"> </span><span class="dv">5</span>))</span>
+<span id="cb38-21"><a href="data-prep.html#cb38-21" aria-hidden="true"></a><span class="co"># Now figure out train/test groups</span></span>
+<span id="cb38-22"><a href="data-prep.html#cb38-22" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span>cryptodata <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">train_rows_1 =</span> (<span class="kw">as.integer</span>(<span class="kw">n</span>()<span class="op">/</span><span class="dv">5</span>))<span class="op">*</span><span class="fl">0.8</span>,</span>
+<span id="cb38-23"><a href="data-prep.html#cb38-23" aria-hidden="true"></a>                                    <span class="dt">test_rows_1  =</span> train_rows_<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>(<span class="kw">as.integer</span>(<span class="kw">n</span>()<span class="op">/</span><span class="dv">5</span>))<span class="op">*</span><span class="fl">0.2</span>,</span>
+<span id="cb38-24"><a href="data-prep.html#cb38-24" aria-hidden="true"></a>                                    <span class="dt">train_rows_2 =</span> test_rows_<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>train_rows_<span class="dv">1</span>,</span>
+<span id="cb38-25"><a href="data-prep.html#cb38-25" aria-hidden="true"></a>                                    <span class="dt">test_rows_2  =</span> train_rows_<span class="dv">2</span> <span class="op">+</span><span class="st"> </span>(<span class="kw">as.integer</span>(<span class="kw">n</span>()<span class="op">/</span><span class="dv">5</span>))<span class="op">*</span><span class="fl">0.2</span>,</span>
+<span id="cb38-26"><a href="data-prep.html#cb38-26" aria-hidden="true"></a>                                    <span class="dt">train_rows_3 =</span> test_rows_<span class="dv">2</span> <span class="op">+</span><span class="st"> </span>train_rows_<span class="dv">1</span>,</span>
+<span id="cb38-27"><a href="data-prep.html#cb38-27" aria-hidden="true"></a>                                    <span class="dt">test_rows_3  =</span> train_rows_<span class="dv">3</span> <span class="op">+</span><span class="st"> </span>(<span class="kw">as.integer</span>(<span class="kw">n</span>()<span class="op">/</span><span class="dv">5</span>))<span class="op">*</span><span class="fl">0.2</span>,</span>
+<span id="cb38-28"><a href="data-prep.html#cb38-28" aria-hidden="true"></a>                                    <span class="dt">train_rows_4 =</span> test_rows_<span class="dv">3</span> <span class="op">+</span><span class="st"> </span>train_rows_<span class="dv">1</span>,</span>
+<span id="cb38-29"><a href="data-prep.html#cb38-29" aria-hidden="true"></a>                                    <span class="dt">test_rows_4  =</span> train_rows_<span class="dv">4</span> <span class="op">+</span><span class="st"> </span>(<span class="kw">as.integer</span>(<span class="kw">n</span>()<span class="op">/</span><span class="dv">5</span>))<span class="op">*</span><span class="fl">0.2</span>,</span>
+<span id="cb38-30"><a href="data-prep.html#cb38-30" aria-hidden="true"></a>                                    <span class="dt">train_rows_5 =</span> test_rows_<span class="dv">4</span> <span class="op">+</span><span class="st"> </span>train_rows_<span class="dv">1</span>,</span>
+<span id="cb38-31"><a href="data-prep.html#cb38-31" aria-hidden="true"></a>                                    <span class="dt">test_rows_5  =</span> train_rows_<span class="dv">5</span> <span class="op">+</span><span class="st"> </span>(<span class="kw">as.integer</span>(<span class="kw">n</span>()<span class="op">/</span><span class="dv">5</span>))<span class="op">*</span><span class="fl">0.2</span>)</span>
+<span id="cb38-32"><a href="data-prep.html#cb38-32" aria-hidden="true"></a><span class="co"># Now assign train/test groups</span></span>
+<span id="cb38-33"><a href="data-prep.html#cb38-33" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">mutate</span>(cryptodata, </span>
+<span id="cb38-34"><a href="data-prep.html#cb38-34" aria-hidden="true"></a>                     <span class="dt">training =</span> <span class="kw">case_when</span>(</span>
+<span id="cb38-35"><a href="data-prep.html#cb38-35" aria-hidden="true"></a>                       row_id <span class="op">&lt;=</span><span class="st"> </span>train_rows_<span class="dv">1</span> <span class="op">~</span><span class="st"> &#39;train&#39;</span>,</span>
+<span id="cb38-36"><a href="data-prep.html#cb38-36" aria-hidden="true"></a>                       row_id <span class="op">&lt;=</span><span class="st"> </span>test_rows_<span class="dv">1</span> <span class="op">~</span><span class="st"> &#39;test&#39;</span>,</span>
+<span id="cb38-37"><a href="data-prep.html#cb38-37" aria-hidden="true"></a>                       row_id <span class="op">&lt;=</span><span class="st"> </span>train_rows_<span class="dv">2</span> <span class="op">~</span><span class="st"> &#39;train&#39;</span>,</span>
+<span id="cb38-38"><a href="data-prep.html#cb38-38" aria-hidden="true"></a>                       row_id <span class="op">&lt;=</span><span class="st"> </span>test_rows_<span class="dv">2</span> <span class="op">~</span><span class="st"> &#39;test&#39;</span>,</span>
+<span id="cb38-39"><a href="data-prep.html#cb38-39" aria-hidden="true"></a>                       row_id <span class="op">&lt;=</span><span class="st"> </span>train_rows_<span class="dv">3</span> <span class="op">~</span><span class="st"> &#39;train&#39;</span>,</span>
+<span id="cb38-40"><a href="data-prep.html#cb38-40" aria-hidden="true"></a>                       row_id <span class="op">&lt;=</span><span class="st"> </span>test_rows_<span class="dv">3</span> <span class="op">~</span><span class="st"> &#39;test&#39;</span>,</span>
+<span id="cb38-41"><a href="data-prep.html#cb38-41" aria-hidden="true"></a>                       row_id <span class="op">&lt;=</span><span class="st"> </span>train_rows_<span class="dv">4</span> <span class="op">~</span><span class="st"> &#39;train&#39;</span>,</span>
+<span id="cb38-42"><a href="data-prep.html#cb38-42" aria-hidden="true"></a>                       row_id <span class="op">&lt;=</span><span class="st"> </span>test_rows_<span class="dv">4</span> <span class="op">~</span><span class="st"> &#39;test&#39;</span>,</span>
+<span id="cb38-43"><a href="data-prep.html#cb38-43" aria-hidden="true"></a>                       row_id <span class="op">&lt;=</span><span class="st"> </span>train_rows_<span class="dv">5</span> <span class="op">~</span><span class="st"> &#39;train&#39;</span>,</span>
+<span id="cb38-44"><a href="data-prep.html#cb38-44" aria-hidden="true"></a>                       row_id <span class="op">&gt;</span><span class="st"> </span>train_rows_<span class="dv">5</span> <span class="op">~</span><span class="st"> &#39;holdout&#39;</span>))</span>
+<span id="cb38-45"><a href="data-prep.html#cb38-45" aria-hidden="true"></a><span class="co"># Remove all columns that are no longer needed now</span></span>
+<span id="cb38-46"><a href="data-prep.html#cb38-46" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">select</span>(cryptodata, <span class="op">-</span>(tot_rows<span class="op">:</span>test_rows_<span class="dv">5</span>), <span class="op">-</span>(trade_usd_<span class="dv">1</span><span class="op">:</span>trade_usd_<span class="dv">5</span>),</span>
+<span id="cb38-47"><a href="data-prep.html#cb38-47" aria-hidden="true"></a>                     <span class="op">-</span>(ask_<span class="dv">1</span>_price<span class="op">:</span>bid_<span class="dv">5</span>_quantity), <span class="op">-</span>pair, <span class="op">-</span>quote_currency, </span>
+<span id="cb38-48"><a href="data-prep.html#cb38-48" aria-hidden="true"></a>                     <span class="op">-</span>pkDummy, <span class="op">-</span>pkey, <span class="op">-</span>ts_index, split)</span></code></pre></div>
 <p>Our data now has the new columns <code>training</code> (<em>train</em>, <em>test</em> or <em>holdout</em>) and <code>split</code> (numbers 1-5) added to it, let’s take a look at the new columns:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-prep.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(cryptodata, training, split, date)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data-prep.html#cb39-1" aria-hidden="true"></a><span class="kw">select</span>(cryptodata, training, split)</span></code></pre></div>
 <pre><code>## Adding missing grouping variables: `symbol`</code></pre>
-<pre><code>## # A tibble: 138,609 x 4
-## # Groups:   symbol [129]
-##    symbol training split date      
-##    &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt; &lt;date&gt;    
-##  1 XTZ    train        1 2020-08-10
-##  2 BCH    train        1 2020-08-10
-##  3 BNB    train        1 2020-08-10
-##  4 ETC    train        1 2020-08-10
-##  5 NEO    train        1 2020-08-10
-##  6 VLX    train        1 2020-08-10
-##  7 SMT    train        1 2020-08-10
-##  8 LEO    train        1 2020-08-10
-##  9 STX    train        1 2020-08-10
-## 10 GBX    train        1 2020-08-10
-## # ... with 138,599 more rows</code></pre>
+<pre><code>## [90m# A tibble: 123,450 x 3[39m
+## [90m# Groups:   symbol [108][39m
+##    symbol training split
+##    [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;chr&gt;[39m[23m    [3m[90m&lt;dbl&gt;[39m[23m
+## [90m 1[39m XTZ    train        1
+## [90m 2[39m BCH    train        1
+## [90m 3[39m BNB    train        1
+## [90m 4[39m ETC    train        1
+## [90m 5[39m NEO    train        1
+## [90m 6[39m LEO    train        1
+## [90m 7[39m STX    train        1
+## [90m 8[39m GBX    train        1
+## [90m 9[39m ACT    train        1
+## [90m10[39m MBL    train        1
+## [90m# … with 123,440 more rows[39m</code></pre>
 <p><em>Notice that even though we left <code>symbol</code> variables out of our selection, because it is part of the way we grouped our data, it was added back in with the message “Adding missing grouping variables <code>symbol</code>”. The data is tied to its groupings when performing all operations until we use <code>ungroup()</code> to undo them.</em></p>
 <p>Let’s add the new <code>split</code> column to the way the data is grouped:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-prep.html#cb32-1" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">group_by</span>(cryptodata, symbol, split)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data-prep.html#cb42-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">group_by</span>(cryptodata, symbol, split)</span></code></pre></div>
 <p>The new field <code>split</code>, helps us split the data into 5 different datasets based on the date, and contains a number from 1-5. The new field <code>training</code> flags the data as being part of the <strong><em>train</em></strong> dataset, or the <strong><em>test</em></strong> (or <strong><em>holdout</em></strong> for the first split) dataset for each of the 5 splits/datasets.</p>
 <p>Running the same code as before with <code>tail()</code> added, we should see rows associated with the test data of the 5th split (again remember, each of the 5 splits has a training and testing dataset):</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="data-prep.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>( <span class="fu">select</span>(cryptodata, training, split, date) )</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="data-prep.html#cb43-1" aria-hidden="true"></a><span class="kw">tail</span>( <span class="kw">select</span>(cryptodata, training, split) )</span></code></pre></div>
 <pre><code>## Adding missing grouping variables: `symbol`</code></pre>
-<pre><code>## # A tibble: 6 x 4
-## # Groups:   symbol, split [6]
-##   symbol training split date      
-##   &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt; &lt;date&gt;    
-## 1 ELF    holdout      5 2020-10-23
-## 2 REP    holdout      5 2020-10-23
-## 3 BYTZ   holdout      5 2020-10-23
-## 4 DRT    holdout      5 2020-10-23
-## 5 DAY    holdout      5 2020-10-23
-## 6 DCN    holdout      5 2020-10-23</code></pre>
+<pre><code>## [90m# A tibble: 6 x 3[39m
+## [90m# Groups:   symbol, split [6][39m
+##   symbol training split
+##   [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;chr&gt;[39m[23m    [3m[90m&lt;dbl&gt;[39m[23m
+## [90m1[39m VET    holdout      5
+## [90m2[39m REP    holdout      5
+## [90m3[39m DRT    holdout      5
+## [90m4[39m DAY    holdout      5
+## [90m5[39m NUT    holdout      5
+## [90m6[39m UTT    holdout      5</code></pre>
 <p>The easiest way to understand these groupings, is to visualize them. In the next section, you will learn powerful tools for visualizing data in R. Do not worry if you do not understand the code below and are not familiar with <code>ggplot()</code>, we will explain this framework in the <a href="visualization.html#visualization">next section</a>, for now review the charts below and try to follow along with the way we are grouping the data for the predictive models by looking at what the x and y axis represent, as well as the colors. On the x-axis we are plotting the DateTime of when a data point was collected, and on the y-axis the <code>split</code> (1-5) as described in this section. The data is then colored based on the category assigned for the <code>training</code> variable (“train”,“test” or “holdout”).</p>
 <p>We can visualize the new grouping variables:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-prep.html#cb36-1" aria-hidden="true" tabindex="-1"></a>groups_chart <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(cryptodata,</span>
-<span id="cb36-2"><a href="data-prep.html#cb36-2" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">aes</span>(<span class="at">x =</span> date_time_utc, <span class="at">y =</span> split, <span class="at">color =</span> training)) <span class="sc">+</span></span>
-<span id="cb36-3"><a href="data-prep.html#cb36-3" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">geom_point</span>() <span class="co">#+</span></span>
-<span id="cb36-4"><a href="data-prep.html#cb36-4" aria-hidden="true" tabindex="-1"></a>                       <span class="co">#scale_y_reverse()</span></span>
-<span id="cb36-5"><a href="data-prep.html#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co"># now show the chart we just saved:</span></span>
-<span id="cb36-6"><a href="data-prep.html#cb36-6" aria-hidden="true" tabindex="-1"></a>groups_chart</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="data-prep.html#cb46-1" aria-hidden="true"></a>groups_chart &lt;-<span class="st"> </span><span class="kw">ggplot</span>(cryptodata,</span>
+<span id="cb46-2"><a href="data-prep.html#cb46-2" aria-hidden="true"></a>                       <span class="kw">aes</span>(<span class="dt">x =</span> date_time_utc, <span class="dt">y =</span> split, <span class="dt">color =</span> training)) <span class="op">+</span></span>
+<span id="cb46-3"><a href="data-prep.html#cb46-3" aria-hidden="true"></a><span class="st">                       </span><span class="kw">geom_point</span>() <span class="co">#+</span></span>
+<span id="cb46-4"><a href="data-prep.html#cb46-4" aria-hidden="true"></a>                       <span class="co">#scale_y_reverse()</span></span>
+<span id="cb46-5"><a href="data-prep.html#cb46-5" aria-hidden="true"></a><span class="co"># now show the chart we just saved:</span></span>
+<span id="cb46-6"><a href="data-prep.html#cb46-6" aria-hidden="true"></a>groups_chart</span></code></pre></div>
 <p><img src="CryptoResearchPaper_files/figure-html/cv_groupings_visualized-1.png" width="672" /></p>
 <p>We can check on the groupings for each cryptocurrency by animating the previous chart:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-prep.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
-<span id="cb37-2"><a href="data-prep.html#cb37-2" aria-hidden="true" tabindex="-1"></a>animated_chart <span class="ot">&lt;-</span> groups_chart <span class="sc">+</span></span>
-<span id="cb37-3"><a href="data-prep.html#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">transition_states</span>(symbol) <span class="sc">+</span></span>
-<span id="cb37-4"><a href="data-prep.html#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&#39;Now showing: {closest_state}&#39;</span>)</span>
-<span id="cb37-5"><a href="data-prep.html#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co"># show the new animated chart</span></span>
-<span id="cb37-6"><a href="data-prep.html#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="fu">animate</span>(animated_chart, <span class="at">fps =</span> <span class="dv">2</span>)</span></code></pre></div>
-<pre><code>## 
-Frame 1 (1%)
-Frame 2 (2%)
-Frame 3 (3%)
-Frame 4 (4%)
-Frame 5 (5%)
-Frame 6 (6%)
-Frame 7 (7%)
-Frame 8 (8%)
-Frame 9 (9%)
-Frame 10 (10%)
-Frame 11 (11%)
-Frame 12 (12%)
-Frame 13 (13%)
-Frame 14 (14%)
-Frame 15 (15%)
-Frame 16 (16%)
-Frame 17 (17%)
-Frame 18 (18%)
-Frame 19 (19%)
-Frame 20 (20%)
-Frame 21 (21%)
-Frame 22 (22%)
-Frame 23 (23%)
-Frame 24 (24%)
-Frame 25 (25%)
-Frame 26 (26%)
-Frame 27 (27%)
-Frame 28 (28%)
-Frame 29 (29%)
-Frame 30 (30%)
-Frame 31 (31%)
-Frame 32 (32%)
-Frame 33 (33%)
-Frame 34 (34%)
-Frame 35 (35%)
-Frame 36 (36%)
-Frame 37 (37%)
-Frame 38 (38%)
-Frame 39 (39%)
-Frame 40 (40%)
-Frame 41 (41%)
-Frame 42 (42%)
-Frame 43 (43%)
-Frame 44 (44%)
-Frame 45 (45%)
-Frame 46 (46%)
-Frame 47 (47%)
-Frame 48 (48%)
-Frame 49 (49%)
-Frame 50 (50%)
-Frame 51 (51%)
-Frame 52 (52%)
-Frame 53 (53%)
-Frame 54 (54%)
-Frame 55 (55%)
-Frame 56 (56%)
-Frame 57 (57%)
-Frame 58 (58%)
-Frame 59 (59%)
-Frame 60 (60%)
-Frame 61 (61%)
-Frame 62 (62%)
-Frame 63 (63%)
-Frame 64 (64%)
-Frame 65 (65%)
-Frame 66 (66%)
-Frame 67 (67%)
-Frame 68 (68%)
-Frame 69 (69%)
-Frame 70 (70%)
-Frame 71 (71%)
-Frame 72 (72%)
-Frame 73 (73%)
-Frame 74 (74%)
-Frame 75 (75%)
-Frame 76 (76%)
-Frame 77 (77%)
-Frame 78 (78%)
-Frame 79 (79%)
-Frame 80 (80%)
-Frame 81 (81%)
-Frame 82 (82%)
-Frame 83 (83%)
-Frame 84 (84%)
-Frame 85 (85%)
-Frame 86 (86%)
-Frame 87 (87%)
-Frame 88 (88%)
-Frame 89 (89%)
-Frame 90 (90%)
-Frame 91 (91%)
-Frame 92 (92%)
-Frame 93 (93%)
-Frame 94 (94%)
-Frame 95 (95%)
-Frame 96 (96%)
-Frame 97 (97%)
-Frame 98 (98%)
-Frame 99 (99%)
-Frame 100 (100%)
-## Finalizing encoding... done!</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data-prep.html#cb47-1" aria-hidden="true"></a><span class="kw">library</span>(gganimate)</span>
+<span id="cb47-2"><a href="data-prep.html#cb47-2" aria-hidden="true"></a>animated_chart &lt;-<span class="st"> </span>groups_chart <span class="op">+</span></span>
+<span id="cb47-3"><a href="data-prep.html#cb47-3" aria-hidden="true"></a><span class="st">    </span><span class="kw">transition_states</span>(symbol) <span class="op">+</span></span>
+<span id="cb47-4"><a href="data-prep.html#cb47-4" aria-hidden="true"></a><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&#39;Now showing: {closest_state}&#39;</span>)</span>
+<span id="cb47-5"><a href="data-prep.html#cb47-5" aria-hidden="true"></a><span class="co"># show the new animated chart</span></span>
+<span id="cb47-6"><a href="data-prep.html#cb47-6" aria-hidden="true"></a><span class="kw">animate</span>(animated_chart, <span class="dt">fps =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="CryptoResearchPaper_files/figure-html/animate_groupings-1.gif" /><!-- --></p>
 <p>If/when need to slow these down, use this code: (can’t change fps from 1 - or at least be careful, it’s error prone) animate(animated_chart, fps = 1)</p>
 <p><strong><em>This is another tool that we will walk through in the <a href="visualization.html#visualization">next section</a>.</em></strong></p>
 <p>It can be a bit hard to tell how many data points there are because they end up looking like lines. Let’s change the plot to use <code>geom_jitter()</code> instead of <code>geom_point()</code>, which will manually offset the points and let us see exactly how many data points there are:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data-prep.html#cb39-1" aria-hidden="true" tabindex="-1"></a>animated_chart <span class="ot">&lt;-</span> animated_chart <span class="sc">+</span></span>
-<span id="cb39-2"><a href="data-prep.html#cb39-2" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">geom_jitter</span>()</span>
-<span id="cb39-3"><a href="data-prep.html#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># show the new animated chart</span></span>
-<span id="cb39-4"><a href="data-prep.html#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">animate</span>(animated_chart, <span class="at">fps =</span> <span class="dv">2</span>)</span></code></pre></div>
-<pre><code>## 
-Frame 1 (1%)
-Frame 2 (2%)
-Frame 3 (3%)
-Frame 4 (4%)
-Frame 5 (5%)
-Frame 6 (6%)
-Frame 7 (7%)
-Frame 8 (8%)
-Frame 9 (9%)
-Frame 10 (10%)
-Frame 11 (11%)
-Frame 12 (12%)
-Frame 13 (13%)
-Frame 14 (14%)
-Frame 15 (15%)
-Frame 16 (16%)
-Frame 17 (17%)
-Frame 18 (18%)
-Frame 19 (19%)
-Frame 20 (20%)
-Frame 21 (21%)
-Frame 22 (22%)
-Frame 23 (23%)
-Frame 24 (24%)
-Frame 25 (25%)
-Frame 26 (26%)
-Frame 27 (27%)
-Frame 28 (28%)
-Frame 29 (29%)
-Frame 30 (30%)
-Frame 31 (31%)
-Frame 32 (32%)
-Frame 33 (33%)
-Frame 34 (34%)
-Frame 35 (35%)
-Frame 36 (36%)
-Frame 37 (37%)
-Frame 38 (38%)
-Frame 39 (39%)
-Frame 40 (40%)
-Frame 41 (41%)
-Frame 42 (42%)
-Frame 43 (43%)
-Frame 44 (44%)
-Frame 45 (45%)
-Frame 46 (46%)
-Frame 47 (47%)
-Frame 48 (48%)
-Frame 49 (49%)
-Frame 50 (50%)
-Frame 51 (51%)
-Frame 52 (52%)
-Frame 53 (53%)
-Frame 54 (54%)
-Frame 55 (55%)
-Frame 56 (56%)
-Frame 57 (57%)
-Frame 58 (58%)
-Frame 59 (59%)
-Frame 60 (60%)
-Frame 61 (61%)
-Frame 62 (62%)
-Frame 63 (63%)
-Frame 64 (64%)
-Frame 65 (65%)
-Frame 66 (66%)
-Frame 67 (67%)
-Frame 68 (68%)
-Frame 69 (69%)
-Frame 70 (70%)
-Frame 71 (71%)
-Frame 72 (72%)
-Frame 73 (73%)
-Frame 74 (74%)
-Frame 75 (75%)
-Frame 76 (76%)
-Frame 77 (77%)
-Frame 78 (78%)
-Frame 79 (79%)
-Frame 80 (80%)
-Frame 81 (81%)
-Frame 82 (82%)
-Frame 83 (83%)
-Frame 84 (84%)
-Frame 85 (85%)
-Frame 86 (86%)
-Frame 87 (87%)
-Frame 88 (88%)
-Frame 89 (89%)
-Frame 90 (90%)
-Frame 91 (91%)
-Frame 92 (92%)
-Frame 93 (93%)
-Frame 94 (94%)
-Frame 95 (95%)
-Frame 96 (96%)
-Frame 97 (97%)
-Frame 98 (98%)
-Frame 99 (99%)
-Frame 100 (100%)
-## Finalizing encoding... done!</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-prep.html#cb48-1" aria-hidden="true"></a>animated_chart &lt;-<span class="st"> </span>animated_chart <span class="op">+</span></span>
+<span id="cb48-2"><a href="data-prep.html#cb48-2" aria-hidden="true"></a><span class="st">                    </span><span class="kw">geom_jitter</span>()</span>
+<span id="cb48-3"><a href="data-prep.html#cb48-3" aria-hidden="true"></a><span class="co"># show the new animated chart</span></span>
+<span id="cb48-4"><a href="data-prep.html#cb48-4" aria-hidden="true"></a><span class="kw">animate</span>(animated_chart, <span class="dt">fps =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="CryptoResearchPaper_files/figure-html/gganimate_jitter-1.gif" /><!-- --></p>
-<div id="fix-data-by-split" class="section level3" number="3.5.1">
-<h3><span class="header-section-number">3.5.1</span> Fix Data by Split</h3>
+</div>
+<div id="fix-data-by-split" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Fix Data by Split</h2>
 <p>Now that we have split the data into many different subsets, those subsets themselves may have issues that prevent the predictive models from working as expected.</p>
-<div id="zero-variance" class="section level4" number="3.5.1.1">
-<h4><span class="header-section-number">3.5.1.1</span> Zero Variance</h4>
+<div id="zero-variance" class="section level3" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> Zero Variance</h3>
 <p>One of the first models we will make is a simple linear model. The regular R function for this will not work if the data contains any columns that have “zero variance”, meaning the value of the column never changes throughout the data being given to the model. Therefore, let’s fix any issues relating to zero variance columns in any dataset before we change the structure of the data in the step after this one.</p>
-<p>First let’s create a new object called <code>find_zero_var</code> which shows the value of the minimum standard deviation across all columns and calculated based on the grouping of symbol, split and train.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="data-prep.html#cb41-1" aria-hidden="true" tabindex="-1"></a>find_zero_var <span class="ot">&lt;-</span> <span class="fu">select</span>(<span class="fu">mutate</span>(cryptodata, <span class="at">min_sd =</span> <span class="fu">min</span>(<span class="fu">sd</span>(price_usd, <span class="at">na.rm=</span>T), </span>
-<span id="cb41-2"><a href="data-prep.html#cb41-2" aria-hidden="true" tabindex="-1"></a>                                                        <span class="fu">sd</span>(target_price_24h, <span class="at">na.rm=</span>T),</span>
-<span id="cb41-3"><a href="data-prep.html#cb41-3" aria-hidden="true" tabindex="-1"></a>                                                        <span class="fu">sd</span>(lagged_price_1h, <span class="at">na.rm=</span>T), </span>
-<span id="cb41-4"><a href="data-prep.html#cb41-4" aria-hidden="true" tabindex="-1"></a>                                                        <span class="fu">sd</span>(lagged_price_2h, <span class="at">na.rm=</span>T),</span>
-<span id="cb41-5"><a href="data-prep.html#cb41-5" aria-hidden="true" tabindex="-1"></a>                                                        <span class="fu">sd</span>(lagged_price_3h, <span class="at">na.rm=</span>T), </span>
-<span id="cb41-6"><a href="data-prep.html#cb41-6" aria-hidden="true" tabindex="-1"></a>                                                        <span class="fu">sd</span>(lagged_price_6h, <span class="at">na.rm=</span>T),</span>
-<span id="cb41-7"><a href="data-prep.html#cb41-7" aria-hidden="true" tabindex="-1"></a>                                                        <span class="fu">sd</span>(lagged_price_12h, <span class="at">na.rm=</span>T), </span>
-<span id="cb41-8"><a href="data-prep.html#cb41-8" aria-hidden="true" tabindex="-1"></a>                                                        <span class="fu">sd</span>(lagged_price_24h, <span class="at">na.rm=</span>T))), min_sd)</span></code></pre></div>
-<pre><code>## Adding missing grouping variables: `symbol`, `split`</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="data-prep.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show data</span></span>
-<span id="cb43-2"><a href="data-prep.html#cb43-2" aria-hidden="true" tabindex="-1"></a>find_zero_var</span></code></pre></div>
-<pre><code>## # A tibble: 138,609 x 3
-## # Groups:   symbol, split [645]
-##    symbol split    min_sd
-##    &lt;chr&gt;  &lt;dbl&gt;     &lt;dbl&gt;
-##  1 XTZ        1  0.183   
-##  2 BCH        1 11.7     
-##  3 BNB        1  0.842   
-##  4 ETC        1  0.253   
-##  5 NEO        1  0.905   
-##  6 VLX        1  0.00100 
-##  7 SMT        1  0.000143
-##  8 LEO        1  0.110   
-##  9 STX        1  0.000478
-## 10 GBX        1  0.00277 
-## # ... with 138,599 more rows</code></pre>
+<p>First change the grouping of the data, we are interested in calculating the zero variance based on the <code>symbol</code>, <code>split</code> and <code>training</code> fields.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="data-prep.html#cb49-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">group_by</span>(cryptodata, symbol, split, training)</span></code></pre></div>
+<p>Now let’s create a new object called <code>find_zero_var</code> which shows the value of the minimum standard deviation across all columns and calculated based on the grouping of symbol, split and train.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data-prep.html#cb50-1" aria-hidden="true"></a>find_zero_var &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="kw">mutate</span>(cryptodata, <span class="dt">min_sd =</span> <span class="kw">min</span>(<span class="kw">sd</span>(price_usd, <span class="dt">na.rm=</span>T), </span>
+<span id="cb50-2"><a href="data-prep.html#cb50-2" aria-hidden="true"></a>                                                        <span class="kw">sd</span>(target_price_24h, <span class="dt">na.rm=</span>T),</span>
+<span id="cb50-3"><a href="data-prep.html#cb50-3" aria-hidden="true"></a>                                                        <span class="kw">sd</span>(lagged_price_1h, <span class="dt">na.rm=</span>T), </span>
+<span id="cb50-4"><a href="data-prep.html#cb50-4" aria-hidden="true"></a>                                                        <span class="kw">sd</span>(lagged_price_2h, <span class="dt">na.rm=</span>T),</span>
+<span id="cb50-5"><a href="data-prep.html#cb50-5" aria-hidden="true"></a>                                                        <span class="kw">sd</span>(lagged_price_3h, <span class="dt">na.rm=</span>T), </span>
+<span id="cb50-6"><a href="data-prep.html#cb50-6" aria-hidden="true"></a>                                                        <span class="kw">sd</span>(lagged_price_6h, <span class="dt">na.rm=</span>T),</span>
+<span id="cb50-7"><a href="data-prep.html#cb50-7" aria-hidden="true"></a>                                                        <span class="kw">sd</span>(lagged_price_12h, <span class="dt">na.rm=</span>T), </span>
+<span id="cb50-8"><a href="data-prep.html#cb50-8" aria-hidden="true"></a>                                                        <span class="kw">sd</span>(lagged_price_24h, <span class="dt">na.rm=</span>T))), min_sd)</span></code></pre></div>
+<pre><code>## Adding missing grouping variables: `symbol`, `split`, `training`</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="data-prep.html#cb52-1" aria-hidden="true"></a><span class="co"># Show data</span></span>
+<span id="cb52-2"><a href="data-prep.html#cb52-2" aria-hidden="true"></a>find_zero_var</span></code></pre></div>
+<pre><code>## [90m# A tibble: 123,450 x 4[39m
+## [90m# Groups:   symbol, split, training [1,080][39m
+##    symbol split training     min_sd
+##    [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;chr&gt;[39m[23m         [3m[90m&lt;dbl&gt;[39m[23m
+## [90m 1[39m XTZ        1 train    0.000[4m6[24m[4m1[24m[4m0[24m  
+## [90m 2[39m BCH        1 train    0.000[4m2[24m[4m8[24m[4m3[24m  
+## [90m 3[39m BNB        1 train    0.000[4m0[24m[4m2[24m[4m6[24m4 
+## [90m 4[39m ETC        1 train    0.001[4m3[24m[4m4[24m   
+## [90m 5[39m NEO        1 train    0.005[4m9[24m[4m7[24m   
+## [90m 6[39m LEO        1 train    0.000[4m1[24m[4m0[24m[4m9[24m  
+## [90m 7[39m STX        1 train    0.000[4m5[24m[4m5[24m[4m3[24m  
+## [90m 8[39m GBX        1 train    0.001[4m1[24m[4m9[24m   
+## [90m 9[39m ACT        1 train    0.000[4m0[24m[4m2[24m[4m0[24m8 
+## [90m10[39m MBL        1 train    0.000[4m0[24m[4m0[24m[4m6[24m67
+## [90m# … with 123,440 more rows[39m</code></pre>
 <p>Now let’s get to a list of cryptocurrency symbols where the minimum standard deviation across all columns for all splits of the data is 0.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="data-prep.html#cb45-1" aria-hidden="true" tabindex="-1"></a>minimum_sd <span class="ot">&lt;-</span> <span class="fu">filter</span>(<span class="fu">distinct</span>(<span class="fu">mutate</span>(<span class="fu">group_by</span>(<span class="fu">ungroup</span>(find_zero_var), symbol),</span>
-<span id="cb45-2"><a href="data-prep.html#cb45-2" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">min_sd =</span> <span class="fu">min</span>(min_sd, <span class="at">na.rm=</span>T)), min_sd),min_sd <span class="sc">&lt;</span> <span class="fl">0.0001</span>)<span class="sc">$</span>symbol</span>
-<span id="cb45-3"><a href="data-prep.html#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Show result</span></span>
-<span id="cb45-4"><a href="data-prep.html#cb45-4" aria-hidden="true" tabindex="-1"></a>minimum_sd</span></code></pre></div>
-<pre><code>##  [1] &quot;ACT&quot;    &quot;MBL&quot;    &quot;ACAT&quot;   &quot;AMM&quot;    &quot;CVC&quot;    &quot;ARPA&quot;   &quot;DRT&quot;    &quot;EKO&quot;    &quot;XDN&quot;    &quot;DENT&quot;   &quot;DAY&quot;    &quot;IPL&quot;    &quot;APPC&quot;   &quot;PMA&quot;    &quot;APL&quot;    &quot;IHT&quot;    &quot;IQ&quot;     &quot;PXG&quot;   
-## [19] &quot;CDT&quot;    &quot;NAV&quot;    &quot;CVCOIN&quot; &quot;FLP&quot;    &quot;FDZ&quot;    &quot;COCOS&quot;  &quot;HTML&quot;   &quot;ELEC&quot;   &quot;SBD&quot;    &quot;GST&quot;    &quot;CND&quot;    &quot;DCN&quot;    &quot;SUB&quot;    &quot;PLA&quot;    &quot;BTT&quot;    &quot;SMART&quot;  &quot;MG&quot;     &quot;PHX&quot;   
-## [37] &quot;CUTE&quot;   &quot;BCN&quot;    &quot;BYTZ&quot;</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="data-prep.html#cb54-1" aria-hidden="true"></a>minimum_sd &lt;-<span class="st"> </span><span class="kw">filter</span>(<span class="kw">distinct</span>(<span class="kw">mutate</span>(<span class="kw">group_by</span>(<span class="kw">ungroup</span>(find_zero_var), symbol),</span>
+<span id="cb54-2"><a href="data-prep.html#cb54-2" aria-hidden="true"></a>                                     <span class="dt">min_sd =</span> <span class="kw">min</span>(min_sd, <span class="dt">na.rm=</span>T)), min_sd),min_sd <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>)<span class="op">$</span>symbol</span></code></pre></div>
+<pre><code>## Warning: Problem with `mutate()` input `min_sd`.
+## [34mℹ[39m no non-missing arguments to min; returning Inf
+## [34mℹ[39m Input `min_sd` is `min(min_sd, na.rm = T)`.
+## [34mℹ[39m The error occurred in group 44: symbol = &quot;EVX&quot;.</code></pre>
+<pre><code>## Warning in min(min_sd, na.rm = T): no non-missing arguments to min; returning
+## Inf</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="data-prep.html#cb57-1" aria-hidden="true"></a><span class="co"># Show result</span></span>
+<span id="cb57-2"><a href="data-prep.html#cb57-2" aria-hidden="true"></a>minimum_sd</span></code></pre></div>
+<pre><code>## character(0)</code></pre>
+<!-- [TODO - 0.000001 isn't a super perfect cutoff, small prices will have low standard deviation because not standardized, but will live with some cryptos with suuuper small prices being excluded] -->
 <p>Now we can remove these symbols from appearing in the dataset:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data-prep.html#cb47-1" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">filter</span>(cryptodata, <span class="sc">!</span>(symbol <span class="sc">%in%</span> minimum_sd)) </span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="data-prep.html#cb59-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">filter</span>(cryptodata, <span class="op">!</span>(symbol <span class="op">%in%</span><span class="st"> </span>minimum_sd)) </span></code></pre></div>
 <p>In the code above we match all rows where the symbol is part of the <code>minimum_sd</code> object with the list of cryptocurrency symbols to remove from the data, and we then negate the selection using the <code>!</code> operator to only keep rows with symbols not in the list we found.</p>
 <!-- Ugh wish I could write it like this: -->
 <!-- ```{r} -->
@@ -803,82 +632,81 @@ Frame 100 (100%)
 <!-- ``` -->
 </div>
 </div>
-</div>
-<div id="nest-data" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Nest data</h2>
+<div id="nest-data" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Nest data</h2>
 <p>[ADD HERE]</p>
 <p>… explain goal and method</p>
 <p>… First make sure groupings are correct</p>
 <!-- [TODO - Reference Hadley's book chapter and video as references here] -->
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-prep.html#cb48-1" aria-hidden="true" tabindex="-1"></a>cryptodata <span class="ot">&lt;-</span> <span class="fu">group_by</span>(cryptodata, symbol, split, training)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="data-prep.html#cb60-1" aria-hidden="true"></a>cryptodata &lt;-<span class="st"> </span><span class="kw">group_by</span>(cryptodata, symbol, split, training)</span></code></pre></div>
 <p>Example nesting data:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="data-prep.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nest</span>(cryptodata) </span></code></pre></div>
-<pre><code>## # A tibble: 900 x 4
-## # Groups:   symbol, training, split [900]
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="data-prep.html#cb61-1" aria-hidden="true"></a><span class="kw">nest</span>(cryptodata) </span></code></pre></div>
+<pre><code>## [90m# A tibble: 1,080 x 4[39m
+## [90m# Groups:   symbol, training, split [1,080][39m
 ##    symbol training split data               
-##    &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt; &lt;list&gt;             
-##  1 XTZ    train        1 &lt;tibble [176 x 10]&gt;
-##  2 BCH    train        1 &lt;tibble [176 x 10]&gt;
-##  3 BNB    train        1 &lt;tibble [177 x 10]&gt;
-##  4 ETC    train        1 &lt;tibble [249 x 10]&gt;
-##  5 NEO    train        1 &lt;tibble [177 x 10]&gt;
-##  6 VLX    train        1 &lt;tibble [80 x 10]&gt; 
-##  7 SMT    train        1 &lt;tibble [108 x 10]&gt;
-##  8 LEO    train        1 &lt;tibble [196 x 10]&gt;
-##  9 STX    train        1 &lt;tibble [152 x 10]&gt;
-## 10 GBX    train        1 &lt;tibble [182 x 10]&gt;
-## # ... with 890 more rows</code></pre>
+##    [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;chr&gt;[39m[23m    [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;list&gt;[39m[23m             
+## [90m 1[39m XTZ    train        1 [90m&lt;tibble [176 × 10]&gt;[39m
+## [90m 2[39m BCH    train        1 [90m&lt;tibble [176 × 10]&gt;[39m
+## [90m 3[39m BNB    train        1 [90m&lt;tibble [177 × 10]&gt;[39m
+## [90m 4[39m ETC    train        1 [90m&lt;tibble [250 × 10]&gt;[39m
+## [90m 5[39m NEO    train        1 [90m&lt;tibble [177 × 10]&gt;[39m
+## [90m 6[39m LEO    train        1 [90m&lt;tibble [201 × 10]&gt;[39m
+## [90m 7[39m STX    train        1 [90m&lt;tibble [152 × 10]&gt;[39m
+## [90m 8[39m GBX    train        1 [90m&lt;tibble [186 × 10]&gt;[39m
+## [90m 9[39m ACT    train        1 [90m&lt;tibble [164 × 10]&gt;[39m
+## [90m10[39m MBL    train        1 [90m&lt;tibble [220 × 10]&gt;[39m
+## [90m# … with 1,070 more rows[39m</code></pre>
 <p>First make training data nested:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="data-prep.html#cb51-1" aria-hidden="true" tabindex="-1"></a>cryptodata_train <span class="ot">&lt;-</span> <span class="fu">rename</span>(<span class="fu">nest</span>(<span class="fu">filter</span>(cryptodata, training<span class="sc">==</span><span class="st">&#39;train&#39;</span>)), <span class="at">train_data =</span> <span class="st">&#39;data&#39;</span>)</span>
-<span id="cb51-2"><a href="data-prep.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Now remove training column</span></span>
-<span id="cb51-3"><a href="data-prep.html#cb51-3" aria-hidden="true" tabindex="-1"></a>cryptodata_train <span class="ot">&lt;-</span> <span class="fu">select</span>(<span class="fu">ungroup</span>(cryptodata_train, training), <span class="sc">-</span>training)</span>
-<span id="cb51-4"><a href="data-prep.html#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix issues with individual groups of the data</span></span>
-<span id="cb51-5"><a href="data-prep.html#cb51-5" aria-hidden="true" tabindex="-1"></a>cryptodata_train<span class="sc">$</span>train_data <span class="ot">&lt;-</span> <span class="fu">lapply</span>(cryptodata_train<span class="sc">$</span>train_data, na.omit)</span>
-<span id="cb51-6"><a href="data-prep.html#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove elements with no rows after na.omit step. CONFIRM THIS WORKS!!!</span></span>
-<span id="cb51-7"><a href="data-prep.html#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="co"># First add new column with nrow of train dataset</span></span>
-<span id="cb51-8"><a href="data-prep.html#cb51-8" aria-hidden="true" tabindex="-1"></a>cryptodata_train <span class="ot">&lt;-</span> <span class="fu">group_by</span>(<span class="fu">ungroup</span>(<span class="fu">mutate</span>(<span class="fu">rowwise</span>(cryptodata_train), <span class="at">train_rows =</span> <span class="fu">nrow</span>(train_data))), symbol, split)</span>
-<span id="cb51-9"><a href="data-prep.html#cb51-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove all symbols where their train data has less than 20 rows at least once</span></span>
-<span id="cb51-10"><a href="data-prep.html#cb51-10" aria-hidden="true" tabindex="-1"></a>symbols_rm <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">filter</span>(cryptodata_train, train_rows <span class="sc">&lt;</span> <span class="dv">20</span>)<span class="sc">$</span>symbol)</span>
-<span id="cb51-11"><a href="data-prep.html#cb51-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove all data relating to the symbols found above</span></span>
-<span id="cb51-12"><a href="data-prep.html#cb51-12" aria-hidden="true" tabindex="-1"></a>cryptodata_train <span class="ot">&lt;-</span> <span class="fu">filter</span>(cryptodata_train, <span class="sc">!</span> symbol <span class="sc">%in%</span> symbols_rm) <span class="co"># ! is to make %not in% operator</span></span>
-<span id="cb51-13"><a href="data-prep.html#cb51-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop train_rows column</span></span>
-<span id="cb51-14"><a href="data-prep.html#cb51-14" aria-hidden="true" tabindex="-1"></a>cryptodata_train <span class="ot">&lt;-</span> <span class="fu">select</span>(cryptodata_train, <span class="sc">-</span>train_rows)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="data-prep.html#cb63-1" aria-hidden="true"></a>cryptodata_train &lt;-<span class="st"> </span><span class="kw">rename</span>(<span class="kw">nest</span>(<span class="kw">filter</span>(cryptodata, training<span class="op">==</span><span class="st">&#39;train&#39;</span>)), <span class="dt">train_data =</span> <span class="st">&#39;data&#39;</span>)</span>
+<span id="cb63-2"><a href="data-prep.html#cb63-2" aria-hidden="true"></a><span class="co"># Now remove training column</span></span>
+<span id="cb63-3"><a href="data-prep.html#cb63-3" aria-hidden="true"></a>cryptodata_train &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="kw">ungroup</span>(cryptodata_train, training), <span class="op">-</span>training)</span>
+<span id="cb63-4"><a href="data-prep.html#cb63-4" aria-hidden="true"></a><span class="co"># Fix issues with individual groups of the data</span></span>
+<span id="cb63-5"><a href="data-prep.html#cb63-5" aria-hidden="true"></a>cryptodata_train<span class="op">$</span>train_data &lt;-<span class="st"> </span><span class="kw">lapply</span>(cryptodata_train<span class="op">$</span>train_data, na.omit)</span>
+<span id="cb63-6"><a href="data-prep.html#cb63-6" aria-hidden="true"></a><span class="co"># Remove elements with no rows after na.omit step. CONFIRM THIS WORKS!!!</span></span>
+<span id="cb63-7"><a href="data-prep.html#cb63-7" aria-hidden="true"></a><span class="co"># First add new column with nrow of train dataset</span></span>
+<span id="cb63-8"><a href="data-prep.html#cb63-8" aria-hidden="true"></a>cryptodata_train &lt;-<span class="st"> </span><span class="kw">group_by</span>(<span class="kw">ungroup</span>(<span class="kw">mutate</span>(<span class="kw">rowwise</span>(cryptodata_train), <span class="dt">train_rows =</span> <span class="kw">nrow</span>(train_data))), symbol, split)</span>
+<span id="cb63-9"><a href="data-prep.html#cb63-9" aria-hidden="true"></a><span class="co"># Remove all symbols where their train data has less than 20 rows at least once</span></span>
+<span id="cb63-10"><a href="data-prep.html#cb63-10" aria-hidden="true"></a>symbols_rm &lt;-<span class="st"> </span><span class="kw">unique</span>(<span class="kw">filter</span>(cryptodata_train, train_rows <span class="op">&lt;</span><span class="st"> </span><span class="dv">20</span>)<span class="op">$</span>symbol)</span>
+<span id="cb63-11"><a href="data-prep.html#cb63-11" aria-hidden="true"></a><span class="co"># Remove all data relating to the symbols found above</span></span>
+<span id="cb63-12"><a href="data-prep.html#cb63-12" aria-hidden="true"></a>cryptodata_train &lt;-<span class="st"> </span><span class="kw">filter</span>(cryptodata_train, <span class="op">!</span><span class="st"> </span>symbol <span class="op">%in%</span><span class="st"> </span>symbols_rm) <span class="co"># ! is to make %not in% operator</span></span>
+<span id="cb63-13"><a href="data-prep.html#cb63-13" aria-hidden="true"></a><span class="co"># Drop train_rows column</span></span>
+<span id="cb63-14"><a href="data-prep.html#cb63-14" aria-hidden="true"></a>cryptodata_train &lt;-<span class="st"> </span><span class="kw">select</span>(cryptodata_train, <span class="op">-</span>train_rows)</span></code></pre></div>
 <p>Now nest test data:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="data-prep.html#cb52-1" aria-hidden="true" tabindex="-1"></a>cryptodata_test <span class="ot">&lt;-</span> <span class="fu">select</span>(<span class="fu">rename</span>(<span class="fu">nest</span>(<span class="fu">filter</span>(cryptodata, training<span class="sc">==</span><span class="st">&#39;test&#39;</span>)), <span class="at">test_data =</span> <span class="st">&#39;data&#39;</span>), <span class="sc">-</span>training)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="data-prep.html#cb64-1" aria-hidden="true"></a>cryptodata_test &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="kw">rename</span>(<span class="kw">nest</span>(<span class="kw">filter</span>(cryptodata, training<span class="op">==</span><span class="st">&#39;test&#39;</span>)), <span class="dt">test_data =</span> <span class="st">&#39;data&#39;</span>), <span class="op">-</span>training)</span></code></pre></div>
 <pre><code>## Adding missing grouping variables: `training`</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="data-prep.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now remove training column</span></span>
-<span id="cb54-2"><a href="data-prep.html#cb54-2" aria-hidden="true" tabindex="-1"></a>cryptodata_test <span class="ot">&lt;-</span> <span class="fu">select</span>(<span class="fu">ungroup</span>(cryptodata_test, training), <span class="sc">-</span>training)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="data-prep.html#cb66-1" aria-hidden="true"></a><span class="co"># Now remove training column</span></span>
+<span id="cb66-2"><a href="data-prep.html#cb66-2" aria-hidden="true"></a>cryptodata_test &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="kw">ungroup</span>(cryptodata_test, training), <span class="op">-</span>training)</span></code></pre></div>
 <p>Also do holdout:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="data-prep.html#cb55-1" aria-hidden="true" tabindex="-1"></a>cryptodata_holdout <span class="ot">&lt;-</span> <span class="fu">rename</span>(<span class="fu">nest</span>(<span class="fu">filter</span>(cryptodata, training<span class="sc">==</span><span class="st">&#39;holdout&#39;</span>)), <span class="at">holdout_data =</span> <span class="st">&#39;data&#39;</span>)</span>
-<span id="cb55-2"><a href="data-prep.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove split and training columns from holdout</span></span>
-<span id="cb55-3"><a href="data-prep.html#cb55-3" aria-hidden="true" tabindex="-1"></a>cryptodata_holdout <span class="ot">&lt;-</span> <span class="fu">select</span>(<span class="fu">ungroup</span>(cryptodata_holdout, split, training), <span class="sc">-</span>split, <span class="sc">-</span>training)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="data-prep.html#cb67-1" aria-hidden="true"></a>cryptodata_holdout &lt;-<span class="st"> </span><span class="kw">rename</span>(<span class="kw">nest</span>(<span class="kw">filter</span>(cryptodata, training<span class="op">==</span><span class="st">&#39;holdout&#39;</span>)), <span class="dt">holdout_data =</span> <span class="st">&#39;data&#39;</span>)</span>
+<span id="cb67-2"><a href="data-prep.html#cb67-2" aria-hidden="true"></a><span class="co"># Remove split and training columns from holdout</span></span>
+<span id="cb67-3"><a href="data-prep.html#cb67-3" aria-hidden="true"></a>cryptodata_holdout &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="kw">ungroup</span>(cryptodata_holdout, split, training), <span class="op">-</span>split, <span class="op">-</span>training)</span></code></pre></div>
 <p>Now join all nested data into the same dataframe</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="data-prep.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Join train and test</span></span>
-<span id="cb56-2"><a href="data-prep.html#cb56-2" aria-hidden="true" tabindex="-1"></a>cryptodata_nested <span class="ot">&lt;-</span> <span class="fu">left_join</span>(cryptodata_train, cryptodata_test,<span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;symbol&quot;</span>, <span class="st">&quot;split&quot;</span>))</span>
-<span id="cb56-3"><a href="data-prep.html#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Join holdout</span></span>
-<span id="cb56-4"><a href="data-prep.html#cb56-4" aria-hidden="true" tabindex="-1"></a>cryptodata_nested <span class="ot">&lt;-</span> <span class="fu">left_join</span>(cryptodata_nested, cryptodata_holdout, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;symbol&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="data-prep.html#cb68-1" aria-hidden="true"></a><span class="co"># Join train and test</span></span>
+<span id="cb68-2"><a href="data-prep.html#cb68-2" aria-hidden="true"></a>cryptodata_nested &lt;-<span class="st"> </span><span class="kw">left_join</span>(cryptodata_train, cryptodata_test,<span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;symbol&quot;</span>, <span class="st">&quot;split&quot;</span>))</span>
+<span id="cb68-3"><a href="data-prep.html#cb68-3" aria-hidden="true"></a><span class="co"># Join holdout</span></span>
+<span id="cb68-4"><a href="data-prep.html#cb68-4" aria-hidden="true"></a>cryptodata_nested &lt;-<span class="st"> </span><span class="kw">left_join</span>(cryptodata_nested, cryptodata_holdout, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;symbol&quot;</span>))</span></code></pre></div>
 <p>New data:</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="data-prep.html#cb57-1" aria-hidden="true" tabindex="-1"></a>cryptodata_nested</span></code></pre></div>
-<pre><code>## # A tibble: 390 x 5
-## # Groups:   symbol, split [390]
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="data-prep.html#cb69-1" aria-hidden="true"></a>cryptodata_nested</span></code></pre></div>
+<pre><code>## [90m# A tibble: 55 x 5[39m
+## [90m# Groups:   symbol, split [55][39m
 ##    symbol split train_data          test_data          holdout_data      
-##    &lt;chr&gt;  &lt;dbl&gt; &lt;list&gt;              &lt;list&gt;             &lt;list&gt;            
-##  1 XTZ        1 &lt;tibble [151 x 10]&gt; &lt;tibble [44 x 10]&gt; &lt;tibble [48 x 10]&gt;
-##  2 BCH        1 &lt;tibble [152 x 10]&gt; &lt;tibble [45 x 10]&gt; &lt;tibble [48 x 10]&gt;
-##  3 BNB        1 &lt;tibble [153 x 10]&gt; &lt;tibble [45 x 10]&gt; &lt;tibble [46 x 10]&gt;
-##  4 ETC        1 &lt;tibble [225 x 10]&gt; &lt;tibble [63 x 10]&gt; &lt;tibble [67 x 10]&gt;
-##  5 NEO        1 &lt;tibble [153 x 10]&gt; &lt;tibble [45 x 10]&gt; &lt;tibble [45 x 10]&gt;
-##  6 SMT        1 &lt;tibble [63 x 10]&gt;  &lt;tibble [27 x 10]&gt; &lt;tibble [28 x 10]&gt;
-##  7 LEO        1 &lt;tibble [161 x 10]&gt; &lt;tibble [50 x 10]&gt; &lt;tibble [51 x 10]&gt;
-##  8 STX        1 &lt;tibble [42 x 10]&gt;  &lt;tibble [38 x 10]&gt; &lt;tibble [39 x 10]&gt;
-##  9 EURS       1 &lt;tibble [120 x 10]&gt; &lt;tibble [44 x 10]&gt; &lt;tibble [48 x 10]&gt;
-## 10 BTG        1 &lt;tibble [223 x 10]&gt; &lt;tibble [66 x 10]&gt; &lt;tibble [70 x 10]&gt;
-## # ... with 380 more rows</code></pre>
+##    [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;list&gt;[39m[23m              [3m[90m&lt;list&gt;[39m[23m             [3m[90m&lt;list&gt;[39m[23m            
+## [90m 1[39m LINK       1 [90m&lt;tibble [45 × 10]&gt;[39m  [90m&lt;tibble [50 × 10]&gt;[39m [90m&lt;tibble [52 × 10]&gt;[39m
+## [90m 2[39m VET        1 [90m&lt;tibble [131 × 10]&gt;[39m [90m&lt;tibble [70 × 10]&gt;[39m [90m&lt;tibble [71 × 10]&gt;[39m
+## [90m 3[39m ARPA       1 [90m&lt;tibble [59 × 10]&gt;[39m  [90m&lt;tibble [29 × 10]&gt;[39m [90m&lt;tibble [30 × 10]&gt;[39m
+## [90m 4[39m SNT        1 [90m&lt;tibble [93 × 10]&gt;[39m  [90m&lt;tibble [29 × 10]&gt;[39m [90m&lt;tibble [30 × 10]&gt;[39m
+## [90m 5[39m ZIL        1 [90m&lt;tibble [25 × 10]&gt;[39m  [90m&lt;tibble [44 × 10]&gt;[39m [90m&lt;tibble [44 × 10]&gt;[39m
+## [90m 6[39m MCO        1 [90m&lt;tibble [81 × 10]&gt;[39m  [90m&lt;tibble [29 × 10]&gt;[39m [90m&lt;tibble [30 × 10]&gt;[39m
+## [90m 7[39m XEM        1 [90m&lt;tibble [132 × 10]&gt;[39m [90m&lt;tibble [69 × 10]&gt;[39m [90m&lt;tibble [72 × 10]&gt;[39m
+## [90m 8[39m MITH       1 [90m&lt;tibble [99 × 10]&gt;[39m  [90m&lt;tibble [29 × 10]&gt;[39m [90m&lt;tibble [29 × 10]&gt;[39m
+## [90m 9[39m COMP       1 [90m&lt;tibble [49 × 10]&gt;[39m  [90m&lt;tibble [29 × 10]&gt;[39m [90m&lt;tibble [29 × 10]&gt;[39m
+## [90m10[39m FDZ        1 [90m&lt;tibble [195 × 10]&gt;[39m [90m&lt;tibble [51 × 10]&gt;[39m [90m&lt;tibble [54 × 10]&gt;[39m
+## [90m# … with 45 more rows[39m</code></pre>
 <p>[ADD HERE - Intro to Visualization and explain we will use grouped data in PredictiveModeling]</p>
 <p>[ADD HERE - Worth mentioning the fact that some data will be higher quality, etc…? Give more background on those steps as “catch-alls”?]</p>
 </div>
-<div id="functional-programming" class="section level2" number="3.7">
-<h2><span class="header-section-number">3.7</span> Functional Programming</h2>
+<div id="functional-programming" class="section level2" number="3.8">
+<h2><span class="header-section-number">3.8</span> Functional Programming</h2>
 <p>Could work with the data using for loops, which is an “object-oriented” approach. Basically, we could take our given option, iterate through every row of the data, and perform operations on each row and subset of the data we are interested in. That is one approach, but instead we will use a different approach using a “functional programming” approach</p>
 <!-- https://youtu.be/rz3_FDVt9eg?t=1407  -->
 <!-- [TODO - EXPLAIN THINGS A LOT MORE HERE] -->

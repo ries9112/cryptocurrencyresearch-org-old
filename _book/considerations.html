@@ -31,7 +31,7 @@
   
 <link rel="prev" href="explain-predictions.html"/>
 <link rel="next" href="archive.html"/>
-<script src="libs/header-attrs-2.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,14 +49,16 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.13/datatables.js"></script>
+<script src="libs/datatables-binding-0.15/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -159,21 +161,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.1" data-path="data-prep.html"><a href="data-prep.html#remove-nulls"><i class="fa fa-check"></i><b>3.1</b> Remove Nulls</a></li>
 <li class="chapter" data-level="3.2" data-path="data-prep.html"><a href="data-prep.html#calculate-price_usd-column"><i class="fa fa-check"></i><b>3.2</b> Calculate <code>price_usd</code> Column</a></li>
-<li class="chapter" data-level="3.3" data-path="data-prep.html"><a href="data-prep.html#any-gaps"><i class="fa fa-check"></i><b>3.3</b> Any gaps?</a>
+<li class="chapter" data-level="3.3" data-path="data-prep.html"><a href="data-prep.html#clean-data-by-group"><i class="fa fa-check"></i><b>3.3</b> Clean Data by Group</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="data-prep.html"><a href="data-prep.html#convert-to-tsibble"><i class="fa fa-check"></i><b>3.3.1</b> Convert to tsibble</a></li>
-<li class="chapter" data-level="3.3.2" data-path="data-prep.html"><a href="data-prep.html#scan-gaps"><i class="fa fa-check"></i><b>3.3.2</b> Scan gaps</a></li>
-<li class="chapter" data-level="3.3.3" data-path="data-prep.html"><a href="data-prep.html#fill-gaps"><i class="fa fa-check"></i><b>3.3.3</b> Fill gaps</a></li>
-<li class="chapter" data-level="3.3.4" data-path="data-prep.html"><a href="data-prep.html#group-data"><i class="fa fa-check"></i><b>3.3.4</b> Group Data</a></li>
-<li class="chapter" data-level="3.3.5" data-path="data-prep.html"><a href="data-prep.html#calculate-target"><i class="fa fa-check"></i><b>3.3.5</b> Calculate Target</a></li>
+<li class="chapter" data-level="3.3.1" data-path="data-prep.html"><a href="data-prep.html#remove-symbols-without-enough-rows"><i class="fa fa-check"></i><b>3.3.1</b> Remove symbols without enough rows</a></li>
+<li class="chapter" data-level="3.3.2" data-path="data-prep.html"><a href="data-prep.html#remove-symbols-without-data-from-the-last-3-days"><i class="fa fa-check"></i><b>3.3.2</b> Remove symbols without data from the last 3 days</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="data-prep.html"><a href="data-prep.html#remove-subsets-without-enough-rows"><i class="fa fa-check"></i><b>3.4</b> Remove subsets without enough rows</a></li>
-<li class="chapter" data-level="3.5" data-path="data-prep.html"><a href="data-prep.html#cross-validation"><i class="fa fa-check"></i><b>3.5</b> Cross Validation</a>
+<li class="chapter" data-level="3.4" data-path="data-prep.html"><a href="data-prep.html#any-gaps"><i class="fa fa-check"></i><b>3.4</b> Any gaps?</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="data-prep.html"><a href="data-prep.html#fix-data-by-split"><i class="fa fa-check"></i><b>3.5.1</b> Fix Data by Split</a></li>
+<li class="chapter" data-level="3.4.1" data-path="data-prep.html"><a href="data-prep.html#convert-to-tsibble"><i class="fa fa-check"></i><b>3.4.1</b> Convert to tsibble</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-prep.html"><a href="data-prep.html#scan-gaps"><i class="fa fa-check"></i><b>3.4.2</b> Scan gaps</a></li>
+<li class="chapter" data-level="3.4.3" data-path="data-prep.html"><a href="data-prep.html#fill-gaps"><i class="fa fa-check"></i><b>3.4.3</b> Fill gaps</a></li>
+<li class="chapter" data-level="3.4.4" data-path="data-prep.html"><a href="data-prep.html#calculate-target"><i class="fa fa-check"></i><b>3.4.4</b> Calculate Target</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="data-prep.html"><a href="data-prep.html#nest-data"><i class="fa fa-check"></i><b>3.6</b> Nest data</a></li>
-<li class="chapter" data-level="3.7" data-path="data-prep.html"><a href="data-prep.html#functional-programming"><i class="fa fa-check"></i><b>3.7</b> Functional Programming</a></li>
+<li class="chapter" data-level="3.5" data-path="data-prep.html"><a href="data-prep.html#cross-validation"><i class="fa fa-check"></i><b>3.5</b> Cross Validation</a></li>
+<li class="chapter" data-level="3.6" data-path="data-prep.html"><a href="data-prep.html#fix-data-by-split"><i class="fa fa-check"></i><b>3.6</b> Fix Data by Split</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="data-prep.html"><a href="data-prep.html#zero-variance"><i class="fa fa-check"></i><b>3.6.1</b> Zero Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="data-prep.html"><a href="data-prep.html#nest-data"><i class="fa fa-check"></i><b>3.7</b> Nest data</a></li>
+<li class="chapter" data-level="3.8" data-path="data-prep.html"><a href="data-prep.html#functional-programming"><i class="fa fa-check"></i><b>3.8</b> Functional Programming</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>4</b> Visualization 📉</a>
 <ul>
@@ -272,47 +278,66 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="session-information" class="section level2" number="9.1">
 <h2><span class="header-section-number">9.1</span> Session Information</h2>
 <p>Below is information relating to the specific R session that was run. If you are unable to reproduce these steps, find the correct version of the tools to install below:</p>
-<div class="sourceCode" id="cb5341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5341-1"><a href="considerations.html#cb5341-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>## R version 3.6.2 (2019-12-12)
-## Platform: x86_64-w64-mingw32/x64 (64-bit)
-## Running under: Windows 10 x64 (build 18363)
+<div class="sourceCode" id="cb1155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1155-1"><a href="considerations.html#cb1155-1" aria-hidden="true"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
+<pre><code>## R version 4.0.3 (2020-10-10)
+## Platform: x86_64-apple-darwin17.0 (64-bit)
+## Running under: macOS Catalina 10.15.7
 ## 
 ## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
 ## 
 ## locale:
-## [1] LC_COLLATE=English_United States.1252  LC_CTYPE=English_United States.1252    LC_MONETARY=English_United States.1252 LC_NUMERIC=C                          
-## [5] LC_TIME=English_United States.1252    
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 ## 
 ## attached base packages:
-## [1] parallel  stats     graphics  grDevices utils     datasets  methods   base     
+## [1] parallel  stats     graphics  grDevices utils     datasets  methods  
+## [8] base     
 ## 
 ## other attached packages:
-##  [1] RMariaDB_1.0.8     DBI_1.1.0          magick_2.2         av_0.4.0           ggTimeSeries_1.0.1 ggthemes_4.2.0     rgl_0.100.30       rayshader_0.14.1  
-##  [9] gbm_2.1.5          xgboost_1.0.0.2    gifski_0.8.6       tictoc_1.0         gganimate_1.0.5    anytime_0.3.7      caret_6.0-85       lattice_0.20-38   
-## [17] DT_0.13            doParallel_1.0.15  iterators_1.0.12   foreach_1.4.7      tsibble_0.9.1      skimr_2.1.1        forcats_0.4.0      stringr_1.4.0     
-## [25] dplyr_1.0.0        purrr_0.3.4        readr_1.3.1        tidyr_1.1.0        tibble_3.0.1       ggplot2_3.3.1      tidyverse_1.3.0    pins_0.4.0        
-## [33] pacman_0.5.1      
+##  [1] magick_2.5.0       av_0.5.1           ggTimeSeries_1.0.1 ggthemes_4.2.0    
+##  [5] gbm_2.1.8          xgboost_1.0.0.2    gifski_0.8.6       tictoc_1.0        
+##  [9] gganimate_1.0.5    anytime_0.3.7      caret_6.0-86       lattice_0.20-38   
+## [13] DT_0.15            doParallel_1.0.15  iterators_1.0.12   foreach_1.5.0     
+## [17] tsibble_0.9.2      skimr_2.1          forcats_0.5.0      stringr_1.4.0     
+## [21] dplyr_1.0.2        purrr_0.3.4        readr_1.3.1        tidyr_1.1.1       
+## [25] tibble_3.0.4       ggplot2_3.3.2      tidyverse_1.3.0    pins_0.4.0        
+## [29] pacman_0.5.1      
 ## 
 ## loaded via a namespace (and not attached):
-##   [1] readxl_1.3.1            backports_1.1.7         workflows_0.1.0         plyr_1.8.6              repr_1.0.2              splines_3.6.2          
-##   [7] crosstalk_1.0.0         digest_0.6.25           h2o_3.30.1.2            htmltools_0.4.0         parsnip_0.1.1           fansi_0.4.1            
-##  [13] magrittr_1.5            recipes_0.1.9           rayrender_0.5.3         modelr_0.1.5            gower_0.2.1             prettyunits_1.1.1      
-##  [19] dials_0.0.4             colorspace_1.4-1        rvest_0.3.5             rappdirs_0.3.1          haven_2.2.0             xfun_0.13              
-##  [25] RCurl_1.98-1.1          crayon_1.3.4            jsonlite_1.6.1          survival_3.1-8          glue_1.4.1              gtable_0.3.0           
-##  [31] ipred_0.9-9             webshot_0.5.2           scales_1.1.0            emo_0.0.0.9000          miniUI_0.1.1.1          Rcpp_1.0.5             
-##  [37] xtable_1.8-4            progress_1.2.2          deepnet_0.2             bit_1.1-15.1            GPfit_1.0-8             stats4_3.6.2           
-##  [43] lava_1.6.6              prodlim_2019.11.13      htmlwidgets_1.5.1       httr_1.4.1              ellipsis_0.3.1          pkgconfig_2.0.3        
-##  [49] farver_2.0.3            nnet_7.3-12             dbplyr_1.4.2            utf8_1.1.4              labeling_0.3            tidyselect_1.1.0       
-##  [55] rlang_0.4.7             manipulateWidget_0.10.0 DiceDesign_1.8-1        reshape2_1.4.3          later_1.0.0             munsell_0.5.0          
-##  [61] cellranger_1.1.0        tools_3.6.2             cli_2.0.2               generics_0.0.2          broom_0.5.6             evaluate_0.14          
-##  [67] fastmap_1.0.1           yaml_2.2.1              bit64_0.9-7             ModelMetrics_1.2.2.1    knitr_1.28              fs_1.3.1               
-##  [73] nlme_3.1-143            mime_0.9                xml2_1.2.2              compiler_3.6.2          rstudioapi_0.11         png_0.1-7              
-##  [79] filelock_1.0.2          curl_4.3                reprex_0.3.0            lhs_1.0.1               tweenr_1.0.1            stringi_1.4.4          
-##  [85] highr_0.8               Matrix_1.2-18           vctrs_0.3.2             pillar_1.4.4            lifecycle_0.2.0         bitops_1.0-6           
-##  [91] data.table_1.12.8       httpuv_1.5.2            R6_2.4.1                bookdown_0.21           promises_1.1.0          gridExtra_2.3          
-##  [97] codetools_0.2-16        MASS_7.3-51.5           assertthat_0.2.1        withr_2.2.0             mgcv_1.8-31             hms_0.5.3              
-## [103] grid_3.6.2              rpart_4.1-15            timeDate_3043.102       class_7.3-15            rmarkdown_2.4           pROC_1.16.1            
-## [109] shiny_1.4.0             lubridate_1.7.8         base64enc_0.1-3</code></pre>
+##  [1] colorspace_1.4-1        ellipsis_0.3.1          class_7.3-15           
+##  [4] base64enc_0.1-3         fs_1.4.1                rstudioapi_0.11        
+##  [7] farver_2.0.3            prodlim_2019.11.13      fansi_0.4.1            
+## [10] lubridate_1.7.8         xml2_1.3.1              codetools_0.2-16       
+## [13] splines_4.0.3           knitr_1.30              jsonlite_1.7.1         
+## [16] pROC_1.16.2             broom_0.7.2             dbplyr_1.4.2           
+## [19] shiny_1.5.0             compiler_4.0.3          httr_1.4.2             
+## [22] backports_1.1.6         assertthat_0.2.1        Matrix_1.2-18          
+## [25] fastmap_1.0.1           cli_2.0.2               later_1.0.0            
+## [28] tweenr_1.0.1            htmltools_0.5.0         prettyunits_1.1.1      
+## [31] tools_4.0.3             gtable_0.3.0            glue_1.4.1             
+## [34] reshape2_1.4.3          rappdirs_0.3.1          Rcpp_1.0.4.6           
+## [37] cellranger_1.1.0        vctrs_0.3.2             nlme_3.1-144           
+## [40] crosstalk_1.1.0.1       timeDate_3043.102       gower_0.2.1            
+## [43] xfun_0.18               rvest_0.3.5             miniUI_0.1.1.1         
+## [46] mime_0.9                lifecycle_0.2.0         MASS_7.3-51.5          
+## [49] scales_1.1.1            ipred_0.9-9             hms_0.5.3              
+## [52] promises_1.1.0          curl_4.3                yaml_2.2.1             
+## [55] rpart_4.1-15            stringi_1.4.6           highr_0.8              
+## [58] deepnet_0.2             filelock_1.0.2          manipulateWidget_0.10.1
+## [61] lava_1.6.7              repr_1.1.0              rlang_0.4.7            
+## [64] pkgconfig_2.0.3         evaluate_0.14           labeling_0.3           
+## [67] recipes_0.1.14          htmlwidgets_1.5.1       tidyselect_1.1.0       
+## [70] plyr_1.8.6              magrittr_1.5            bookdown_0.21          
+## [73] R6_2.4.1                generics_0.0.2          DBI_1.1.0              
+## [76] mgcv_1.8-31             pillar_1.4.4            haven_2.2.0            
+## [79] withr_2.3.0             survival_3.1-8          nnet_7.3-12            
+## [82] modelr_0.1.6            crayon_1.3.4            utf8_1.1.4             
+## [85] rmarkdown_2.5           emo_0.0.0.9000          progress_1.2.2         
+## [88] grid_4.0.3              readxl_1.3.1            data.table_1.12.8      
+## [91] ModelMetrics_1.2.2.2    webshot_0.5.2           reprex_0.3.0           
+## [94] digest_0.6.25           xtable_1.8-4            httpuv_1.5.2           
+## [97] stats4_4.0.3            munsell_0.5.0</code></pre>
 
 </div>
 </div>

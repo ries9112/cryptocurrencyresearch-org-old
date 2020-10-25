@@ -31,7 +31,7 @@
   
 <link rel="prev" href="evaluate-model-performance.html"/>
 <link rel="next" href="explain-predictions.html"/>
-<script src="libs/header-attrs-2.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,14 +49,16 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.13/datatables.js"></script>
+<script src="libs/datatables-binding-0.15/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -159,21 +161,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.1" data-path="data-prep.html"><a href="data-prep.html#remove-nulls"><i class="fa fa-check"></i><b>3.1</b> Remove Nulls</a></li>
 <li class="chapter" data-level="3.2" data-path="data-prep.html"><a href="data-prep.html#calculate-price_usd-column"><i class="fa fa-check"></i><b>3.2</b> Calculate <code>price_usd</code> Column</a></li>
-<li class="chapter" data-level="3.3" data-path="data-prep.html"><a href="data-prep.html#any-gaps"><i class="fa fa-check"></i><b>3.3</b> Any gaps?</a>
+<li class="chapter" data-level="3.3" data-path="data-prep.html"><a href="data-prep.html#clean-data-by-group"><i class="fa fa-check"></i><b>3.3</b> Clean Data by Group</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="data-prep.html"><a href="data-prep.html#convert-to-tsibble"><i class="fa fa-check"></i><b>3.3.1</b> Convert to tsibble</a></li>
-<li class="chapter" data-level="3.3.2" data-path="data-prep.html"><a href="data-prep.html#scan-gaps"><i class="fa fa-check"></i><b>3.3.2</b> Scan gaps</a></li>
-<li class="chapter" data-level="3.3.3" data-path="data-prep.html"><a href="data-prep.html#fill-gaps"><i class="fa fa-check"></i><b>3.3.3</b> Fill gaps</a></li>
-<li class="chapter" data-level="3.3.4" data-path="data-prep.html"><a href="data-prep.html#group-data"><i class="fa fa-check"></i><b>3.3.4</b> Group Data</a></li>
-<li class="chapter" data-level="3.3.5" data-path="data-prep.html"><a href="data-prep.html#calculate-target"><i class="fa fa-check"></i><b>3.3.5</b> Calculate Target</a></li>
+<li class="chapter" data-level="3.3.1" data-path="data-prep.html"><a href="data-prep.html#remove-symbols-without-enough-rows"><i class="fa fa-check"></i><b>3.3.1</b> Remove symbols without enough rows</a></li>
+<li class="chapter" data-level="3.3.2" data-path="data-prep.html"><a href="data-prep.html#remove-symbols-without-data-from-the-last-3-days"><i class="fa fa-check"></i><b>3.3.2</b> Remove symbols without data from the last 3 days</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="data-prep.html"><a href="data-prep.html#remove-subsets-without-enough-rows"><i class="fa fa-check"></i><b>3.4</b> Remove subsets without enough rows</a></li>
-<li class="chapter" data-level="3.5" data-path="data-prep.html"><a href="data-prep.html#cross-validation"><i class="fa fa-check"></i><b>3.5</b> Cross Validation</a>
+<li class="chapter" data-level="3.4" data-path="data-prep.html"><a href="data-prep.html#any-gaps"><i class="fa fa-check"></i><b>3.4</b> Any gaps?</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="data-prep.html"><a href="data-prep.html#fix-data-by-split"><i class="fa fa-check"></i><b>3.5.1</b> Fix Data by Split</a></li>
+<li class="chapter" data-level="3.4.1" data-path="data-prep.html"><a href="data-prep.html#convert-to-tsibble"><i class="fa fa-check"></i><b>3.4.1</b> Convert to tsibble</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-prep.html"><a href="data-prep.html#scan-gaps"><i class="fa fa-check"></i><b>3.4.2</b> Scan gaps</a></li>
+<li class="chapter" data-level="3.4.3" data-path="data-prep.html"><a href="data-prep.html#fill-gaps"><i class="fa fa-check"></i><b>3.4.3</b> Fill gaps</a></li>
+<li class="chapter" data-level="3.4.4" data-path="data-prep.html"><a href="data-prep.html#calculate-target"><i class="fa fa-check"></i><b>3.4.4</b> Calculate Target</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="data-prep.html"><a href="data-prep.html#nest-data"><i class="fa fa-check"></i><b>3.6</b> Nest data</a></li>
-<li class="chapter" data-level="3.7" data-path="data-prep.html"><a href="data-prep.html#functional-programming"><i class="fa fa-check"></i><b>3.7</b> Functional Programming</a></li>
+<li class="chapter" data-level="3.5" data-path="data-prep.html"><a href="data-prep.html#cross-validation"><i class="fa fa-check"></i><b>3.5</b> Cross Validation</a></li>
+<li class="chapter" data-level="3.6" data-path="data-prep.html"><a href="data-prep.html#fix-data-by-split"><i class="fa fa-check"></i><b>3.6</b> Fix Data by Split</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="data-prep.html"><a href="data-prep.html#zero-variance"><i class="fa fa-check"></i><b>3.6.1</b> Zero Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="data-prep.html"><a href="data-prep.html#nest-data"><i class="fa fa-check"></i><b>3.7</b> Nest data</a></li>
+<li class="chapter" data-level="3.8" data-path="data-prep.html"><a href="data-prep.html#functional-programming"><i class="fa fa-check"></i><b>3.8</b> Functional Programming</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>4</b> Visualization 📉</a>
 <ul>

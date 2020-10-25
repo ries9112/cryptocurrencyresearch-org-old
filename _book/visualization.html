@@ -31,7 +31,7 @@
   
 <link rel="prev" href="data-prep.html"/>
 <link rel="next" href="predictive-modeling.html"/>
-<script src="libs/header-attrs-2.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,14 +49,16 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.13/datatables.js"></script>
+<script src="libs/datatables-binding-0.15/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -159,21 +161,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.1" data-path="data-prep.html"><a href="data-prep.html#remove-nulls"><i class="fa fa-check"></i><b>3.1</b> Remove Nulls</a></li>
 <li class="chapter" data-level="3.2" data-path="data-prep.html"><a href="data-prep.html#calculate-price_usd-column"><i class="fa fa-check"></i><b>3.2</b> Calculate <code>price_usd</code> Column</a></li>
-<li class="chapter" data-level="3.3" data-path="data-prep.html"><a href="data-prep.html#any-gaps"><i class="fa fa-check"></i><b>3.3</b> Any gaps?</a>
+<li class="chapter" data-level="3.3" data-path="data-prep.html"><a href="data-prep.html#clean-data-by-group"><i class="fa fa-check"></i><b>3.3</b> Clean Data by Group</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="data-prep.html"><a href="data-prep.html#convert-to-tsibble"><i class="fa fa-check"></i><b>3.3.1</b> Convert to tsibble</a></li>
-<li class="chapter" data-level="3.3.2" data-path="data-prep.html"><a href="data-prep.html#scan-gaps"><i class="fa fa-check"></i><b>3.3.2</b> Scan gaps</a></li>
-<li class="chapter" data-level="3.3.3" data-path="data-prep.html"><a href="data-prep.html#fill-gaps"><i class="fa fa-check"></i><b>3.3.3</b> Fill gaps</a></li>
-<li class="chapter" data-level="3.3.4" data-path="data-prep.html"><a href="data-prep.html#group-data"><i class="fa fa-check"></i><b>3.3.4</b> Group Data</a></li>
-<li class="chapter" data-level="3.3.5" data-path="data-prep.html"><a href="data-prep.html#calculate-target"><i class="fa fa-check"></i><b>3.3.5</b> Calculate Target</a></li>
+<li class="chapter" data-level="3.3.1" data-path="data-prep.html"><a href="data-prep.html#remove-symbols-without-enough-rows"><i class="fa fa-check"></i><b>3.3.1</b> Remove symbols without enough rows</a></li>
+<li class="chapter" data-level="3.3.2" data-path="data-prep.html"><a href="data-prep.html#remove-symbols-without-data-from-the-last-3-days"><i class="fa fa-check"></i><b>3.3.2</b> Remove symbols without data from the last 3 days</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="data-prep.html"><a href="data-prep.html#remove-subsets-without-enough-rows"><i class="fa fa-check"></i><b>3.4</b> Remove subsets without enough rows</a></li>
-<li class="chapter" data-level="3.5" data-path="data-prep.html"><a href="data-prep.html#cross-validation"><i class="fa fa-check"></i><b>3.5</b> Cross Validation</a>
+<li class="chapter" data-level="3.4" data-path="data-prep.html"><a href="data-prep.html#any-gaps"><i class="fa fa-check"></i><b>3.4</b> Any gaps?</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="data-prep.html"><a href="data-prep.html#fix-data-by-split"><i class="fa fa-check"></i><b>3.5.1</b> Fix Data by Split</a></li>
+<li class="chapter" data-level="3.4.1" data-path="data-prep.html"><a href="data-prep.html#convert-to-tsibble"><i class="fa fa-check"></i><b>3.4.1</b> Convert to tsibble</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-prep.html"><a href="data-prep.html#scan-gaps"><i class="fa fa-check"></i><b>3.4.2</b> Scan gaps</a></li>
+<li class="chapter" data-level="3.4.3" data-path="data-prep.html"><a href="data-prep.html#fill-gaps"><i class="fa fa-check"></i><b>3.4.3</b> Fill gaps</a></li>
+<li class="chapter" data-level="3.4.4" data-path="data-prep.html"><a href="data-prep.html#calculate-target"><i class="fa fa-check"></i><b>3.4.4</b> Calculate Target</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="data-prep.html"><a href="data-prep.html#nest-data"><i class="fa fa-check"></i><b>3.6</b> Nest data</a></li>
-<li class="chapter" data-level="3.7" data-path="data-prep.html"><a href="data-prep.html#functional-programming"><i class="fa fa-check"></i><b>3.7</b> Functional Programming</a></li>
+<li class="chapter" data-level="3.5" data-path="data-prep.html"><a href="data-prep.html#cross-validation"><i class="fa fa-check"></i><b>3.5</b> Cross Validation</a></li>
+<li class="chapter" data-level="3.6" data-path="data-prep.html"><a href="data-prep.html#fix-data-by-split"><i class="fa fa-check"></i><b>3.6</b> Fix Data by Split</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="data-prep.html"><a href="data-prep.html#zero-variance"><i class="fa fa-check"></i><b>3.6.1</b> Zero Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="data-prep.html"><a href="data-prep.html#nest-data"><i class="fa fa-check"></i><b>3.7</b> Nest data</a></li>
+<li class="chapter" data-level="3.8" data-path="data-prep.html"><a href="data-prep.html#functional-programming"><i class="fa fa-check"></i><b>3.8</b> Functional Programming</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>4</b> Visualization 📉</a>
 <ul>
@@ -269,44 +275,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>So how does <code>ggplot2</code> actually work? <strong><em>“…in most cases you start with <code>ggplot()</code>, supply a dataset and aesthetic mapping (with <code>aes()</code>). You then add on layers (like <code>geom_point()</code> or <code>geom_histogram()</code>), scales (like <code>scale_colour_brewer()</code>), faceting specifications (like <code>facet_wrap()</code>) and coordinate systems (like <code>coord_flip()</code>).”</em></strong> - <a href="https://ggplot2.tidyverse.org/">ggplot2.tidyverse.org/</a>.</p>
 <p>Let’s break this down step by step.</p>
 <p><strong><em>"start with ggplot(), supply a dataset and aesthetic mapping (with aes())</em></strong></p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="visualization.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> cryptodata, <span class="fu">aes</span>(<span class="at">x =</span> date_time_utc, <span class="at">y =</span> price_usd))</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="visualization.html#cb71-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> cryptodata, <span class="kw">aes</span>(<span class="dt">x =</span> date_time_utc, <span class="dt">y =</span> price_usd))</span></code></pre></div>
 <p><img src="CryptoResearchPaper_files/figure-html/ggplot_blank-1.png" width="672" /></p>
 <p>The chart now shows up but is blank because we need to perform an additional step <strong><em>“You then add on layers (like <code>geom_point()</code> or <code>geom_histogram()</code>)…”</em></strong></p>
 <p>We can take the exact same code as above and add <strong><em>+ <code>geom_point()</code></em></strong></p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="visualization.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> cryptodata, <span class="fu">aes</span>(<span class="at">x =</span> date_time_utc, <span class="at">y =</span> price_usd)) <span class="sc">+</span></span>
-<span id="cb60-2"><a href="visualization.html#cb60-2" aria-hidden="true" tabindex="-1"></a>       <span class="co"># adding geom_point():</span></span>
-<span id="cb60-3"><a href="visualization.html#cb60-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="visualization.html#cb72-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> cryptodata, <span class="kw">aes</span>(<span class="dt">x =</span> date_time_utc, <span class="dt">y =</span> price_usd)) <span class="op">+</span></span>
+<span id="cb72-2"><a href="visualization.html#cb72-2" aria-hidden="true"></a><span class="st">       </span><span class="co"># adding geom_point():</span></span>
+<span id="cb72-3"><a href="visualization.html#cb72-3" aria-hidden="true"></a><span class="st">       </span><span class="kw">geom_point</span>()</span></code></pre></div>
 <p><img src="CryptoResearchPaper_files/figure-html/ggplot_geom_point-1.png" width="672" /></p>
 <p>The most expensive cryptocurrency being shown, BTC in this case, makes it difficult to take a look at any of the other ones. Let’s try <em>zooming-in</em> on a single one by using the same code but making an adjustment to the <code>data</code> parameter to only show data for the cryptocurrency with the symbol <em>ETH</em>, first let’s filter the data down to those results only:</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="visualization.html#cb61-1" aria-hidden="true" tabindex="-1"></a>eth_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(cryptodata, symbol <span class="sc">==</span> <span class="st">&#39;ETH&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="visualization.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> eth_data, </span>
-<span id="cb62-2"><a href="visualization.html#cb62-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> date_time_utc, <span class="at">y =</span> price_usd)) <span class="sc">+</span> </span>
-<span id="cb62-3"><a href="visualization.html#cb62-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="visualization.html#cb73-1" aria-hidden="true"></a>eth_data &lt;-<span class="st"> </span><span class="kw">subset</span>(cryptodata, symbol <span class="op">==</span><span class="st"> &#39;ETH&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="visualization.html#cb74-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> eth_data, </span>
+<span id="cb74-2"><a href="visualization.html#cb74-2" aria-hidden="true"></a>       <span class="kw">aes</span>(<span class="dt">x =</span> date_time_utc, <span class="dt">y =</span> price_usd)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb74-3"><a href="visualization.html#cb74-3" aria-hidden="true"></a><span class="st">       </span><span class="kw">geom_point</span>()</span></code></pre></div>
 <p><img src="CryptoResearchPaper_files/figure-html/ggplot_ETH-1.png" width="672" /></p>
 <p><em>The axis automatically adjusted to the new data.</em></p>
 <p>This is better, but geom_point() might not be the best choice for this chart, let’s change <code>geom_point</code> with <code>geom_line</code> and see what that looks like:</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="visualization.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> eth_data, </span>
-<span id="cb63-2"><a href="visualization.html#cb63-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> date_time_utc, <span class="at">y =</span> price_usd)) <span class="sc">+</span> </span>
-<span id="cb63-3"><a href="visualization.html#cb63-3" aria-hidden="true" tabindex="-1"></a>       <span class="co"># changing geom_point() into geom_line():</span></span>
-<span id="cb63-4"><a href="visualization.html#cb63-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">geom_line</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="visualization.html#cb75-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> eth_data, </span>
+<span id="cb75-2"><a href="visualization.html#cb75-2" aria-hidden="true"></a>       <span class="kw">aes</span>(<span class="dt">x =</span> date_time_utc, <span class="dt">y =</span> price_usd)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb75-3"><a href="visualization.html#cb75-3" aria-hidden="true"></a><span class="st">       </span><span class="co"># changing geom_point() into geom_line():</span></span>
+<span id="cb75-4"><a href="visualization.html#cb75-4" aria-hidden="true"></a><span class="st">       </span><span class="kw">geom_line</span>()</span></code></pre></div>
 <p><img src="CryptoResearchPaper_files/figure-html/ggplot_ETH_line-1.png" width="672" /></p>
 <p>Let’s save the results as an object called <code>crypto_chart</code>:</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="visualization.html#cb64-1" aria-hidden="true" tabindex="-1"></a>crypto_chart <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> eth_data, </span>
-<span id="cb64-2"><a href="visualization.html#cb64-2" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">aes</span>(<span class="at">x =</span> date_time_utc, <span class="at">y =</span> price_usd)) <span class="sc">+</span> </span>
-<span id="cb64-3"><a href="visualization.html#cb64-3" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">geom_line</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="visualization.html#cb76-1" aria-hidden="true"></a>crypto_chart &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> eth_data, </span>
+<span id="cb76-2"><a href="visualization.html#cb76-2" aria-hidden="true"></a>                       <span class="kw">aes</span>(<span class="dt">x =</span> date_time_utc, <span class="dt">y =</span> price_usd)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb76-3"><a href="visualization.html#cb76-3" aria-hidden="true"></a><span class="st">                       </span><span class="kw">geom_line</span>()</span></code></pre></div>
 <p>We can add a linear regression line going through the plot to show the strength of the relationship between the two values. A horizontal line would show a weak relationship, while a sloped line would show a strong one.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="visualization.html#cb65-1" aria-hidden="true" tabindex="-1"></a>crypto_chart <span class="ot">&lt;-</span> crypto_chart <span class="sc">+</span> <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&#39;lm&#39;</span>)</span>
-<span id="cb65-2"><a href="visualization.html#cb65-2" aria-hidden="true" tabindex="-1"></a>crypto_chart</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="visualization.html#cb77-1" aria-hidden="true"></a>crypto_chart &lt;-<span class="st"> </span>crypto_chart <span class="op">+</span><span class="st"> </span><span class="kw">stat_smooth</span>(<span class="dt">method =</span> <span class="st">&#39;lm&#39;</span>)</span>
+<span id="cb77-2"><a href="visualization.html#cb77-2" aria-hidden="true"></a>crypto_chart</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p><img src="CryptoResearchPaper_files/figure-html/ggplot_ETH_lm_relationship-1.png" width="672" /></p>
 <p>Next, let’s adjust the labels on the chart:</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="visualization.html#cb67-1" aria-hidden="true" tabindex="-1"></a>crypto_chart <span class="ot">&lt;-</span> crypto_chart <span class="sc">+</span></span>
-<span id="cb67-2"><a href="visualization.html#cb67-2" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">ggtitle</span>(<span class="st">&#39;Previous 24h % Price Change Vs. Next 24h Price % Change&#39;</span>, </span>
-<span id="cb67-3"><a href="visualization.html#cb67-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">subtitle =</span> <span class="fu">max</span>(eth_data<span class="sc">$</span>symbol)) <span class="sc">+</span> </span>
-<span id="cb67-4"><a href="visualization.html#cb67-4" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">xlab</span>(<span class="st">&#39;Previous 24 hours % Price Change&#39;</span>) <span class="sc">+</span></span>
-<span id="cb67-5"><a href="visualization.html#cb67-5" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">ylab</span>(<span class="st">&#39;Next 24 hours % Price Change&#39;</span>)</span>
-<span id="cb67-6"><a href="visualization.html#cb67-6" aria-hidden="true" tabindex="-1"></a><span class="co"># display the new chart</span></span>
-<span id="cb67-7"><a href="visualization.html#cb67-7" aria-hidden="true" tabindex="-1"></a>crypto_chart</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="visualization.html#cb79-1" aria-hidden="true"></a>crypto_chart &lt;-<span class="st"> </span>crypto_chart <span class="op">+</span></span>
+<span id="cb79-2"><a href="visualization.html#cb79-2" aria-hidden="true"></a><span class="st">                  </span><span class="kw">ggtitle</span>(<span class="st">&#39;Previous 24h % Price Change Vs. Next 24h Price % Change&#39;</span>, </span>
+<span id="cb79-3"><a href="visualization.html#cb79-3" aria-hidden="true"></a>                          <span class="dt">subtitle =</span> <span class="kw">max</span>(eth_data<span class="op">$</span>symbol)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb79-4"><a href="visualization.html#cb79-4" aria-hidden="true"></a><span class="st">                  </span><span class="kw">xlab</span>(<span class="st">&#39;Previous 24 hours % Price Change&#39;</span>) <span class="op">+</span></span>
+<span id="cb79-5"><a href="visualization.html#cb79-5" aria-hidden="true"></a><span class="st">                  </span><span class="kw">ylab</span>(<span class="st">&#39;Next 24 hours % Price Change&#39;</span>)</span>
+<span id="cb79-6"><a href="visualization.html#cb79-6" aria-hidden="true"></a><span class="co"># display the new chart</span></span>
+<span id="cb79-7"><a href="visualization.html#cb79-7" aria-hidden="true"></a>crypto_chart</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p><img src="CryptoResearchPaper_files/figure-html/ggplot_labels-1.png" width="672" /></p>
 </div>
@@ -315,10 +321,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="ggthemes" class="section level3" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> ggthemes</h3>
 <p>Let’s import a <code>ggplot2</code> <strong><em>“extension”</em></strong> by importing a package called <code>ggthemes</code> <span class="citation">[@R-ggthemes]</span> and apply a theme to change the overall look of the chart:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="visualization.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># apply the theme &quot;economist&quot;</span></span>
-<span id="cb69-2"><a href="visualization.html#cb69-2" aria-hidden="true" tabindex="-1"></a>crypto_chart <span class="ot">&lt;-</span> crypto_chart <span class="sc">+</span> <span class="fu">theme_economist</span>()</span>
-<span id="cb69-3"><a href="visualization.html#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="co"># display the new chart</span></span>
-<span id="cb69-4"><a href="visualization.html#cb69-4" aria-hidden="true" tabindex="-1"></a>crypto_chart</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="visualization.html#cb81-1" aria-hidden="true"></a><span class="co"># apply the theme &quot;economist&quot;</span></span>
+<span id="cb81-2"><a href="visualization.html#cb81-2" aria-hidden="true"></a>crypto_chart &lt;-<span class="st"> </span>crypto_chart <span class="op">+</span><span class="st"> </span><span class="kw">theme_economist</span>()</span>
+<span id="cb81-3"><a href="visualization.html#cb81-3" aria-hidden="true"></a><span class="co"># display the new chart</span></span>
+<span id="cb81-4"><a href="visualization.html#cb81-4" aria-hidden="true"></a>crypto_chart</span></code></pre></div>
 <p><img src="CryptoResearchPaper_files/figure-html/ggthemes-1.png" width="672" /></p>
 <p><em>You can find a full list of themes here: <a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/" class="uri">https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/</a></em></p>
 </div>
@@ -372,223 +378,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- LOOK THROUGH THIS AND PUT THE PRICE OVER TIME CHART AND THE RELATIONSHIP BETWEEN PREVIOUS PRICE AND NEXT 24H PRICE SIDE BY SIDE, AND HAVE THEM ANIMATED ITERATING OVER ALL CRYPTOCURRENCIES: https://github.com/thomasp85/gganimate/wiki/Animation-Composition -->
 <!-- DISABLED CODE BELOW BECAUSE OF AN ERROR "trasnformr is required to tween paths and lines" -->
 <p>We can repeat the same steps on the complete dataset, and then animate the results for each of the groups. Here is the first chart again, animated based on the groupings we created in the previous section:</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="visualization.html#cb70-1" aria-hidden="true" tabindex="-1"></a>animated_prices <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">mutate</span>(cryptodata, <span class="at">groups=</span>symbol),</span>
-<span id="cb70-2"><a href="visualization.html#cb70-2" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">aes</span>(<span class="at">x =</span> date_time_utc, <span class="at">y =</span> price_usd)) <span class="sc">+</span></span>
-<span id="cb70-3"><a href="visualization.html#cb70-3" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb70-4"><a href="visualization.html#cb70-4" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">transition_states</span>(groups) <span class="sc">+</span></span>
-<span id="cb70-5"><a href="visualization.html#cb70-5" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">ggtitle</span>(<span class="st">&#39;Price Over Time&#39;</span>,<span class="at">subtitle =</span> <span class="st">&#39;{closest_state}&#39;</span>) <span class="sc">+</span></span>
-<span id="cb70-6"><a href="visualization.html#cb70-6" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">view_follow</span>() <span class="co"># this adjusts the axis based on the group</span></span>
-<span id="cb70-7"><a href="visualization.html#cb70-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Show animation:</span></span>
-<span id="cb70-8"><a href="visualization.html#cb70-8" aria-hidden="true" tabindex="-1"></a>animated_prices</span></code></pre></div>
-<pre><code>## 
-Frame 1 (1%)
-Frame 2 (2%)
-Frame 3 (3%)
-Frame 4 (4%)
-Frame 5 (5%)
-Frame 6 (6%)
-Frame 7 (7%)
-Frame 8 (8%)
-Frame 9 (9%)
-Frame 10 (10%)
-Frame 11 (11%)
-Frame 12 (12%)
-Frame 13 (13%)
-Frame 14 (14%)
-Frame 15 (15%)
-Frame 16 (16%)
-Frame 17 (17%)
-Frame 18 (18%)
-Frame 19 (19%)
-Frame 20 (20%)
-Frame 21 (21%)
-Frame 22 (22%)
-Frame 23 (23%)
-Frame 24 (24%)
-Frame 25 (25%)
-Frame 26 (26%)
-Frame 27 (27%)
-Frame 28 (28%)
-Frame 29 (29%)
-Frame 30 (30%)
-Frame 31 (31%)
-Frame 32 (32%)
-Frame 33 (33%)
-Frame 34 (34%)
-Frame 35 (35%)
-Frame 36 (36%)
-Frame 37 (37%)
-Frame 38 (38%)
-Frame 39 (39%)
-Frame 40 (40%)
-Frame 41 (41%)
-Frame 42 (42%)
-Frame 43 (43%)
-Frame 44 (44%)
-Frame 45 (45%)
-Frame 46 (46%)
-Frame 47 (47%)
-Frame 48 (48%)
-Frame 49 (49%)
-Frame 50 (50%)
-Frame 51 (51%)
-Frame 52 (52%)
-Frame 53 (53%)
-Frame 54 (54%)
-Frame 55 (55%)
-Frame 56 (56%)
-Frame 57 (57%)
-Frame 58 (58%)
-Frame 59 (59%)
-Frame 60 (60%)
-Frame 61 (61%)
-Frame 62 (62%)
-Frame 63 (63%)
-Frame 64 (64%)
-Frame 65 (65%)
-Frame 66 (66%)
-Frame 67 (67%)
-Frame 68 (68%)
-Frame 69 (69%)
-Frame 70 (70%)
-Frame 71 (71%)
-Frame 72 (72%)
-Frame 73 (73%)
-Frame 74 (74%)
-Frame 75 (75%)
-Frame 76 (76%)
-Frame 77 (77%)
-Frame 78 (78%)
-Frame 79 (79%)
-Frame 80 (80%)
-Frame 81 (81%)
-Frame 82 (82%)
-Frame 83 (83%)
-Frame 84 (84%)
-Frame 85 (85%)
-Frame 86 (86%)
-Frame 87 (87%)
-Frame 88 (88%)
-Frame 89 (89%)
-Frame 90 (90%)
-Frame 91 (91%)
-Frame 92 (92%)
-Frame 93 (93%)
-Frame 94 (94%)
-Frame 95 (95%)
-Frame 96 (96%)
-Frame 97 (97%)
-Frame 98 (98%)
-Frame 99 (99%)
-Frame 100 (100%)
-## Finalizing encoding... done!</code></pre>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="visualization.html#cb82-1" aria-hidden="true"></a>animated_prices &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="kw">mutate</span>(cryptodata, <span class="dt">groups=</span>symbol),</span>
+<span id="cb82-2"><a href="visualization.html#cb82-2" aria-hidden="true"></a>                          <span class="kw">aes</span>(<span class="dt">x =</span> date_time_utc, <span class="dt">y =</span> price_usd)) <span class="op">+</span></span>
+<span id="cb82-3"><a href="visualization.html#cb82-3" aria-hidden="true"></a><span class="st">                          </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb82-4"><a href="visualization.html#cb82-4" aria-hidden="true"></a><span class="st">                          </span><span class="kw">transition_states</span>(groups) <span class="op">+</span></span>
+<span id="cb82-5"><a href="visualization.html#cb82-5" aria-hidden="true"></a><span class="st">                          </span><span class="kw">ggtitle</span>(<span class="st">&#39;Price Over Time&#39;</span>,<span class="dt">subtitle =</span> <span class="st">&#39;{closest_state}&#39;</span>) <span class="op">+</span></span>
+<span id="cb82-6"><a href="visualization.html#cb82-6" aria-hidden="true"></a><span class="st">                          </span><span class="kw">view_follow</span>() <span class="co"># this adjusts the axis based on the group</span></span>
+<span id="cb82-7"><a href="visualization.html#cb82-7" aria-hidden="true"></a><span class="co"># Show animation:</span></span>
+<span id="cb82-8"><a href="visualization.html#cb82-8" aria-hidden="true"></a>animated_prices</span></code></pre></div>
 <p><img src="CryptoResearchPaper_files/figure-html/first_gganimate-1.gif" /><!-- --></p>
 <p>We can slow down the animation by using <code>animate()</code> and choosing the speed in terms of the frames per second (<code>fps</code>)"</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="visualization.html#cb72-1" aria-hidden="true" tabindex="-1"></a>animated_prices_result <span class="ot">&lt;-</span> <span class="fu">animate</span>(animated_prices,<span class="at">fps=</span><span class="dv">1</span>)</span></code></pre></div>
-<pre><code>## 
-Frame 1 (1%)
-Frame 2 (2%)
-Frame 3 (3%)
-Frame 4 (4%)
-Frame 5 (5%)
-Frame 6 (6%)
-Frame 7 (7%)
-Frame 8 (8%)
-Frame 9 (9%)
-Frame 10 (10%)
-Frame 11 (11%)
-Frame 12 (12%)
-Frame 13 (13%)
-Frame 14 (14%)
-Frame 15 (15%)
-Frame 16 (16%)
-Frame 17 (17%)
-Frame 18 (18%)
-Frame 19 (19%)
-Frame 20 (20%)
-Frame 21 (21%)
-Frame 22 (22%)
-Frame 23 (23%)
-Frame 24 (24%)
-Frame 25 (25%)
-Frame 26 (26%)
-Frame 27 (27%)
-Frame 28 (28%)
-Frame 29 (29%)
-Frame 30 (30%)
-Frame 31 (31%)
-Frame 32 (32%)
-Frame 33 (33%)
-Frame 34 (34%)
-Frame 35 (35%)
-Frame 36 (36%)
-Frame 37 (37%)
-Frame 38 (38%)
-Frame 39 (39%)
-Frame 40 (40%)
-Frame 41 (41%)
-Frame 42 (42%)
-Frame 43 (43%)
-Frame 44 (44%)
-Frame 45 (45%)
-Frame 46 (46%)
-Frame 47 (47%)
-Frame 48 (48%)
-Frame 49 (49%)
-Frame 50 (50%)
-Frame 51 (51%)
-Frame 52 (52%)
-Frame 53 (53%)
-Frame 54 (54%)
-Frame 55 (55%)
-Frame 56 (56%)
-Frame 57 (57%)
-Frame 58 (58%)
-Frame 59 (59%)
-Frame 60 (60%)
-Frame 61 (61%)
-Frame 62 (62%)
-Frame 63 (63%)
-Frame 64 (64%)
-Frame 65 (65%)
-Frame 66 (66%)
-Frame 67 (67%)
-Frame 68 (68%)
-Frame 69 (69%)
-Frame 70 (70%)
-Frame 71 (71%)
-Frame 72 (72%)
-Frame 73 (73%)
-Frame 74 (74%)
-Frame 75 (75%)
-Frame 76 (76%)
-Frame 77 (77%)
-Frame 78 (78%)
-Frame 79 (79%)
-Frame 80 (80%)
-Frame 81 (81%)
-Frame 82 (82%)
-Frame 83 (83%)
-Frame 84 (84%)
-Frame 85 (85%)
-Frame 86 (86%)
-Frame 87 (87%)
-Frame 88 (88%)
-Frame 89 (89%)
-Frame 90 (90%)
-Frame 91 (91%)
-Frame 92 (92%)
-Frame 93 (93%)
-Frame 94 (94%)
-Frame 95 (95%)
-Frame 96 (96%)
-Frame 97 (97%)
-Frame 98 (98%)
-Frame 99 (99%)
-Frame 100 (100%)
-## Finalizing encoding... done!</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="visualization.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># show slowed down results</span></span>
-<span id="cb74-2"><a href="visualization.html#cb74-2" aria-hidden="true" tabindex="-1"></a>animated_prices_result</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="visualization.html#cb83-1" aria-hidden="true"></a>animated_prices_result &lt;-<span class="st"> </span><span class="kw">animate</span>(animated_prices,<span class="dt">fps=</span><span class="dv">1</span>)</span>
+<span id="cb83-2"><a href="visualization.html#cb83-2" aria-hidden="true"></a><span class="co"># show slowed down results</span></span>
+<span id="cb83-3"><a href="visualization.html#cb83-3" aria-hidden="true"></a>animated_prices_result</span></code></pre></div>
 <p><img src="CryptoResearchPaper_files/figure-html/gganimate_speed-1.gif" /><!-- --></p>
 <!-- More animate options: -->
 <!-- animate( -->
@@ -615,38 +417,43 @@ Frame 100 (100%)
 <div id="calendar-heatmap" class="section level3" number="4.2.4">
 <h3><span class="header-section-number">4.2.4</span> Calendar Heatmap</h3>
 <p>For this kind of timeseries data, another nice view we can take of the data is a calendar heatmap, by using the package <code>ggTimeSeries</code> <span class="citation">[@R-ggTimeSeries]</span>:</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="visualization.html#cb75-1" aria-hidden="true" tabindex="-1"></a>calendar_heatmap <span class="ot">&lt;-</span> <span class="fu">ggplot_calendar_heatmap</span>(eth_data,<span class="st">&#39;date_time_utc&#39;</span>,<span class="st">&#39;price_usd&#39;</span>) <span class="co">#or do target_percent_change here?</span></span>
-<span id="cb75-2"><a href="visualization.html#cb75-2" aria-hidden="true" tabindex="-1"></a>calendar_heatmap</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="visualization.html#cb84-1" aria-hidden="true"></a>calendar_heatmap &lt;-<span class="st"> </span><span class="kw">ggplot_calendar_heatmap</span>(eth_data,<span class="st">&#39;date_time_utc&#39;</span>,<span class="st">&#39;price_usd&#39;</span>) <span class="co">#or do target_percent_change here?</span></span>
+<span id="cb84-2"><a href="visualization.html#cb84-2" aria-hidden="true"></a>calendar_heatmap</span></code></pre></div>
 <p><img src="CryptoResearchPaper_files/figure-html/ggtimeseries_heatmap-1.png" width="672" /></p>
 <p><em>DoW on the y-axis stands for Day Of the Week</em></p>
 </div>
 <div id="rayshader" class="section level3" number="4.2.5">
 <h3><span class="header-section-number">4.2.5</span> Rayshader</h3>
-<p>The previous chart is helpful, but a color scale like that can be a bit difficult to interpret. Although this is mostly for fun rather than being particularly useful, we could convert the previous chart into a 3d figure that is easier to visually interpret by using the amazing <code>rayshader</code> <span class="citation">[@R-rayshader]</span> package:</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="visualization.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First remove the title from the legend to avoid visual issues</span></span>
-<span id="cb76-2"><a href="visualization.html#cb76-2" aria-hidden="true" tabindex="-1"></a>calendar_heatmap <span class="ot">&lt;-</span> calendar_heatmap <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.title =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb76-3"><a href="visualization.html#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the date to the title to make it clear these refresh twice daily</span></span>
-<span id="cb76-4"><a href="visualization.html#cb76-4" aria-hidden="true" tabindex="-1"></a>calendar_heatmap <span class="ot">&lt;-</span> calendar_heatmap <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">&#39;Through: &#39;</span>,<span class="fu">substr</span>(<span class="fu">max</span>(eth_data<span class="sc">$</span>date_time_utc),<span class="dv">1</span>,<span class="dv">13</span>)))</span>
-<span id="cb76-5"><a href="visualization.html#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to 3d plot</span></span>
-<span id="cb76-6"><a href="visualization.html#cb76-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_gg</span>(calendar_heatmap, <span class="at">zoom =</span> <span class="fl">0.60</span>, <span class="at">phi =</span> <span class="dv">35</span>, <span class="at">theta =</span> <span class="dv">45</span>)</span>
-<span id="cb76-7"><a href="visualization.html#cb76-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Render snapshot</span></span>
-<span id="cb76-8"><a href="visualization.html#cb76-8" aria-hidden="true" tabindex="-1"></a><span class="fu">render_snapshot</span>(<span class="st">&#39;images/rayshader_image.png&#39;</span>)</span>
-<span id="cb76-9"><a href="visualization.html#cb76-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Close RGL (which opens on plot_gg() command in a separate window)</span></span>
-<span id="cb76-10"><a href="visualization.html#cb76-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rgl.close</span>()</span></code></pre></div>
-<p><img src="images/rayshader_image.png" /></p>
-<p>This is the same two dimensional <a href="visualization.html#calendar-heatmap">calendar heatmap that was made earlier</a>.</p>
-<p>Because we can programmatically adjust the camera as shown above, that means that we can also create a snapshot, move the camera and take another one, and keep going until we have enough to make it look like a video! This is not difficult to do using the <code>render_movie()</code> function, which will take care of everything behind the scenes for the same plot as before:</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="visualization.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This time let&#39;s remove the scale too since we aren&#39;t changing it:</span></span>
-<span id="cb77-2"><a href="visualization.html#cb77-2" aria-hidden="true" tabindex="-1"></a>calendar_heatmap <span class="ot">&lt;-</span> calendar_heatmap <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb77-3"><a href="visualization.html#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Same 3d plot as before</span></span>
-<span id="cb77-4"><a href="visualization.html#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_gg</span>(calendar_heatmap, <span class="at">zoom =</span> <span class="fl">0.60</span>, <span class="at">phi =</span> <span class="dv">35</span>, <span class="at">theta =</span> <span class="dv">45</span>)</span>
-<span id="cb77-5"><a href="visualization.html#cb77-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Render movie</span></span>
-<span id="cb77-6"><a href="visualization.html#cb77-6" aria-hidden="true" tabindex="-1"></a><span class="fu">render_movie</span>(<span class="st">&#39;images/rayshader_video.mp4&#39;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;C:\\Users\\Ricky\\Desktop\\Research-Paper-Example-NEW\\images\\rayshader_video.mp4&quot;</code></pre>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="visualization.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Close RGL</span></span>
-<span id="cb79-2"><a href="visualization.html#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rgl.close</span>()</span></code></pre></div>
-<p><em>Click on the video below to play the output</em></p>
-<p><video src="images/rayshader_video.mp4" controls=""><a href="images/rayshader_video.mp4">Video</a></video></p>
+<!-- DISABLED BECAUSE OF GITHUB ACTIONS XQUARTZ NOT BEING DETECTED -->
+<!-- ### Rayshader -->
+<!-- The previous chart is helpful, but a color scale like that can be a bit difficult to interpret. Although this is mostly for fun rather than being particularly useful, we could convert the previous chart into a 3d figure that is easier to visually interpret by using the amazing `rayshader` [@R-rayshader] package: -->
+<!-- ```{r rayshader_cal_heatmap, message=FALSE, warning=FALSE} -->
+<!-- # First remove the title from the legend to avoid visual issues -->
+<!-- calendar_heatmap <- calendar_heatmap + theme(legend.title = element_blank()) -->
+<!-- # Add the date to the title to make it clear these refresh twice daily -->
+<!-- calendar_heatmap <- calendar_heatmap + ggtitle(paste0('Through: ',substr(max(eth_data$date_time_utc),1,13))) -->
+<!-- # Convert to 3d plot -->
+<!-- plot_gg(calendar_heatmap, zoom = 0.60, phi = 35, theta = 45) -->
+<!-- # Render snapshot -->
+<!-- render_snapshot('images/rayshader_image.png') -->
+<!-- # Close RGL (which opens on plot_gg() command in a separate window) -->
+<!-- rgl.close() -->
+<!-- ``` -->
+<!-- ![](images/rayshader_image.png) -->
+<!-- This is the same two dimensional [calendar heatmap that was made earlier](#calendar-heatmap). -->
+<!-- Because we can programmatically adjust the camera as shown above, that means that we can also create a snapshot, move the camera and take another one, and keep going until we have enough to make it look like a video! This is not difficult to do using the `render_movie()` function, which will take care of everything behind the scenes for the same plot as before: -->
+<!-- ```{r rayshader_render_movie, message=FALSE, warning=FALSE} -->
+<!-- # This time let's remove the scale too since we aren't changing it: -->
+<!-- calendar_heatmap <- calendar_heatmap + theme(legend.position = "none") -->
+<!-- # Same 3d plot as before -->
+<!-- plot_gg(calendar_heatmap, zoom = 0.60, phi = 35, theta = 45) -->
+<!-- # Render movie -->
+<!-- render_movie('images/rayshader_video.mp4') -->
+<!-- # Close RGL -->
+<!-- rgl.close() -->
+<!-- ``` -->
+<!-- *Click on the video below to play the output* -->
+<!-- ![](images/rayshader_video.mp4) -->
 <p>Awesome! Move on to the <a href="predictive-modeling.html#predictive-modeling">next section</a> to start making predictive models for the data, or keep reading below to learn more about ggplot2 extensions.</p>
 <!-- ### ggmap -->
 <!-- (could probably get rid of this, cool but not super relevant) -->
