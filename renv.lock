@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "3.6.3",
+    "Version": "4.0.3",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -135,6 +135,13 @@
       "Repository": "CRAN",
       "Hash": "543776ae6848fde2f48ff3816d0628bc"
     },
+    "bookdown": {
+      "Package": "bookdown",
+      "Version": "0.21",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "1bf627f1f77313e345f71e779b658578"
+    },
     "brew": {
       "Package": "brew",
       "Version": "1.0-6",
@@ -151,17 +158,17 @@
     },
     "callr": {
       "Package": "callr",
-      "Version": "3.4.3",
+      "Version": "3.5.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "643163a00cb536454c624883a10ae0bc"
+      "Hash": "b7d7f1e926dfcd57c74ce93f5c048e80"
     },
     "capsule": {
       "Package": "capsule",
       "Version": "0.1.1",
       "Source": "GitHub",
-      "Remotes": "rstudio/renv, anthonynorth/using",
       "RemoteType": "github",
+      "Remotes": "rstudio/renv, anthonynorth/using",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "capsule",
       "RemoteUsername": "MilesMcBain",
@@ -545,6 +552,13 @@
       "Repository": "CRAN",
       "Hash": "117128f48662573ff4c4e72608b9e202"
     },
+    "jpeg": {
+      "Package": "jpeg",
+      "Version": "0.1-8.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "bc316c003aba520fc73d70ad53b5fc36"
+    },
     "jsonlite": {
       "Package": "jsonlite",
       "Version": "1.7.1",
@@ -554,10 +568,10 @@
     },
     "knitr": {
       "Package": "knitr",
-      "Version": "1.28",
+      "Version": "1.30",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "915a6f0134cdbdf016d7778bc80b2eda"
+      "Hash": "eed7ee0d02eee88d53881cdc92457c62"
     },
     "labeling": {
       "Package": "labeling",
@@ -736,10 +750,10 @@
     },
     "pkgbuild": {
       "Package": "pkgbuild",
-      "Version": "1.0.6",
+      "Version": "1.1.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "899835dfe286963471cbdb9591f8f94f"
+      "Hash": "404684bc4e3685007f9720adf13b06c1"
     },
     "pkgconfig": {
       "Package": "pkgconfig",
@@ -750,10 +764,10 @@
     },
     "pkgload": {
       "Package": "pkgload",
-      "Version": "1.0.2",
+      "Version": "1.1.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "5e655fb54cceead0f095f22d7be33da3"
+      "Hash": "b6b150cd4709e0c0c9b5d51ac4376282"
     },
     "plyr": {
       "Package": "plyr",
@@ -785,10 +799,10 @@
     },
     "processx": {
       "Package": "processx",
-      "Version": "3.4.2",
+      "Version": "3.4.4",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "20a082f2bde0ffcd8755779fd476a274"
+      "Hash": "03446ed0b8129916f73676726cb3c48f"
     },
     "prodlim": {
       "Package": "prodlim",
@@ -838,6 +852,20 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "019d5fc373bec143779d33bfb88757d1"
+    },
+    "rayimage": {
+      "Package": "rayimage",
+      "Version": "0.3.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "8afcad97896eb0183885951f4c4b31de"
+    },
+    "rayshader": {
+      "Package": "rayshader",
+      "Version": "0.19.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "0b4f332e5452d539b7376f4f05753db4"
     },
     "rcmdcheck": {
       "Package": "rcmdcheck",
@@ -939,10 +967,10 @@
     },
     "rmarkdown": {
       "Package": "rmarkdown",
-      "Version": "2.1",
+      "Version": "2.5",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "9d1c61d476c448350c482d6664e1b28b"
+      "Hash": "20a0a94af9e8f7040510447763aab3e9"
     },
     "roxygen2": {
       "Package": "roxygen2",
@@ -1203,17 +1231,17 @@
     },
     "withr": {
       "Package": "withr",
-      "Version": "2.1.2",
+      "Version": "2.3.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "aa57ed55ff2df4bea697a07df528993d"
+      "Hash": "7307d79f58d1885b38c4f4f1a8cb19dd"
     },
     "xfun": {
       "Package": "xfun",
-      "Version": "0.13",
+      "Version": "0.18",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "3c1eeacd705ff1695db94bfd443b8a84"
+      "Hash": "d1c0b777b432e4b4c039c8aaecc54e0f"
     },
     "xgboost": {
       "Package": "xgboost",
