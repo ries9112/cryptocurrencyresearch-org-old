@@ -29,8 +29,8 @@ jobs:
           Rscript -e 'renv::consent(provided = TRUE)'
           Rscript -e "renv::restore()"
           Rscript -e "install.packages(c('knitr','bookdown','deepnet','devtools'))"
-          Rscript -e "#devtools::install_github('tylermorganwall/rayshader')"
-          Rscript -e "#devtools::install_github('cran/rgl')"
+          Rscript -e "devtools::install_github('tylermorganwall/rayshader')"
+          Rscript -e "devtools::install_github('cran/rgl')"
           Rscript -e "#devtools::install_github('ropensci/magick')"
       - name: Render Book
         run: |-
