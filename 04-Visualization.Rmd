@@ -224,42 +224,43 @@ calendar_heatmap
 
 
 <!-- DISABLED BECAUSE OF GITHUB ACTIONS XQUARTZ NOT BEING DETECTED -->
-<!-- ### Rayshader -->
+### Rayshader
 
-<!-- The previous chart is helpful, but a color scale like that can be a bit difficult to interpret. Although this is mostly for fun rather than being particularly useful, we could convert the previous chart into a 3d figure that is easier to visually interpret by using the amazing `rayshader` [@R-rayshader] package: -->
+The previous chart is helpful, but a color scale like that can be a bit difficult to interpret. Although this is mostly for fun rather than being particularly useful, we could convert the previous chart into a 3d figure that is easier to visually interpret by using the amazing `rayshader` [@R-rayshader] package:
 
-<!-- ```{r rayshader_cal_heatmap, message=FALSE, warning=FALSE} -->
-<!-- # First remove the title from the legend to avoid visual issues -->
-<!-- calendar_heatmap <- calendar_heatmap + theme(legend.title = element_blank()) -->
-<!-- # Add the date to the title to make it clear these refresh twice daily -->
-<!-- calendar_heatmap <- calendar_heatmap + ggtitle(paste0('Through: ',substr(max(eth_data$date_time_utc),1,13))) -->
-<!-- # Convert to 3d plot -->
-<!-- plot_gg(calendar_heatmap, zoom = 0.60, phi = 35, theta = 45) -->
-<!-- # Render snapshot -->
-<!-- render_snapshot('images/rayshader_image.png') -->
-<!-- # Close RGL (which opens on plot_gg() command in a separate window) -->
-<!-- rgl.close() -->
-<!-- ``` -->
+```{r rayshader_cal_heatmap, message=FALSE, warning=FALSE}
+# First remove the title from the legend to avoid visual issues
+calendar_heatmap <- calendar_heatmap + theme(legend.title = element_blank())
+# Add the date to the title to make it clear these refresh twice daily
+calendar_heatmap <- calendar_heatmap + ggtitle(paste0('Through: ',substr(max(eth_data$date_time_utc),1,13)))
+# Convert to 3d plot
+plot_gg(calendar_heatmap, zoom = 0.60, phi = 35, theta = 45)
+# Render snapshot
+render_snapshot('images/rayshader_image.png')
+# Close RGL (which opens on plot_gg() command in a separate window)
+rgl.close()
+```
 
-<!-- ![](images/rayshader_image.png) -->
+![](images/rayshader_image.png)
 
-<!-- This is the same two dimensional [calendar heatmap that was made earlier](#calendar-heatmap). -->
+This is the same two dimensional [calendar heatmap that was made earlier](#calendar-heatmap).
 
-<!-- Because we can programmatically adjust the camera as shown above, that means that we can also create a snapshot, move the camera and take another one, and keep going until we have enough to make it look like a video! This is not difficult to do using the `render_movie()` function, which will take care of everything behind the scenes for the same plot as before: -->
-<!-- ```{r rayshader_render_movie, message=FALSE, warning=FALSE} -->
-<!-- # This time let's remove the scale too since we aren't changing it: -->
-<!-- calendar_heatmap <- calendar_heatmap + theme(legend.position = "none") -->
-<!-- # Same 3d plot as before -->
-<!-- plot_gg(calendar_heatmap, zoom = 0.60, phi = 35, theta = 45) -->
-<!-- # Render movie -->
-<!-- render_movie('images/rayshader_video.mp4') -->
-<!-- # Close RGL -->
-<!-- rgl.close() -->
-<!-- ``` -->
+Because we can programmatically adjust the camera as shown above, that means that we can also create a snapshot, move the camera and take another one, and keep going until we have enough to make it look like a video! This is not difficult to do using the `render_movie()` function, which will take care of everything behind the scenes for the same plot as before:
+```{r rayshader_render_movie, message=FALSE, warning=FALSE}
+# This time let's remove the scale too since we aren't changing it:
+calendar_heatmap <- calendar_heatmap + theme(legend.position = "none")
+# Same 3d plot as before
+plot_gg(calendar_heatmap, zoom = 0.60, phi = 35, theta = 45)
+# Render movie
+render_movie('images/rayshader_video.mp4')
+# Close RGL
+rgl.close()
+```
 
-<!-- *Click on the video below to play the output* -->
+*Click on the video below to play the output*
 
-<!-- ![](images/rayshader_video.mp4) -->
+![](images/rayshader_video.mp4)
+
 Awesome! Move on to the [next section](#predictive-modeling) to start making predictive models for the data, or keep reading below to learn more about ggplot2 extensions.
 
 
