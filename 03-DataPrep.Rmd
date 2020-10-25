@@ -10,6 +10,32 @@
 cryptodata <- na.omit(cryptodata)
 ```
 
+## Remove symbols without enough rows
+
+[ADD HERE]
+
+```{r}
+rowcount1 <- nrow(cryptodata)
+```
+
+```{r rm_subset_not_enough_rows}
+cryptodata <- dplyr::filter(cryptodata, n() >= 700)
+```
+
+```{r}
+rowcount2 <- nrow(cryptodata)
+```
+
+The number of rows for the `cryptodata` dataset before the filtering step was `r rowcount1` and is now `r rowcount2`.
+
+## Remove symbols without data from the last 3 days
+
+If there was no data collected for a cryptocurrency over the last 3 day period, let's exclude that asset from the dataset since we are only looking to model data that is currently flowing through the process. If an asset is removed from the exchange (if a project is a scam for example) or is no longer being actively captured by the data collection process, we can't make new predictions for it, so might as well exclude these ahead of time as well.
+
+```{r remove_last_3_days_missing}
+cryptodata <- dplyr::filter(cryptodata, date > Sys.Date()-3)
+```
+
 ## Calculate `price_usd` Column
 
 [ADD HERE]
@@ -78,6 +104,7 @@ cryptodata$ts_index <- anytime(paste0(cryptodata$pkDummy,':00:00'))
 ```
 
 ... `distinct()` from the `dplyr` package [@R-dplyr]...
+
 ```{r}
 cryptodata <- distinct(cryptodata, symbol, ts_index, .keep_all=TRUE)
 ```
@@ -154,30 +181,13 @@ cryptodata <- mutate(cryptodata,
                      #lagged_price_31d = lag(price_usd, 24*31, order_by=ts_index))
 ```
 
-Here is an example showing the results for the subset of data related to the Ethereum cryptocurrency (symbol == 'ETH') showing 30 rows and the relevant columns we just calculated:
+Here is an example showing the results for the subset of data related to the Ethereum cryptocurrency (using `symbol == 'ETH'`) showing 30 rows and the relevant columns we just calculated:
 
 ```{r}
-print(select(filter(cryptodata, symbol == 'ETH'),date_time_utc, price_usd, lagged_price_1h, lagged_price_24h, target_price_24h), n=30)
+print(select(filter(cryptodata, symbol == 'ETH'),ts_index, price_usd, lagged_price_1h, lagged_price_24h, target_price_24h), n=30)
 ```
 
-The field `target_price_24h` should have the value of `price_usd` 24 hours into the future relative to the row of data. All the `lagged_` fields show the price from the past relative to `date_time_utc`.
-
-## Remove subsets without enough rows
-
-[ADD HERE]
-
-```{r rm_subset_not_enough_rows}
-cryptodata <- dplyr::filter(cryptodata, n() >= 700)
-```
-
-## Remove symbols without data from the last 3 days
-
-If there was no data collected for a cryptocurrency over the last 3 day period, let's exclude that asset from the dataset since we are only looking to model data that is currently flowing through the process. If an asset is removed from the exchange (if a project is a scam for example) or is no longer being actively captured by the data collection process, we can't make new predictions for it, so might as well exclude these ahead of time as well.
-
-```{r remove_last_3_days_missing}
-cryptodata <- dplyr::filter(cryptodata, date > Sys.Date()-3)
-```
-
+The field `target_price_24h` shows the value of `price_usd` 24 hours into the future relative to the row of data. All the `lagged_` fields show the price from the past relative to when the data was collected (where `lagged_price_1h` shows the price 1 hour before the `ts_index` timestamp of the data).
 
 ## Cross Validation
 
@@ -301,7 +311,6 @@ animated_chart <- animated_chart +
 animate(animated_chart, fps = 2)
 ```
 
-
 ### Fix Data by Split
 
 Now that we have split the data into many different subsets, those subsets themselves may have issues that prevent the predictive models from working as expected.
@@ -310,7 +319,7 @@ Now that we have split the data into many different subsets, those subsets thems
 
 One of the first models we will make is a simple linear model. The regular R function for this will not work if the data contains any columns that have "zero variance", meaning the value of the column never changes throughout the data being given to the model. Therefore, let's fix any issues relating to zero variance columns in any dataset before we change the structure of the data in the step after this one.
 
-First let's create a new object called `find_zero_var` which shows the value of the minimum standard deviation across all columns and calculated based on the grouping of symbol, split and train. 
+First let's create a new object called `find_zero_var` which shows the value of the minimum standard deviation across all columns and calculated based on the grouping of symbol, split and train.
 
 ```{r}
 find_zero_var <- select(mutate(cryptodata, min_sd = min(sd(price_usd, na.rm=T), 
@@ -342,19 +351,23 @@ cryptodata <- filter(cryptodata, !(symbol %in% minimum_sd))
 
 In the code above we match all rows where the symbol is part of the `minimum_sd` object with the list of cryptocurrency symbols to remove from the data, and we then negate the selection using the `!` operator to only keep rows with symbols not in the list we found.
 
-
 <!-- Ugh wish I could write it like this: -->
+
 <!-- ```{r} -->
+
 <!-- find_zero_var %>% #start with data -->
+
 <!--   ungroup() %>% #ungroup -->
+
 <!--   group_by(symbol) %>% #re-group by symbol -->
+
 <!--   mutate(min_sd = min(min_sd)) %>% #find the minimum by the symbol -->
+
 <!--   select(min_sd) %>% #only keep symbol and min_sd -->
+
 <!--   distinct() #distinct  -->
+
 <!-- ``` -->
-
-
-
 
 ## Nest data
 
@@ -453,39 +466,57 @@ Could work with the data using for loops, which is an "object-oriented" approach
 <!-- We can find columns that have at least a 98% completion rate using a combination of `skim()` and `filter()`: -->
 
 <!-- ```{r} -->
+
 <!-- filter(skim(cryptodata_nested$train_data[[1]]), complete_rate > 0.02) -->
+
 <!-- ``` -->
 
 <!-- And extract the variable names by adding `$skim_variable` to the end of the result to return the results for that column only since that is what we are interested in. We will save the result in the object `example_variables` so we can use it in the next step. -->
 
 <!-- ```{r} -->
+
 <!-- example_variables <- filter(skim(cryptodata_nested$train_data[[1]]),  -->
+
 <!--                             complete_rate > 0.02)$skim_variable -->
+
 <!-- # Show the new object -->
+
 <!-- example_variables -->
+
 <!-- ``` -->
 
 <!-- Now we can use that information to only keep these columns in the train data: -->
-<!-- ```{r} -->
-<!-- cryptodata_nested$train_data[[1]][, example_variables] -->
-<!-- ``` -->
 
+<!-- ```{r} -->
+
+<!-- cryptodata_nested$train_data[[1]][, example_variables] -->
+
+<!-- ``` -->
 
 <!-- Great! Hopefully this change was not necessary on the first nested dataset. Now we need to apply the same idea to create a function that we can apply to all nested datasets -->
 
-<!-- <!-- [TODO - Explain this step and process using map() better!] --> -->
+<!-- <!-- [TODO - Explain this step and process using map() better!] -->
+
+--\>
 
 <!-- ```{r} -->
+
 <!-- remove_zero_var <- function(df){ -->
+
 <!--   df[, filter(skim(df), complete_rate > 0.02)$skim_variable] -->
+
 <!-- } -->
+
 <!-- ``` -->
 
-
 <!-- Now the function can be used in conjunction with the `map()` and `mutate()` functions to apply the function on each of the nested datasets and overwrite the old results with the new ones: -->
+
 <!-- ```{r} -->
+
 <!-- cryptodata_nested <- mutate(cryptodata_nested,  -->
+
 <!--                             train_data = map(train_data, remove_zero_var)) -->
+
 <!-- ``` -->
 
 <!-- Now we need to do the same for the test data, but skipping over the empty  -->
@@ -493,9 +524,9 @@ Could work with the data using for loops, which is an "object-oriented" approach
 <!-- [TODO - HERE AM I SKIPPING OVER EMPTY ONES OR KEEP TEST_AND_HOLDOUT AND TRAIN? SO NO NULL ROW ELEMENTS] -->
 
 <!-- ```{r} -->
+
 <!-- cryptodata_nested <- mutate(cryptodata_nested,  -->
+
 <!--                             test_data = case_when(class(test_data)[[1]] == 'tbl_df' ~ map(test_data, remove_zero_var))) -->
+
 <!-- ``` -->
-
-
-
