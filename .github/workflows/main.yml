@@ -26,7 +26,6 @@ jobs:
           Rscript -e "install.packages('renv')"
           Rscript -e 'renv::consent(provided = TRUE)'
           Rscript -e "renv::restore()"
-          Rscript -e "library(rayshader)"
       - name: Render Book
         run: |-
           Rscript -e "bookdown::render_book('index.Rmd')"
