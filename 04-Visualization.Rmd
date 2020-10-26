@@ -216,6 +216,7 @@ To read this chart in the correct date order start from the top left and work yo
 ### Rayshader
 
 The previous chart is helpful, but a color scale like that can be a bit difficult to interpret. We could convert the previous chart into a 3d figure that is easier to visually interpret by using the amazing `rayshader` [@R-rayshader] package. 
+<!-- [TODO - is citation above working? Need to export it manually if rayshader can't be installed on GH Actions] -->
 
 **This document runs automatically through GitHub Actions, which [does not have a graphical environment to run the code below](https://github.community/t/installation-of-xquartz-not-found/139804), which prevents it from refreshing the results with the latest data. We are showing old results for the Rayshader section below. If you have gotten to this point, run the code below yourself on the latest data to see this amazing package in action!**
 
@@ -252,5 +253,5 @@ rgl.close()
 
 ![](rayshader_video.mp4)
 
-Awesome! Move on to the [next section](#predictive-modeling) to start making predictive models for the data, or keep reading below to learn more about ggplot2 extensions.
+Awesome! Move on to the [next section](#predictive-modeling) to start making predictive models for the data..
 

@@ -115,9 +115,13 @@ rowcount2 <- nrow(cryptodata)
 
 The number of rows for the `cryptodata` dataset before this filtering step was `r rowcount1` and is now `r rowcount2`.
 
-## Any gaps?
+## Calculate Target
 
-[ADD HERE]
+[TODO - ADD HERE]
+
+### Any gaps?
+
+[TODO - ADD HERE]
 
 ### Convert to tsibble
 
