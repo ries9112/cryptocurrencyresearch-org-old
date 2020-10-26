@@ -71,9 +71,10 @@ library(pacman)
 Install other packages:
 
 ```{r install_all_other_packages}
-p_load('pins','tidyverse','skimr','tsibble','doParallel','DT', 'caret','anytime','gganimate','tictoc','gifski',
-       'xgboost','gbm','rayshader', 'rgl', 'ggthemes','ggTimeSeries',
-       'av','magick')
+p_load('pins','tidyverse','skimr','tsibble','doParallel','DT', 'caret','anytime', # Data Exploration + Data Prep
+       'ggTimeSeries','gifski','av', 'magick', 'ggthemes', 'plotly', 'ggpubr', # VIsualization
+       'ggforce','gganimate', 'transformr', # Visualization continued
+       'xgboost','gbm','deepnet') # Predictive Modeling
 ```
 
 Nice work! Now you have everything you need to [follow along with this example](#overview).

@@ -12,7 +12,7 @@ board_register(name = "pins_board", url = "https://raw.githubusercontent.com/pre
 
 By running the `board_register()` command on the URL where the data is located, we can now ***"ask"*** for the data we are interested in, which is called `hitBTC_orderbook`:
 
-```{r pull_data}
+```{r pull_data, warning=F, message=F}
 cryptodata <- pin_get(name = "hitBTC_orderbook")
 ```
 
