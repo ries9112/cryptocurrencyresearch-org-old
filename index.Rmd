@@ -28,11 +28,11 @@ knitr::opts_knit$set(progress=FALSE, verbose = FALSE)
 
 **(this book is a work in progress and is NOT ready)**
 
-<!-- Welcome to this tutorial on supervised machine learning. This document will walk you through the process of using data relating to cryptocurrencies and past price movements to create models that help forecast future prices.  -->
 
-<!-- First we will discuss the process at a high-level  -->
 
 Welcome to this programming tutorial on machine learning!
+
+In this tutorial we will use the latest data from the cryptocurrency markets to provide a hands-on and complete example that anyone can follow along with.
 
 ## What will I learn?
 
@@ -70,7 +70,7 @@ knitr::include_url("https://cryptocurrencyresearch.org/high-level/")
 
 
 ```{block2, type='infoicon'}
-When following along with this example, the results will be completely reproducible and the document is static and does not update over time. The document you are currently reading this text on on the other hand updates every 12 hours. You will be able to access the same data source, but it updates hourly by the 8th minute of every hour with the most recent data, so this document and your results won't perfectly match.
+When following along with the high-level tutorial embedded above, the results will be completely reproducible and the document is static and does not update over time meaning your results will exactly match those shown. The document you are currently reading this text on on the other hand updates every 12 hours. You will be able to access the same data source, but it updates hourly by the 8th minute of every hour with the most recent data, so this document and your results won't perfectly match.
 ```
 
 
@@ -91,15 +91,25 @@ When following along with this example, the results will be completely reproduci
 
 <!-- It is also worth mentioning that we will be taking a very practical approach to machine learning. Because we are modeling many cryptocurrencies independently at the same time and the dataset evolves as time passes, it becomes difficult to make a decision across the board in terms of what the "best model" to use is because it may change based on the specific cryptocurrency in question and/or over time. -->
 
-<!-- [TODO - KEEP ADDING HERE?] -->
+ <!-- [TODO - KEEP ADDING HERE?] -->
 
 ## Format Notes
 
 -   You can hide the sidebar on the left by pressing the ***s*** key on your keyboard.
 
--   When the code is `highlighted this way`, that means we are referencing an R object of some kind. This will usually be an object in the R session like a dataset, but functions and packages are highlighted in the same way.
-
 -   The cryptocurrency data was chosen to produce results that change over time and because these markets don't have any downtime (unlike the stock market).
+
+<!-- [TODO - JUST LIKE THE HIGH LEVEL VERSION, WE WILL USE COLOR CODING] -->
+
+- Whenever an **R package** is referenced, the text will be <span style="color: #ae7b11;"> **colored orange**</span>. We will discuss ***R packages*** and the rest of the terms below later in this document, but if you are not familiar with these terms please look through the [high-level version first](https://cryptocurrencyresearch.org/high-level/).
+
+- Whenever a **function** is referenced, it will be <span style="color: green;"> colored green</span>.
+
+- Whenever an **R object** is referenced, it will be <span style="color: blue;"> colored blue</span>. We will also refer to the **parameters** of functions in <span style="color: blue;">blue</span>.
+
+- When a **term** is particularly common in machine learning or data science, we will call it out with <span style="color: purple;"> purple text</span>, but only the first time it appears.
+
+-   Whenever text is **`highlighted this way`**, that means it is a snippet of R code, which will usually be done to bring attention to specific parts of the code.
 
 ## Plan of Attack
 
@@ -111,11 +121,18 @@ How will we generate predictive models to predict cryptocurrency prices? At a hi
 
 3.  [Prepare the data](#data-prep). Make adjustments to "clean" the data based on the findings from the previous section to avoid running into problems when making models to make predictions.
 
-4.  [Visualize the data](#visualization). Visualizing the data can be an effective way to understand relationships, trends and outliers before creating predictive models.
+4.  [Visualize the data](#visualization). Visualizing the data can be an effective way to understand relationships, trends and outliers before creating predictive models, and is generally useful for many different purposes. Definitely the most fun section!
 
 5.  [Make predictive models](#predictive-modeling). Now we are ready to take the data available to us and use it to make predictive models that can be used to make predictions about future price movements using the latest data.
 
 6.  [Evaluate the performance of the models](#evaluate-model-performance). Before we can use the predictive models to make predictions on the latest data, we need to understand how well we expect them to perform, which is also essential in detecting issues.
+
+## GitHub Repository
+
+In the [next section](#setup) we will talk more about the GitHub Repository for this tutorial, for now you can check on the latest run history for this document, which is expected to update every 12 hours every day: https://github.com/ries9112/cryptocurrencyresearch-org/actions
+
+If you are seeing ✅ associated with the most recent runs at the link above, that means you are looking at a version that refreshed in the last 12 hours. If you are seeing red ❌ on the latest runs, you may be looking at an older analysis, but that should not be the case, check the timestamp at the top of this document to be sure.
+
 
 ## Disclaimer
 

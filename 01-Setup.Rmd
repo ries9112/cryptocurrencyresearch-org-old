@@ -1,18 +1,9 @@
 # Setup and Installation {#setup}
 
-<!-- (OLD COMMENTS, NOW DOING HITBTC FIRST AND MAKING THAT STEP REPRODUCIBLE AND EXPLAINING MESSARI DATA LATER) -->
+Every part of this document can be run on any computer that has R installed 
 
-<!-- Unfortunately, unlike the [high-level version](https://cryptocurrencyresearch.org/high-level/) we are not allowed to redistribute the data to others directly. Therefore, in order to use the same data used in this tutorial you will need to follow the instructions that we have outlined at this link: https://github.com/ries9112/messarir -->
 
-<!-- Those instructions provide a guide on setting up a process to collect data using the Messari.io API and writing it to a Google Sheets dataset. After doing so every step outlined in the rest of this tutorial would work because it would be the exact same data. Because this is too much to ask out of the average user, we won't cover each step here, but they are linked in [the repository linked above](https://github.com/ries9112/messarir). If anything is unclear about the process and you are running into problems you can create an issue here: https://github.com/ries9112/messarir/issues -->
-
-<!-- We recommend that most users follow along with this tutorial without setting up the data collection process and instead follow along with the document without running the code. -->
-
-<!-- [NEED TO KEEP WORKING ON THIS. MESSARIR PACKAGE NEEDS PROPER INFRASTRUCTURE TO GET ANYONE DATA (BOTH FREE AND PRO API) COLLECTION PROCESS WRITING DATA INTO GOOGLE SHEETS AND HOW TO USE TO REPLICATE TUTORIAL] -->
-
-<!-- NEED TO UPDATE THE ABOVE: Instead start with HitBTC data (provided through pins), and call out that won't be able to use Messari data without own data collection process. -->
-
-You can follow the tutorial without coding. In that case, [**you can move on to the next page where the tutorial actually begins**](#overview).
+You can also follow along with the tutorial without running the individual steps yourself. In that case, [**you can move on to the next page where the tutorial actually begins**](#overview).
 
 ## Option 1 - Run in the Cloud
 
@@ -78,3 +69,21 @@ p_load('pins','tidyverse','skimr','tsibble','doParallel','DT', 'caret','anytime'
 ```
 
 Nice work! Now you have everything you need to [follow along with this example](#overview).
+
+
+### GitHub Repository
+
+Because this document is produced through a **C**ontinuous **I**ntegration (CI) tool called **GitHub Actions**, it is also really easy for anyone to use the same code on their own computer to produce this document using the latest available data.
+
+If you wanted to render this document in its entirety yourself, here is how you would do it:
+
+<!-- [TODO - ADD STEPS HERE] -->
+
+1. First
+
+2. Second
+
+3. ...
+
+
+

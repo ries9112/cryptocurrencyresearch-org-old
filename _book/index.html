@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Cryptocurrency Research</title>
   <meta name="description" content="Cryptocurrency Research" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Cryptocurrency Research" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 
 <link rel="next" href="setup.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,20 +49,6 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.15/datatables.js"></script>
-<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -154,7 +140,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#format-notes"><i class="fa fa-check"></i><b>1.3</b> Format Notes</a></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#plan-of-attack"><i class="fa fa-check"></i><b>1.4</b> Plan of Attack</a></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i><b>1.5</b> Disclaimer</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#github-repository"><i class="fa fa-check"></i><b>1.5</b> GitHub Repository</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i><b>1.6</b> Disclaimer</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>2</b> Setup and Installation</a>
 <ul>
@@ -163,7 +150,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="setup.html"><a href="setup.html#setup-r"><i class="fa fa-check"></i><b>2.2.1</b> Setup R</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="setup.html"><a href="setup.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>2.3</b> Installing and Loading Packages</a></li>
+<li class="chapter" data-level="2.3" data-path="setup.html"><a href="setup.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>2.3</b> Installing and Loading Packages</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="setup.html"><a href="setup.html#github-repository-1"><i class="fa fa-check"></i><b>2.3.1</b> GitHub Repository</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="explore-data.html"><a href="explore-data.html"><i class="fa fa-check"></i><b>3</b> Explore the Data</a>
 <ul>
@@ -181,12 +171,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.1" data-path="data-prep.html"><a href="data-prep.html#remove-symbols-without-enough-rows"><i class="fa fa-check"></i><b>4.3.1</b> Remove symbols without enough rows</a></li>
 <li class="chapter" data-level="4.3.2" data-path="data-prep.html"><a href="data-prep.html#remove-symbols-without-data-from-the-last-3-days"><i class="fa fa-check"></i><b>4.3.2</b> Remove symbols without data from the last 3 days</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="data-prep.html"><a href="data-prep.html#any-gaps"><i class="fa fa-check"></i><b>4.4</b> Any gaps?</a>
+<li class="chapter" data-level="4.4" data-path="data-prep.html"><a href="data-prep.html#calculate-target"><i class="fa fa-check"></i><b>4.4</b> Calculate Target</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="data-prep.html"><a href="data-prep.html#convert-to-tsibble"><i class="fa fa-check"></i><b>4.4.1</b> Convert to tsibble</a></li>
-<li class="chapter" data-level="4.4.2" data-path="data-prep.html"><a href="data-prep.html#scan-gaps"><i class="fa fa-check"></i><b>4.4.2</b> Scan gaps</a></li>
-<li class="chapter" data-level="4.4.3" data-path="data-prep.html"><a href="data-prep.html#fill-gaps"><i class="fa fa-check"></i><b>4.4.3</b> Fill gaps</a></li>
-<li class="chapter" data-level="4.4.4" data-path="data-prep.html"><a href="data-prep.html#calculate-target"><i class="fa fa-check"></i><b>4.4.4</b> Calculate Target</a></li>
+<li class="chapter" data-level="4.4.1" data-path="data-prep.html"><a href="data-prep.html#any-gaps"><i class="fa fa-check"></i><b>4.4.1</b> Any gaps?</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data-prep.html"><a href="data-prep.html#convert-to-tsibble"><i class="fa fa-check"></i><b>4.4.2</b> Convert to tsibble</a></li>
+<li class="chapter" data-level="4.4.3" data-path="data-prep.html"><a href="data-prep.html#scan-gaps"><i class="fa fa-check"></i><b>4.4.3</b> Scan gaps</a></li>
+<li class="chapter" data-level="4.4.4" data-path="data-prep.html"><a href="data-prep.html#fill-gaps"><i class="fa fa-check"></i><b>4.4.4</b> Fill gaps</a></li>
+<li class="chapter" data-level="4.4.5" data-path="data-prep.html"><a href="data-prep.html#calculate-target-1"><i class="fa fa-check"></i><b>4.4.5</b> Calculate Target</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="data-prep.html"><a href="data-prep.html#cross-validation"><i class="fa fa-check"></i><b>4.5</b> Cross Validation</a></li>
 <li class="chapter" data-level="4.6" data-path="data-prep.html"><a href="data-prep.html#fix-data-by-split"><i class="fa fa-check"></i><b>4.6</b> Fix Data by Split</a>
@@ -206,7 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2.3" data-path="visualization.html"><a href="visualization.html#ggpubr"><i class="fa fa-check"></i><b>5.2.3</b> ggpubr</a></li>
 <li class="chapter" data-level="5.2.4" data-path="visualization.html"><a href="visualization.html#ggforce"><i class="fa fa-check"></i><b>5.2.4</b> ggforce</a></li>
 <li class="chapter" data-level="5.2.5" data-path="visualization.html"><a href="visualization.html#gganimate"><i class="fa fa-check"></i><b>5.2.5</b> gganimate</a></li>
-<li class="chapter" data-level="5.2.6" data-path="visualization.html"><a href="visualization.html#calendar-heatmap"><i class="fa fa-check"></i><b>5.2.6</b> Calendar Heatmap</a></li>
+<li class="chapter" data-level="5.2.6" data-path="visualization.html"><a href="visualization.html#ggtimeseries"><i class="fa fa-check"></i><b>5.2.6</b> ggTimeSeries</a></li>
 <li class="chapter" data-level="5.2.7" data-path="visualization.html"><a href="visualization.html#rayshader"><i class="fa fa-check"></i><b>5.2.7</b> Rayshader</a></li>
 </ul></li>
 </ul></li>
@@ -229,7 +220,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html"><i class="fa fa-check"></i><b>7</b> Evaluate Model Performance</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#summarizing-models"><i class="fa fa-check"></i><b>7.1</b> Summarizing models</a></li>
+<li class="chapter" data-level="7.1" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#summarizing-models"><i class="fa fa-check"></i><b>7.1</b> Summarizing models</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#adjust-rmse"><i class="fa fa-check"></i><b>7.1.1</b> Adjust RMSE</a></li>
+<li class="chapter" data-level="7.1.2" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#calculate-rmse"><i class="fa fa-check"></i><b>7.1.2</b> Calculate RMSE</a></li>
+<li class="chapter" data-level="7.1.3" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#calculate-r2"><i class="fa fa-check"></i><b>7.1.3</b> Calculate R^2</a></li>
+<li class="chapter" data-level="7.1.4" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#new-section"><i class="fa fa-check"></i><b>7.1.4</b> New Section</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#visualize-results"><i class="fa fa-check"></i><b>7.2</b> Visualize Results</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#rmse-visualization"><i class="fa fa-check"></i><b>7.2.1</b> RMSE Visualization</a></li>
+<li class="chapter" data-level="7.2.2" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#both"><i class="fa fa-check"></i><b>7.2.2</b> Both</a></li>
+<li class="chapter" data-level="7.2.3" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#results-by-the-cryptocurrency"><i class="fa fa-check"></i><b>7.2.3</b> Results by the Cryptocurrency</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="time-series.html"><a href="time-series.html"><i class="fa fa-check"></i><b>8</b> Time Series</a></li>
 <li class="chapter" data-level="9" data-path="explain-predictions.html"><a href="explain-predictions.html"><i class="fa fa-check"></i><b>9</b> Explain Predictions</a></li>
@@ -272,14 +275,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">Cryptocurrency Research</h1>
-<p class="date"><em>Last Updated:<br/> 2020-10-26 02:45:25</em></p>
+<p class="date"><em>Last Updated:<br/> 2020-10-26 11:41:28</em></p>
 </div>
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">Section - 1</span> Introduction</h1>
 <p><strong>(this book is a work in progress and is NOT ready)</strong></p>
-<!-- Welcome to this tutorial on supervised machine learning. This document will walk you through the process of using data relating to cryptocurrencies and past price movements to create models that help forecast future prices.  -->
-<!-- First we will discuss the process at a high-level  -->
 <p>Welcome to this programming tutorial on machine learning!</p>
+<p>In this tutorial we will use the latest data from the cryptocurrency markets to provide a hands-on and complete example that anyone can follow along with.</p>
 <div id="what-will-i-learn" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> What will I learn?</h2>
 <ul>
@@ -308,7 +310,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <iframe src="https://cryptocurrencyresearch.org/high-level/" width="672" height="400px"></iframe></p>
 
 <div class="infoicon">
-When following along with this example, the results will be completely reproducible and the document is static and does not update over time. The document you are currently reading this text on on the other hand updates every 12 hours. You will be able to access the same data source, but it updates hourly by the 8th minute of every hour with the most recent data, so this document and your results won’t perfectly match.
+When following along with the high-level tutorial embedded above, the results will be completely reproducible and the document is static and does not update over time meaning your results will exactly match those shown. The document you are currently reading this text on on the other hand updates every 12 hours. You will be able to access the same data source, but it updates hourly by the 8th minute of every hour with the most recent data, so this document and your results won’t perfectly match.
 </div>
 <!-- ## Who is this example for? -->
 <!-- Are you a Bob, Hosung, or Jessica below? This section provides more information on how to proceed with this tutorial. -->
@@ -318,15 +320,22 @@ When following along with this example, the results will be completely reproduci
 <!-- -   **Jessica (expert)**: Jessica is a business analyst who has experience with both R and the Tidyverse and uses the pipe operator (%\>%) regularly. Jessica should [**move onto the next section**](#introduction) for the detailed tutorial. -->
 <!-- ### Approach taken -->
 <!-- It is also worth mentioning that we will be taking a very practical approach to machine learning. Because we are modeling many cryptocurrencies independently at the same time and the dataset evolves as time passes, it becomes difficult to make a decision across the board in terms of what the "best model" to use is because it may change based on the specific cryptocurrency in question and/or over time. -->
-<!-- [TODO - KEEP ADDING HERE?] -->
+<p><!-- [TODO - KEEP ADDING HERE?] --></p>
 </div>
 </div>
 <div id="format-notes" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Format Notes</h2>
 <ul>
 <li><p>You can hide the sidebar on the left by pressing the <strong><em>s</em></strong> key on your keyboard.</p></li>
-<li><p>When the code is <code>highlighted this way</code>, that means we are referencing an R object of some kind. This will usually be an object in the R session like a dataset, but functions and packages are highlighted in the same way.</p></li>
 <li><p>The cryptocurrency data was chosen to produce results that change over time and because these markets don’t have any downtime (unlike the stock market).</p></li>
+</ul>
+<!-- [TODO - JUST LIKE THE HIGH LEVEL VERSION, WE WILL USE COLOR CODING] -->
+<ul>
+<li><p>Whenever an <strong>R package</strong> is referenced, the text will be <span style="color: #ae7b11;"> <strong>colored orange</strong></span>. We will discuss <strong><em>R packages</em></strong> and the rest of the terms below later on in this presentation.</p></li>
+<li><p>Whenever a <strong>function</strong> is referenced, it will be <span style="color: green;"> colored green</span>.</p></li>
+<li><p>Whenever an <strong>R object</strong> is referenced, it will be <span style="color: blue;"> colored blue</span>. We will also refer to the <strong>parameters</strong> of functions in <span style="color: blue;">blue</span>.</p></li>
+<li><p>When a <strong>term</strong> is particularly common in machine learning or data science, we will call it out with <span style="color: purple;"> purple text</span>, but only the first time it appears.</p></li>
+<li><p>Whenever text is <strong><code>highlighted this way</code></strong>, that means it is a snippet of R code, which will usually be done to bring attention to specific parts of the code.</p></li>
 </ul>
 </div>
 <div id="plan-of-attack" class="section level2" number="1.4">
@@ -341,8 +350,13 @@ When following along with this example, the results will be completely reproduci
 <li><p><a href="evaluate-model-performance.html#evaluate-model-performance">Evaluate the performance of the models</a>. Before we can use the predictive models to make predictions on the latest data, we need to understand how well we expect them to perform, which is also essential in detecting issues.</p></li>
 </ol>
 </div>
-<div id="disclaimer" class="section level2" number="1.5">
-<h2><span class="header-section-number">1.5</span> Disclaimer</h2>
+<div id="github-repository" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> GitHub Repository</h2>
+<p>In the <a href="setup.html#setup">next section</a> we will talk more about the GitHub Repository for this tutorial, for now you can check on the latest run history for this document, which is expected to update every 12 hours every day: <a href="https://github.com/ries9112/cryptocurrencyresearch-org/actions" class="uri">https://github.com/ries9112/cryptocurrencyresearch-org/actions</a></p>
+<p>If you are seeing ✅ associated with the most recent runs at the link above, that means you are looking at a version that refreshed in the last 12 hours. If you are seeing red ❌ on the latest runs, you may be looking at an older analysis, but that should not be the case, check the timestamp at the top of this document to be sure.</p>
+</div>
+<div id="disclaimer" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> Disclaimer</h2>
 
 <div class="rmdimportant">
 This tutorial is made available for learning and educational purposes only and the information to follow does not constitute trading advice in any way shape or form. We avoid giving any advice when it comes to trading strategies, as this is a very complex ecosystem that is out of the scope of this tutorial; we make no attempt in this regard, and if this, rather than data science, is your interest, your time would be better spent following a different tutorial that aims to answer those questions.
