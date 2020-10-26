@@ -22,12 +22,13 @@ calculate-price_usd-column
 clean-data-by-group
 remove-symbols-without-enough-rows
 remove-symbols-without-data-from-the-last-3-days
+calculate-target
 any-gaps
 convert-to-tsibble
 convert-to-hourly-data-and-get-rid-of-minutes-and-seconds
 scan-gaps
 fill-gaps
-calculate-target
+calculate-target-1
 cross-validation
 fix-data-by-split
 zero-variance
@@ -41,7 +42,7 @@ plotly
 ggpubr
 ggforce
 gganimate
-calendar-heatmap
+ggtimeseries
 rayshader
 predictive-modeling
 example-simple-model
@@ -57,7 +58,6 @@ gradient-boosting-machines
 make-predictions
 traditional-timeseries
 evaluate-model-performance
-summarizing-models
 time-series
 explain-predictions
 considerations
