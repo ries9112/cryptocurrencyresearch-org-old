@@ -177,11 +177,7 @@ When using the `geom_mark_ellipse()` function we are passing the `data` argument
 
 ### gganimate
 
-<!-- LOOK THROUGH THIS AND PUT THE PRICE OVER TIME CHART AND THE RELATIONSHIP BETWEEN PREVIOUS PRICE AND NEXT 24H PRICE SIDE BY SIDE, AND HAVE THEM ANIMATED ITERATING OVER ALL CRYPTOCURRENCIES: https://github.com/thomasp85/gganimate/wiki/Animation-Composition -->
-
-<!-- DISABLED CODE BELOW BECAUSE OF AN ERROR "trasnformr is required to tween paths and lines" -->
-
-We can repeat the same steps on the complete dataset, and then animate the results for each of the groups. Here is the first chart again, animated based on the groupings we created in the previous section:
+We can also extend the functionality of ggplot by using the `gganimate` [@R-gganimate] package, which allows us to create an animated GIF that iterates over groups in the data through the use of the `transition_states()` function.
 ```{r first_gganimate, message=FALSE, warning=FALSE, error=TRUE}
 animated_prices <- ggplot(data = mutate(cryptodata, groups=symbol),
                           aes(x = date_time_utc, y = price_usd)) +
@@ -201,41 +197,13 @@ animated_prices_result <- animate(animated_prices,fps=1)
 animated_prices_result
 ```
 
-<!-- More animate options: -->
-<!-- animate( -->
-<!--     plot = my_plot, -->
-<!--     render = gifski_renderer(), -->
-<!--     height = 600, -->
-<!--     width = 800,  -->
-<!--     duration = 5, -->
-<!--     fps = 20) -->
+We recommend consulting this documentation for really simple and straightforward examples on using gganimate: https://gganimate.com/articles/gganimate.html
 
 
+### ggTimeSeries
 
+The `ggTimeSeries` [@R-ggTimeSeries] package has functionality that is helpful in plotting time series data. We can create a calendar heatmap of the price over time using the `ggplot_calendar_heatmap()` function.
 
-<!-- COMMENTED OUT BECAUSE WAS USING PRICE INSTEAD OF % CHANGE -->
-<!-- ### gghiglight -->
-
-<!-- Instead of iterating over each cryptocurrency one at a time like we did with the animation above, we might want to get a better side-by-side view of all our groups. -->
-
-<!-- The `gghighlight` [@R-gghighlight] package lets us plot all groups on the same chart, and highlight the series we are interested in. -->
-
-<!-- For example, we can plot the percentage change in price over a 24 hour period for all cryptocurrencies, and highlight those we are interested in to compare them against the rest of the trends. -->
-<!-- ```{r gghighlight_percent_change, message=FALSE, warning=FALSE} -->
-<!-- library(gghighlight) -->
-<!-- ggplot(cryptodata, -->
-<!--        aes(x=date_time_utc, y=((sell_price_usd_24h_later - price_usd)/price_usd) * 100, colour=symbol)) + -->
-<!--   geom_line() + -->
-<!--   ylab('Next 24 hours % Price Change') + -->
-<!--   gghighlight(symbol=='Bitcoin') -->
-<!-- ``` -->
-
-
-
-
-### Calendar Heatmap
-
-For this kind of timeseries data, another nice view we can take of the data is a calendar heatmap, by using the package `ggTimeSeries` [@R-ggTimeSeries]:
 ```{r ggtimeseries_heatmap, error=TRUE}
 calendar_heatmap <- ggplot_calendar_heatmap(eth_data,'date_time_utc','price_usd') #or do target_percent_change here?
 calendar_heatmap
