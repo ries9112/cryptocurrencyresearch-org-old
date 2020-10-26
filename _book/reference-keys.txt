@@ -2,7 +2,7 @@ tab:skimr
 introduction
 what-will-i-learn
 before-getting-started
-who-is-this-example-for
+high-level-version
 format-notes
 plan-of-attack
 disclaimer
@@ -38,6 +38,8 @@ basics---ggplot2
 using-extensions
 ggthemes
 plotly
+ggpubr
+ggforce
 gganimate
 calendar-heatmap
 rayshader
@@ -56,18 +58,6 @@ make-predictions
 traditional-timeseries
 evaluate-model-performance
 summarizing-models
-adjust-rmse
-predictions-adjustment
-actual-results-adjustment
-calculate-rmse
-calculate-r2
-new-section
-visualize-results
-rmse-visualization
-both
-join-datasets
-plot-results
-results-by-the-cryptocurrency
 time-series
 explain-predictions
 considerations
