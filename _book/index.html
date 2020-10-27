@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Cryptocurrency Research</title>
   <meta name="description" content="Cryptocurrency Research" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Cryptocurrency Research" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 
 <link rel="next" href="setup.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,20 +49,6 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.15/datatables.js"></script>
-<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -164,17 +150,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="setup.html"><a href="setup.html#option-2---run-locally"><i class="fa fa-check"></i><b>2.2</b> Option 2 - Run Locally</a>
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="setup.html"><a href="setup.html#setup-r"><i class="fa fa-check"></i><b>2.2.1</b> Setup R</a></li>
-</ul></li>
-<li class="chapter" data-level="2.3" data-path="setup.html"><a href="setup.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>2.3</b> Installing and Loading Packages</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="setup.html"><a href="setup.html#github-repository-1"><i class="fa fa-check"></i><b>2.3.1</b> GitHub Repository</a></li>
+<li class="chapter" data-level="2.2.2" data-path="setup.html"><a href="setup.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>2.2.2</b> Installing and Loading Packages</a></li>
+<li class="chapter" data-level="2.2.3" data-path="setup.html"><a href="setup.html#github-repository-1"><i class="fa fa-check"></i><b>2.2.3</b> GitHub Repository</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="explore-data.html"><a href="explore-data.html"><i class="fa fa-check"></i><b>3</b> Explore the Data</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="explore-data.html"><a href="explore-data.html#pull-the-data"><i class="fa fa-check"></i><b>3.1</b> Pull the Data</a></li>
 <li class="chapter" data-level="3.2" data-path="explore-data.html"><a href="explore-data.html#data-preview"><i class="fa fa-check"></i><b>3.2</b> Data Preview</a></li>
-<li class="chapter" data-level="3.3" data-path="explore-data.html"><a href="explore-data.html#the-definition-of-a-price"><i class="fa fa-check"></i><b>3.3</b> The definition of a “price”</a></li>
+<li class="chapter" data-level="3.3" data-path="explore-data.html"><a href="explore-data.html#the-definition-of-a-price"><i class="fa fa-check"></i><b>3.3</b> The definition of a “price”</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="explore-data.html"><a href="explore-data.html#in-summary"><i class="fa fa-check"></i><b>3.3.1</b> In Summary</a></li>
+</ul></li>
 <li class="chapter" data-level="3.4" data-path="explore-data.html"><a href="explore-data.html#data-quality"><i class="fa fa-check"></i><b>3.4</b> Data Quality</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-prep.html"><a href="data-prep.html"><i class="fa fa-check"></i><b>4</b> Data Prep</a>
@@ -230,7 +217,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3.3" data-path="predictive-modeling.html"><a href="predictive-modeling.html#cross-validation-1"><i class="fa fa-check"></i><b>6.3.3</b> Cross Validation</a></li>
 <li class="chapter" data-level="6.3.4" data-path="predictive-modeling.html"><a href="predictive-modeling.html#xgboost-models"><i class="fa fa-check"></i><b>6.3.4</b> XGBoost models</a></li>
 <li class="chapter" data-level="6.3.5" data-path="predictive-modeling.html"><a href="predictive-modeling.html#all-other-models"><i class="fa fa-check"></i><b>6.3.5</b> All Other Models</a></li>
-<<<<<<< HEAD
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="predictive-modeling.html"><a href="predictive-modeling.html#make-predictions"><i class="fa fa-check"></i><b>6.4</b> Make Predictions</a></li>
 <li class="chapter" data-level="6.5" data-path="predictive-modeling.html"><a href="predictive-modeling.html#traditional-timeseries"><i class="fa fa-check"></i><b>6.5</b> Traditional Timeseries</a></li>
@@ -249,13 +235,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.1" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#rmse-visualization"><i class="fa fa-check"></i><b>7.2.1</b> RMSE Visualization</a></li>
 <li class="chapter" data-level="7.2.2" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#both"><i class="fa fa-check"></i><b>7.2.2</b> Both</a></li>
 <li class="chapter" data-level="7.2.3" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html#results-by-the-cryptocurrency"><i class="fa fa-check"></i><b>7.2.3</b> Results by the Cryptocurrency</a></li>
-=======
->>>>>>> bbc3aea3881461f0f5c84598deaead5a624ed831
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="predictive-modeling.html"><a href="predictive-modeling.html#make-predictions"><i class="fa fa-check"></i><b>6.4</b> Make Predictions</a></li>
-<li class="chapter" data-level="6.5" data-path="predictive-modeling.html"><a href="predictive-modeling.html#traditional-timeseries"><i class="fa fa-check"></i><b>6.5</b> Traditional Timeseries</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="evaluate-model-performance.html"><a href="evaluate-model-performance.html"><i class="fa fa-check"></i><b>7</b> Evaluate Model Performance</a></li>
 <li class="chapter" data-level="8" data-path="time-series.html"><a href="time-series.html"><i class="fa fa-check"></i><b>8</b> Time Series</a></li>
 <li class="chapter" data-level="9" data-path="explain-predictions.html"><a href="explain-predictions.html"><i class="fa fa-check"></i><b>9</b> Explain Predictions</a></li>
 <li class="chapter" data-level="10" data-path="considerations.html"><a href="considerations.html"><i class="fa fa-check"></i><b>10</b> Considerations</a>
@@ -297,15 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">Cryptocurrency Research</h1>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<p class="date"><em>Last Updated:<br/> 2020-10-27 06:35:44</em></p>
-=======
-<p class="date"><em>Last Updated:<br/> 2020-10-27 05:04:47</em></p>
->>>>>>> bbc3aea3881461f0f5c84598deaead5a624ed831
-=======
-<p class="date"><em>Last Updated:<br/> 2020-10-27 17:07:34</em></p>
->>>>>>> e5faf7b58702c011624fc64403a056c5a60a21e3
+<p class="date"><em>Last Updated:<br/> 2020-10-27 12:41:04</em></p>
 </div>
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">Section - 1</span> Introduction</h1>
@@ -352,14 +325,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Whenever a <strong>function</strong> is referenced, it will be <span style="color: green;"><strong>colored green</strong></span>.</p></li>
 <li><p>Whenever an <strong>R object</strong> is referenced, it will be <span style="color: blue;"><strong>colored blue</strong></span>. We will also refer to the <strong>parameters</strong> of functions in <span style="color: blue;"><strong>blue</strong></span>.</p></li>
 <li><p>When a <strong>term</strong> is particularly common in machine learning or data science, we will call it out with <span style="color: purple;"><strong>purple text</strong></span>, but only the first time it appears.</p></li>
-<li><p>Whenever text is <strong><code>highlighted this way</code></strong>, that means it is a snippet of R code, which will usually be done to bring attention to specific parts of the code.</p></li>
+<li><p>Whenever text is <strong><code>highlighted this way</code></strong>, that means it is a snippet of <strong>R code</strong>, which will usually be done to bring attention to specific parts of the code.</p></li>
 <li><p>You will not need to login or do anything special to access any of the data or functionality shown here and you will have everything you need to copy each step on your own computer.</p></li>
 <li><p>The cryptocurrency data was chosen to produce results that change over time and because these markets don’t have any downtime (unlike the stock market).</p></li>
 </ul>
 </div>
 <div id="who-is-this-tutorial-for" class="section level2" number="1.4">
 <h2><span class="header-section-number">1.4</span> Who is this tutorial for?</h2>
-<p>Are you a Bob, Hosung, or Jessica below? This section provides more information on how to proceed with this tutorial.</p>
+<p>Are you a Bob, Hosung, or Jessica below? This section provides an example of how different users may want to approach the tutorial differently based on their levels of experience.</p>
 <ul>
 <li><p><strong>Bob (beginner)</strong>: Bob is someone who understands the idea of predictive analytics at a high level and has heard of cryptocurrencies and is interested in learning more about both, but he has never used R. Bob would definitely want to <a href="https://cryptocurrencyresearch.org/high-level/">opt for the more high-level version of this tutorial</a> first and come back to this tutorial after getting hands on experience running the code explained there and understanding what happened in each step.</p>
 <!-- -   Bob might benefit from the book ["R for Data Science"](https://r4ds.had.co.nz/), available for free online. --></li>
@@ -386,6 +359,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">1.6</span> GitHub Repository</h2>
 <p>This tutorial has a public <span style="color: purple;"><strong>GitHub Repository</strong></span> associated with it, which is not only a website for us to easily distribute all the code behind this document for others to view and use, but also where it actually runs. Every 12 hours, a process gets kicked off on the page associated with our project on GitHub.com and refreshes these results. You can view the latest runs as they execute over time here: <a href="https://github.com/ries9112/cryptocurrencyresearch-org/actions" class="uri">https://github.com/ries9112/cryptocurrencyresearch-org/actions</a></p>
 <!-- If you are seeing ✅ associated with the most recent runs at the link above, that means you are looking at a version that refreshed in the last 12 hours. If you are seeing red ❌ on the latest runs, you may be looking at an older analysis, but that should not be the case, check the timestamp at the top of this document to be sure. -->
+<p>If you are running into problems using the code or notice any problems, please let us know by creating an <strong><em>issue</em></strong> on the GitHub repository: <a href="https://github.com/ries9112/cryptocurrencyresearch-org/issues" class="uri">https://github.com/ries9112/cryptocurrencyresearch-org/issues</a></p>
 <p>Go to the <a href="setup.html#setup">next section</a> for instruction on getting setup to follow along with the code run in the tutorial. You can run every step either in the cloud on your web browser, or in your own R session. You can even make a copy of the GitHub Repository on your computer and run this “book” on the latest data (updated hourly), and make changes wherever you would like. All explained in the next section ➡️</p>
 </div>
 <div id="disclaimer" class="section level2" number="1.7">
@@ -394,11 +368,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="rmdimportant">
 This tutorial is made available for learning and educational purposes only and the information to follow does not constitute trading advice in any way shape or form. We avoid giving any advice when it comes to trading strategies, as this is a very complex ecosystem that is out of the scope of this tutorial; we make no attempt in this regard, and if this, rather than data science, is your interest, your time would be better spent following a different tutorial that aims to answer those questions.
 </div>
-
-<div class="infoicon">
-This tutorial is made available for learning and educational purposes only and the information to follow does not constitute trading advice in any way shape or form. We avoid giving any advice when it comes to trading strategies, as this is a very complex ecosystem that is out of the scope of this tutorial; we make no attempt in this regard, and if this, rather than data science, is your interest, your time would be better spent following a different tutorial that aims to answer those questions.
-</div>
 <!-- REMEMBER OTHER SPECIAL BLOCK TYPE IS CALLED "rmdcaution" USE THESE TO DRAW ATTENTION TO ANYTHING IMPORTANT! -->
+<iframe src="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/" width="672" height="600px">
+</iframe>
 
 </div>
 </div>
