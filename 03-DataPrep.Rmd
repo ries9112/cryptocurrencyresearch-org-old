@@ -197,20 +197,41 @@ cryptodata <- mutate(cryptodata,
                      lagged_price_3h  = lag(price_usd, 3, order_by=ts_index),
                      lagged_price_6h  = lag(price_usd, 6, order_by=ts_index),
                      lagged_price_12h = lag(price_usd, 12, order_by=ts_index),
-                     lagged_price_24h = lag(price_usd, 24, order_by=ts_index))
-                     #lagged_price_3d  = lag(price_usd, 24*3, order_by=ts_index),
-                     #lagged_price_7d  = lag(price_usd, 24*7, order_by=ts_index),
-                     #lagged_price_14d = lag(price_usd, 24*14, order_by=ts_index),
-                     #lagged_price_31d = lag(price_usd, 24*31, order_by=ts_index))
+                     lagged_price_24h = lag(price_usd, 24, order_by=ts_index),
+                     lagged_price_3d  = lag(price_usd, 24*3, order_by=ts_index))
 ```
 
-Here is an example showing the results for the subset of data related to the Ethereum cryptocurrency (using `symbol == 'ETH'`) showing 30 rows and the relevant columns we just calculated:
+Here is an example showing the results for the subset of data related to the Bitcoin cryptocurrency (using `symbol == 'BTC'`) showing 30 rows and the relevant columns we just calculated:
 
 ```{r}
-print(select(filter(cryptodata, symbol == 'ETH'),ts_index, price_usd, lagged_price_1h, lagged_price_24h, target_price_24h), n=30)
+print(select(filter(cryptodata, symbol == 'BTC'),ts_index, price_usd, lagged_price_1h, lagged_price_24h, target_price_24h), n=30)
 ```
 
 The field `target_price_24h` shows the value of `price_usd` 24 hours into the future relative to the row of data. All the `lagged_` fields show the price from the past relative to when the data was collected (where `lagged_price_1h` shows the price 1 hour before the `ts_index` timestamp of the data).
+
+So looking at the [**tail()**]{style="color: green;"} end of the data, we should see 24 rows with no values for [**target_price_24h**]{style="color: blue;"}, while all the [**lagged_price_**]{style="color: blue;"} columns should have values:
+```{r}
+tail(print(select(filter(cryptodata, symbol == 'BTC'),ts_index, price_usd, lagged_price_1h, lagged_price_24h, target_price_24h), n=30))
+```
+
+Reading the code shown above is less than ideal. One of the more popular tools introduced by the [tidyverse](https://www.tidyverse.org/) is the [**%>%**]{style="color: purple;"} operator, which works by starting with the object/data you want to make changes to first, and then apply each transformation step by step. It's simply a way of re-writing the same code in a way that is easier to read by splitting the way the function is called rather than adding functions onto each other into a single line that becomes really hard to read. In the example above it becomes difficult to keep track of where things begin, the order of operations, and the parameters associated with the specific functions. Compare that to the code below:
+
+<!-- [TODO - ADD HERE ABOUT PIPE OPERATOR] -->
+```{r pipe_example}
+# Start with the object/data to manipulate
+cryptodata %>% 
+  # Filter the data
+  filter(symbol == 'BTC') %>% 
+  # Select columns
+  select(ts_index, price_usd, lagged_price_1h, lagged_price_24h, target_price_24h) %>% 
+  # Print 30 elements instead of only default 10 for a tibble dataframe
+  print(n = 30) %>% 
+  # Show the last 30 elements of the data
+  tail(30)
+```
+
+There are several advantages to writing code *the* ***tidy*** *way*, but while some love it others hate it, so we won't force anyone to have to understand how the **%>%** operator works and we have stayed away from its use for the rest of the code shown, but we do encourage the use of this tool: https://magrittr.tidyverse.org/reference/pipe.html
+
 
 ## Cross Validation
 
@@ -228,7 +249,7 @@ NEW CV METHOD - need to explain:
 # Remove rows with null date_time_utc to exclude missing data from next steps
 cryptodata <- drop_na(cryptodata, date_time_utc)
 # Counts by symbol
-cryptodata <- cryptodata %>% group_by(symbol) %>% mutate(tot_rows = n())
+cryptodata <- mutate(group_by(cryptodata, symbol), tot_rows = n())
 # Add row index by symbol
 cryptodata <- mutate(arrange(cryptodata, date_time_utc), row_id = seq_along(date_time_utc))
 # Calculate what rows belong in the first split

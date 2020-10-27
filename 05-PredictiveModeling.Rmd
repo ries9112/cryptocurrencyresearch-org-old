@@ -8,7 +8,7 @@
 
 ...First need to run example normal lm model, etc...
 
-### Using Functional Programming
+### Using Functional Programming {#using-functional-programming}
 
 ```{r}
 linear_model <- function(df){

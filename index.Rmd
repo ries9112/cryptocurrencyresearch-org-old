@@ -22,8 +22,6 @@ knitr::opts_chunk$set(widgetframe_widgets_dir = 'widgets' )
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 # Try getting rid of extra unwanted outputs
 knitr::opts_knit$set(progress=FALSE, verbose = FALSE)
-# Source gs_key.R
-#source("gs_key.R")
 ```
 
 **(this book is a work in progress and is NOT ready)**
@@ -93,7 +91,7 @@ knitr::include_url("https://cryptocurrencyresearch.org/high-level/")
 
 ## Who is this tutorial for?
 
-Are you a Bob, Hosung, or Jessica below? This section provides more information on how to proceed with this tutorial.
+Are you a Bob, Hosung, or Jessica below? This section provides an example of how different users may want to approach the tutorial differently based on their levels of experience.
 
 -   **Bob (beginner)**: Bob is someone who understands the idea of predictive analytics at a high level and has heard of cryptocurrencies and is interested in learning more about both, but he has never used R. Bob would definitely want to [opt for the more high-level version of this tutorial](https://cryptocurrencyresearch.org/high-level/) first and come back to this tutorial after getting hands on experience running the code explained there and understanding what happened in each step.
 
@@ -127,9 +125,11 @@ How will we generate predictive models to predict cryptocurrency prices? At a hi
 
 ## GitHub Repository
 
-This tutorial has a public [**GitHub Repository**]{style="color: purple;"} associated with it, which is not only a website for us to easily distribute the code for others to view and use, but also where it actually runs. Every 12 hours, a process gets kicked off on the page associated with our project on GitHub.com and refreshes these results. You can view the latest runs as they execute over time here: <https://github.com/ries9112/cryptocurrencyresearch-org/actions>
+This tutorial has a public [**GitHub Repository**]{style="color: purple;"} associated with it, which is not only a website for us to easily distribute all the code behind this document for others to view and use, but also where it actually runs. Every 12 hours, a process gets kicked off on the page associated with our project on GitHub.com and refreshes these results. You can view the latest runs as they execute over time here: <https://github.com/ries9112/cryptocurrencyresearch-org/actions>
 
 <!-- If you are seeing ✅ associated with the most recent runs at the link above, that means you are looking at a version that refreshed in the last 12 hours. If you are seeing red ❌ on the latest runs, you may be looking at an older analysis, but that should not be the case, check the timestamp at the top of this document to be sure. -->
+
+If you are running into problems using the code or notice any problems, please let us know by creating an ***issue*** on the GitHub repository: https://github.com/ries9112/cryptocurrencyresearch-org/issues
 
 Go to the [next section](#setup) for instruction on getting setup to follow along with the code run in the tutorial. You can run every step either in the cloud on your web browser, or in your own R session. You can even make a copy of the GitHub Repository on your computer and run this "book" on the latest data (updated hourly), and make changes wherever you would like. All explained in the next section ➡️
 
@@ -138,5 +138,6 @@ Go to the [next section](#setup) for instruction on getting setup to follow alon
 ```{block2, note-disclaimer, type='rmdimportant'}
 This tutorial is made available for learning and educational purposes only and the information to follow does not constitute trading advice in any way shape or form. We avoid giving any advice when it comes to trading strategies, as this is a very complex ecosystem that is out of the scope of this tutorial; we make no attempt in this regard, and if this, rather than data science, is your interest, your time would be better spent following a different tutorial that aims to answer those questions.
 ```
+
 
 <!-- REMEMBER OTHER SPECIAL BLOCK TYPE IS CALLED "rmdcaution" USE THESE TO DRAW ATTENTION TO ANYTHING IMPORTANT! -->
