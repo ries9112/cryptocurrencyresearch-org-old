@@ -4,13 +4,16 @@ what-will-i-learn
 before-getting-started
 high-level-version
 format-notes
+who-is-this-tutorial-for
 plan-of-attack
+github-repository
 disclaimer
 setup
 option-1---run-in-the-cloud
 option-2---run-locally
 setup-r
 installing-and-loading-packages
+github-repository-1
 explore-data
 pull-the-data
 data-preview
@@ -45,6 +48,7 @@ gganimate
 ggtimeseries
 rayshader
 predictive-modeling
+what-is-it
 example-simple-model
 using-functional-programming
 caret
