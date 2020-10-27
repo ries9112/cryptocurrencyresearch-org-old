@@ -290,21 +290,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb72-3"><a href="predictive-modeling.html#cb72-3" aria-hidden="true"></a>}</span></code></pre></div>
 <p>Can now use it for <code>map()</code></p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="predictive-modeling.html#cb73-1" aria-hidden="true"></a>cryptodata_nested <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">lm_model =</span> <span class="kw">map</span>(train_data, linear_model))</span></code></pre></div>
-<pre><code>## [90m# A tibble: 250 x 6[39m
-## [90m# Groups:   symbol, split [250][39m
+<pre><code>## [90m# A tibble: 260 x 6[39m
+## [90m# Groups:   symbol, split [260][39m
 ##    symbol split train_data          test_data         holdout_data      lm_model
 ##    [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;list&gt;[39m[23m              [3m[90m&lt;list&gt;[39m[23m            [3m[90m&lt;list&gt;[39m[23m            [3m[90m&lt;list&gt;[39m[23m  
-## [90m 1[39m BTG        1 [90m&lt;tibble [237 × 10]&gt;[39m [90m&lt;tibble [69 × 10[0m… [90m&lt;tibble [72 × 10[0m… [90m&lt;lm&gt;[39m    
-## [90m 2[39m LINK       1 [90m&lt;tibble [177 × 10]&gt;[39m [90m&lt;tibble [51 × 10[0m… [90m&lt;tibble [55 × 10[0m… [90m&lt;lm&gt;[39m    
-## [90m 3[39m VET        1 [90m&lt;tibble [256 × 10]&gt;[39m [90m&lt;tibble [72 × 10[0m… [90m&lt;tibble [76 × 10[0m… [90m&lt;lm&gt;[39m    
-## [90m 4[39m IHF        1 [90m&lt;tibble [190 × 10]&gt;[39m [90m&lt;tibble [57 × 10[0m… [90m&lt;tibble [58 × 10[0m… [90m&lt;lm&gt;[39m    
-## [90m 5[39m DGB        1 [90m&lt;tibble [274 × 10]&gt;[39m [90m&lt;tibble [75 × 10[0m… [90m&lt;tibble [76 × 10[0m… [90m&lt;lm&gt;[39m    
-## [90m 6[39m RCN        1 [90m&lt;tibble [191 × 10]&gt;[39m [90m&lt;tibble [66 × 10[0m… [90m&lt;tibble [68 × 10[0m… [90m&lt;lm&gt;[39m    
-## [90m 7[39m LTC        1 [90m&lt;tibble [267 × 10]&gt;[39m [90m&lt;tibble [75 × 10[0m… [90m&lt;tibble [75 × 10[0m… [90m&lt;lm&gt;[39m    
-## [90m 8[39m NUT        1 [90m&lt;tibble [259 × 10]&gt;[39m [90m&lt;tibble [71 × 10[0m… [90m&lt;tibble [72 × 10[0m… [90m&lt;lm&gt;[39m    
-## [90m 9[39m NEXO       1 [90m&lt;tibble [272 × 10]&gt;[39m [90m&lt;tibble [75 × 10[0m… [90m&lt;tibble [76 × 10[0m… [90m&lt;lm&gt;[39m    
-## [90m10[39m XMR        1 [90m&lt;tibble [258 × 10]&gt;[39m [90m&lt;tibble [75 × 10[0m… [90m&lt;tibble [77 × 10[0m… [90m&lt;lm&gt;[39m    
-## [90m# … with 240 more rows[39m</code></pre>
+## [90m 1[39m BTG        1 [90m&lt;tibble [239 × 10]&gt;[39m [90m&lt;tibble [70 × 10[0m… [90m&lt;tibble [71 × 10[0m… [90m&lt;lm&gt;[39m    
+## [90m 2[39m LINK       1 [90m&lt;tibble [179 × 10]&gt;[39m [90m&lt;tibble [51 × 10[0m… [90m&lt;tibble [54 × 10[0m… [90m&lt;lm&gt;[39m    
+## [90m 3[39m VET        1 [90m&lt;tibble [258 × 10]&gt;[39m [90m&lt;tibble [72 × 10[0m… [90m&lt;tibble [75 × 10[0m… [90m&lt;lm&gt;[39m    
+## [90m 4[39m IHF        1 [90m&lt;tibble [192 × 10]&gt;[39m [90m&lt;tibble [57 × 10[0m… [90m&lt;tibble [61 × 10[0m… [90m&lt;lm&gt;[39m    
+## [90m 5[39m DGB        1 [90m&lt;tibble [276 × 10]&gt;[39m [90m&lt;tibble [75 × 10[0m… [90m&lt;tibble [79 × 10[0m… [90m&lt;lm&gt;[39m    
+## [90m 6[39m RCN        1 [90m&lt;tibble [193 × 10]&gt;[39m [90m&lt;tibble [67 × 10[0m… [90m&lt;tibble [67 × 10[0m… [90m&lt;lm&gt;[39m    
+## [90m 7[39m LTC        1 [90m&lt;tibble [269 × 10]&gt;[39m [90m&lt;tibble [75 × 10[0m… [90m&lt;tibble [78 × 10[0m… [90m&lt;lm&gt;[39m    
+## [90m 8[39m NUT        1 [90m&lt;tibble [260 × 10]&gt;[39m [90m&lt;tibble [72 × 10[0m… [90m&lt;tibble [72 × 10[0m… [90m&lt;lm&gt;[39m    
+## [90m 9[39m NEXO       1 [90m&lt;tibble [274 × 10]&gt;[39m [90m&lt;tibble [75 × 10[0m… [90m&lt;tibble [79 × 10[0m… [90m&lt;lm&gt;[39m    
+## [90m10[39m XMR        1 [90m&lt;tibble [261 × 10]&gt;[39m [90m&lt;tibble [75 × 10[0m… [90m&lt;tibble [75 × 10[0m… [90m&lt;lm&gt;[39m    
+## [90m# … with 250 more rows[39m</code></pre>
 </div>
 </div>
 <div id="caret" class="section level2" number="6.3">
@@ -385,23 +385,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb83-2"><a href="predictive-modeling.html#cb83-2" aria-hidden="true"></a>              <span class="dt">newdata =</span> cryptodata_nested<span class="op">$</span>test_data[[<span class="dv">1</span>]],</span>
 <span id="cb83-3"><a href="predictive-modeling.html#cb83-3" aria-hidden="true"></a>              <span class="dt">na.action =</span> na.pass)</span></code></pre></div>
 <pre><code>##        1        2        3        4        5        6        7        8 
-## 11.07048 11.09338 11.05043 11.08908 10.99779 10.99703 11.03806 10.83661 
+## 11.04840 11.08738 10.99676 10.99574 11.03668 10.83556 10.88979 10.79099 
 ##        9       10       11       12       13       14       15       16 
-## 10.89097 10.79084 10.53383 10.45414 10.48466 10.45807 10.40978 10.42272 
+## 10.53380 10.45328 10.48354 10.45777 10.40911 10.42232 10.59737 10.72812 
 ##       17       18       19       20       21       22       23       24 
-## 10.59811 10.72865 10.76217 10.73167 10.74425 10.72397 10.74606 10.77009 
+## 10.76276 10.73203 10.74465 10.72512 10.74742 10.77120 10.71790 10.69520 
 ##       25       26       27       28       29       30       31       32 
-## 10.71644 10.69383 10.67743 10.67782 10.69422 10.59260 10.56132 10.77033 
+## 10.67877 10.67827 10.69428 10.59274 10.56089 10.76977 10.87715 10.96278 
 ##       33       34       35       36       37       38       39       40 
-## 10.87717 10.96330 10.99739 10.84891 10.68033 10.51403 10.70426 10.67592 
+## 10.99689 10.84893 10.68003 10.51338 10.70308 10.67574 10.74785 10.73075 
 ##       41       42       43       44       45       46       47       48 
-## 10.74770 10.73015 10.58051 10.58794 10.53114 10.55665 10.59131       NA 
+## 10.58036 10.58708 10.52999 10.55520 10.59052       NA 10.68599 10.74432 
 ##       49       50       51       52       53       54       55       56 
-## 10.68535 10.74456 10.76619 10.79078 10.76398 10.81091 10.81798 10.80341 
+## 10.76631 10.79057 10.76372 10.81098 10.81859 10.80437 10.79352 10.86795 
 ##       57       58       59       60       61       62       63       64 
-## 10.79252 10.86710 10.69497 10.69841 10.72864 10.74702 10.74747 10.69695 
-##       65       66       67       68       69 
-## 10.83570 10.83585 10.83449 10.90861 10.90314</code></pre>
+## 10.69553 10.69807 10.72783 10.74660 10.74689 10.69671 10.83499 10.83531 
+##       65       66       67       68       69       70 
+## 10.83397 10.90797 10.90243 10.87937 10.84559       NA</code></pre>
 <p>… now make function to use for map</p>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="predictive-modeling.html#cb85-1" aria-hidden="true"></a>make_predictions &lt;-<span class="st"> </span><span class="cf">function</span>(model, test){</span>
 <span id="cb85-2"><a href="predictive-modeling.html#cb85-2" aria-hidden="true"></a>  </span>
@@ -419,21 +419,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb86-8"><a href="predictive-modeling.html#cb86-8" aria-hidden="true"></a>                                                      make_predictions))</span></code></pre></div>
 <p>We can view the results:</p>
 <div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="predictive-modeling.html#cb87-1" aria-hidden="true"></a><span class="kw">select</span>(cryptodata_nested, lm_test_predictions, lm_holdout_predictions)</span></code></pre></div>
-<pre><code>## [90m# A tibble: 250 x 4[39m
-## [90m# Groups:   symbol, split [250][39m
+<pre><code>## [90m# A tibble: 260 x 4[39m
+## [90m# Groups:   symbol, split [260][39m
 ##    symbol split lm_test_predictions lm_holdout_predictions
 ##    [3m[90m&lt;chr&gt;[39m[23m  [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;list&gt;[39m[23m              [3m[90m&lt;list&gt;[39m[23m                
-## [90m 1[39m BTG        1 [90m&lt;dbl [69]&gt;[39m          [90m&lt;dbl [72]&gt;[39m            
-## [90m 2[39m LINK       1 [90m&lt;dbl [51]&gt;[39m          [90m&lt;dbl [55]&gt;[39m            
-## [90m 3[39m VET        1 [90m&lt;dbl [72]&gt;[39m          [90m&lt;dbl [76]&gt;[39m            
-## [90m 4[39m IHF        1 [90m&lt;dbl [57]&gt;[39m          [90m&lt;dbl [58]&gt;[39m            
-## [90m 5[39m DGB        1 [90m&lt;dbl [75]&gt;[39m          [90m&lt;dbl [76]&gt;[39m            
-## [90m 6[39m RCN        1 [90m&lt;dbl [66]&gt;[39m          [90m&lt;dbl [68]&gt;[39m            
-## [90m 7[39m LTC        1 [90m&lt;dbl [75]&gt;[39m          [90m&lt;dbl [75]&gt;[39m            
-## [90m 8[39m NUT        1 [90m&lt;dbl [71]&gt;[39m          [90m&lt;dbl [72]&gt;[39m            
-## [90m 9[39m NEXO       1 [90m&lt;dbl [75]&gt;[39m          [90m&lt;dbl [76]&gt;[39m            
-## [90m10[39m XMR        1 [90m&lt;dbl [75]&gt;[39m          [90m&lt;dbl [77]&gt;[39m            
-## [90m# … with 240 more rows[39m</code></pre>
+## [90m 1[39m BTG        1 [90m&lt;dbl [70]&gt;[39m          [90m&lt;dbl [71]&gt;[39m            
+## [90m 2[39m LINK       1 [90m&lt;dbl [51]&gt;[39m          [90m&lt;dbl [54]&gt;[39m            
+## [90m 3[39m VET        1 [90m&lt;dbl [72]&gt;[39m          [90m&lt;dbl [75]&gt;[39m            
+## [90m 4[39m IHF        1 [90m&lt;dbl [57]&gt;[39m          [90m&lt;dbl [61]&gt;[39m            
+## [90m 5[39m DGB        1 [90m&lt;dbl [75]&gt;[39m          [90m&lt;dbl [79]&gt;[39m            
+## [90m 6[39m RCN        1 [90m&lt;dbl [67]&gt;[39m          [90m&lt;dbl [67]&gt;[39m            
+## [90m 7[39m LTC        1 [90m&lt;dbl [75]&gt;[39m          [90m&lt;dbl [78]&gt;[39m            
+## [90m 8[39m NUT        1 [90m&lt;dbl [72]&gt;[39m          [90m&lt;dbl [72]&gt;[39m            
+## [90m 9[39m NEXO       1 [90m&lt;dbl [75]&gt;[39m          [90m&lt;dbl [79]&gt;[39m            
+## [90m10[39m XMR        1 [90m&lt;dbl [75]&gt;[39m          [90m&lt;dbl [75]&gt;[39m            
+## [90m# … with 250 more rows[39m</code></pre>
 <p>Now we can do the same for the rest of the models:</p>
 <div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="predictive-modeling.html#cb89-1" aria-hidden="true"></a>cryptodata_nested &lt;-<span class="st"> </span><span class="kw">mutate</span>(cryptodata_nested, </span>
 <span id="cb89-2"><a href="predictive-modeling.html#cb89-2" aria-hidden="true"></a>                            <span class="co"># XGBoost:</span></span>
