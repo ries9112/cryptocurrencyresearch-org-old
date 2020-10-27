@@ -168,12 +168,15 @@ crypto_chart <- crypto_chart +
                           description = paste0('Price drop to $', price_usd)))
 ```
 
+When using the `geom_mark_ellipse()` function we are passing the `data` argument, the `label` and the `description` through the `aes()` function. We are marking two points, one for the minimum price during the time period, and one for the maximum price. For the first point we filter the data to only the point where the `price_usd` was equal to the `max(price_usd)` and add the labels accordingly. The same is done for the second point, but showing the lowest price point for the given date range.
+
 Now view the new chart:
 ```{r}
 crypto_chart
 ```
 
-When using the `geom_mark_ellipse()` function we are passing the `data` argument, the `label` and the `description` through the `aes()` function. We are marking two points, one for the minimum price during the time period, and one for the maximum price. For the first point we filter the data to only the point where the `price_usd` was equal to the `max(price_usd)` and add the labels accordingly. The same is done for the second point, but showing the lowest price point for the given date range.
+Notice that this chart is specifically annotated around these points, but we never specified the specific dates to circle, and we are always circling the maximum and minimum values regardless of the specific data. One of the points of this document is to show the idea that when it comes to data analysis, visualizations, and reporting, most people in the workplace approach these as one time tasks, but with the proper (open source/free) tools automation and reproducibility becomes a given, and any old analysis can be run again to get the exact same results, or could be performed on the most recent view of the data using the same exact methodology.
+
 
 ### gganimate
 
@@ -186,18 +189,11 @@ animated_prices <- ggplot(data = mutate(cryptodata, groups=symbol),
                           stat_smooth() +
                           ggtitle('Price Over Time',subtitle = '{closest_state}') +
                           view_follow() # this adjusts the axis based on the group
-# Show animation:
-animated_prices
+# Show animation (slowed to 1 frame per second):
+animate(animated_prices,fps=1)
 ```
 
-We can slow down the animation by using `animate()` and choosing the speed in terms of the frames per second (`fps`)"
-```{r gganimate_speed, message=FALSE, warning=FALSE, error=TRUE}
-animated_prices_result <- animate(animated_prices,fps=1)
-# show slowed down results
-animated_prices_result
-```
-
-We recommend consulting this documentation for really simple and straightforward examples on using gganimate: https://gganimate.com/articles/gganimate.html
+We recommend consulting this documentation for simple and straightforward examples on using gganimate: https://gganimate.com/articles/gganimate.html
 
 
 ### ggTimeSeries
@@ -216,7 +212,7 @@ To read this chart in the correct date order start from the top left and work yo
 ### Rayshader
 
 The previous chart is helpful, but a color scale like that can be a bit difficult to interpret. We could convert the previous chart into a 3d figure that is easier to visually interpret by using the amazing `rayshader` [@R-rayshader] package. 
-<!-- [TODO - is citation above working? Need to export it manually if rayshader can't be installed on GH Actions] -->
+<!-- [TODO - NEED TO MANUALLY FIX THIS CITATION! Add new .bib file, right now just packages.bib which is automatically overwritten each time.] -->
 
 **This document runs automatically through GitHub Actions, which [does not have a graphical environment to run the code below](https://github.community/t/installation-of-xquartz-not-found/139804), which prevents it from refreshing the results with the latest data. We are showing old results for the Rayshader section below. If you have gotten to this point, run the code below yourself on the latest data to see this amazing package in action!**
 

@@ -5,6 +5,7 @@ site: bookdown::bookdown_site
 documentclass: book
 bibliography:
 - packages.bib
+- packages_two.bib
 biblio-style: apalike
 link-citations: yes
 ---
@@ -83,7 +84,7 @@ knitr::include_url("https://cryptocurrencyresearch.org/high-level/")
 
 -   When a **term** is particularly common in machine learning or data science, we will call it out with [**purple text**]{style="color: purple;"}, but only the first time it appears.
 
--   Whenever text is **`highlighted this way`**, that means it is a snippet of R code, which will usually be done to bring attention to specific parts of the code.
+-   Whenever text is **`highlighted this way`**, that means it is a snippet of **R code**, which will usually be done to bring attention to specific parts of the code.
 
 - You will not need to login or do anything special to access any of the data or functionality shown here and you will have everything you need to copy each step on your own computer.
 
