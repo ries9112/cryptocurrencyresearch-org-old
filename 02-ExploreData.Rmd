@@ -63,6 +63,10 @@ You can find an example of a live order book for the exchange we will be using h
 Scroll down to view the information relating to the orderbooks: ![](images/orderbook_ex.PNG)
 
 <!-- [TODO - FINISH THIS] -->
+[ADD HERE ABOUT ORDERBOOKS VS. PRICE SHOWN ON A WEBSITE]
+
+The price of a cryptocurrency on an exchange is given by the [***order book***](https://www.investopedia.com/terms/o/order-book.asp), where traders can post trades they want to perform. [KEEP ADDING HERE]
+
 
 Let's focus on the **Market Depth Chart** for now: ![](images/market_depth_chart.PNG)
 
