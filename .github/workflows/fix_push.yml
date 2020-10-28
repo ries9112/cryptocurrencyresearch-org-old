@@ -1,0 +1,20 @@
+name: Test fix push
+
+on:
+  push:
+
+jobs:
+  build:
+
+    runs-on: macOS-10.15
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the site in the jekyll/builder container
+      run: |
+        git config --local user.email "ries9112@colorado.edu"
+        git config --local user.name "ries9112"
+        git remote add origin cryptocurrencyresearch-org
+        git fetch --unshallow origin
+        git commit -m "Fix issue with shallow origin" -a
+        git push https://ries9112:${{secrets.GITHUB_TOKEN}}@github.com/ries9112/cryptocurrencyresearch-org.git HEAD:main --force
